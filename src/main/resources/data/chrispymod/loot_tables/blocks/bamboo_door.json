@@ -2,11 +2,19 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "chrsipymod:blockpool",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "chrispymod:bamboo_door",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "chrispymod:bamboo_door"
         }
       ],
