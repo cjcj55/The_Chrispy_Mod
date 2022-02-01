@@ -16,10 +16,10 @@ public class ChrispyModItemGroups {
 		}
 	};
 
-	public static final CreativeModeTab CHRISPY_BLOCKS_TAB = new CreativeModeTab(ChrispyMod.MODID) {
+	public static final CreativeModeTab CHRISPY_BLOCKS_TAB = new CreativeModeTab(ChrispyMod.MODID.concat("1")) {
 		@Override
 		public ItemStack makeIcon() {
-			return ChrispyModBlocks.BLUE_EMERALD_BLOCK.get().getCloneItemStack();
+			return new ItemStack(ChrispyModBlocks.BLUE_EMERALD_BLOCK.get());
 			// return ItemInit.OUR_ITEM.get().getDefaultInstance();
 		}
 	};

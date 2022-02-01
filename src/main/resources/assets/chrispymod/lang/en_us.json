@@ -218,8 +218,9 @@
 		
 		
 		
-	"itemGroup.chrispytab": "Chrispy Mod",
-	
+	"itemGroup.chrispymod": "Chrispy Mod Items",
+	"itemGroup.chrispymod1": "Chrispy Mod Blocks",
+
 	"biome.chrispymod.extreme_desert_biome": "Extreme Desert Biome",
 	"biome.chrispymod.dense_oak_forest_biome": "Dense Oak Forest Biome",
 	"generator.chrispy_type": "Chrispy Mod Gen"
