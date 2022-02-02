@@ -11,6 +11,7 @@
 	"item.chrispymod.ruby_boots": "Ruby Boots",
 	"block.chrispymod.ruby_block": "Ruby Block",
 	"block.chrispymod.ruby_ore": "Ruby Ore",
+	"block.chrispymod.deepslate_ruby_ore": "Deepslate Ruby Ore",
 	"block.chrispymod.ruby_ore_nether": "Nether Ruby Ore",
 	
 	"item.chrispymod.opal": "Opal",
@@ -25,7 +26,8 @@
 	"item.chrispymod.opal_boots": "Opal Boots",
 	"block.chrispymod.opal_block": "Opal Block",
 	"block.chrispymod.opal_ore": "Opal Ore",
-	
+	"block.chrispymod.deepslate_opal_ore": "Deepslate Opal Ore",
+
 	"item.chrispymod.tangerine": "Tangerine",
 	"item.chrispymod.tangerine_pickaxe": "Tangerine Pickaxe",
 	"item.chrispymod.tangerine_sword": "Tangerine Sword",
@@ -38,7 +40,8 @@
 	"item.chrispymod.tangerine_boots": "Tangerine Boots",
 	"block.chrispymod.tangerine_block": "Tangerine Block",
 	"block.chrispymod.tangerine_ore": "Tangerine Ore",
-	
+	"block.chrispymod.deepslate_tangerine_ore": "Deepslate Tangerine Ore",
+
 	"item.chrispymod.cobalt": "Cobalt",
 	"item.chrispymod.cobalt_shard": "Cobalt Shard",
 	"item.chrispymod.cobalt_pickaxe": "Cobalt Pickaxe",
@@ -52,7 +55,8 @@
 	"item.chrispymod.cobalt_boots": "Cobalt Boots",
 	"block.chrispymod.cobalt_block": "Cobalt Block",
 	"block.chrispymod.cobalt_ore": "Cobalt Ore",
-	
+	"block.chrispymod.deepslate_cobalt_ore": "Deepslate Cobalt Ore",
+
 	"item.chrispymod.blue_emerald": "Blue Emerald",
 	"item.chrispymod.blue_emerald_pickaxe": "Blue Emerald Pickaxe",
 	"item.chrispymod.blue_emerald_sword": "Blue Emerald Sword",
@@ -77,7 +81,8 @@
 	"item.chrispymod.paryth_boots": "Paryth Boots",
 	"block.chrispymod.paryth_block": "Paryth Block",
 	"block.chrispymod.paryth_ore": "Paryth Ore",
-	
+	"block.chrispymod.deepslate_paryth_ore": "Deepslate Paryth Ore",
+
 	"item.chrispymod.lightning": "Lightning",
 	"item.chrispymod.lightning_pickaxe": "Lightning Pickaxe",
 	"item.chrispymod.lightning_sword": "Lightning Sword",
@@ -192,23 +197,26 @@
 	"block.chrispymod.red_redstone_lamp": "Red Redstone Lamp",
 	"block.chrispymod.white_redstone_lamp": "White Redstone Lamp",
 	"block.chrispymod.yellow_redstone_lamp": "Yellow Redstone Lamp",
-	
+
 	"block.chrispymod.hellfire_ore_nether": "Hellfire Ore",
 	"item.chrispymod.hellfire": "Hellfire",
-	
+
 	"item.chrispymod.white_dwarf_star": "White Dwarf Star",
 	"item.chrispymod.white_dwarf_star_helmet": "White Dwarf Star Helmet",
 	"item.chrispymod.white_dwarf_star_chestplate": "White Dwarf Star Chestplate",
 	"item.chrispymod.white_dwarf_star_leggings": "White Dwarf Star Leggings",
 	"item.chrispymod.white_dwarf_star_boots": "White Dwarf Star Boots",
 	"block.chrispymod.white_dwarf_star_ore": "White Dwarf Star Ore",
-	
+	"block.chrispymod.deepslate_white_dwarf_star_ore": "Deepslate White Dwarf Star Ore",
+
 	"block.chrispymod.natural_essence_ore": "Natural Essence Ore",
+	"block.chrispymod.deepslate_natural_essence_ore": "Deepslate Natural Essence Ore",
 	"item.chrispymod.natural_essence": "Natural Essence",
-	
-	"item.chrispymod.edible_experience": "Edible Experience",	
+
+	"item.chrispymod.edible_experience": "Edible Experience",
 	"block.chrispymod.experience_ore": "Experience Ore",
-		
+	"block.chrispymod.deepslate_experience_ore": "Deepslate Experience Ore",
+
 		
 		
 		

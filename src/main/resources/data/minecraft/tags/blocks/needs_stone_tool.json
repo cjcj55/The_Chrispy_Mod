@@ -2,8 +2,10 @@
   "replace": false,
   "values": [
     "chrispymod:experience_ore",
+    "chrispymod:deepslate_experience_ore",
     "chrispymod:opal_block",
     "chrispymod:opal_ore",
+    "chrispymod:deepslate_opal_ore",
     "chrispymod:skinny_slanted_bricks",
     "chrispymod:slanted_bricks",
     "chrispymod:skinny_bricks",
