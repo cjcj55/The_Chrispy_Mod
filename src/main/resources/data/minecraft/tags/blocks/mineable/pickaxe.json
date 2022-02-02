@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "chrispymod:blue_emerald_block",
-    "chrispymod:blue_emerald_ore",
     "chrispymod:cobalt_block",
     "chrispymod:cobalt_ore",
     "chrispymod:experience_ore",
@@ -11,6 +10,7 @@
     "chrispymod:hardened_redstone_block",
     "chrispymod:hellfire_ore_nether",
     "chrispymod:lightning_block",
+    "chrispymod:natural_essence_ore",
     "chrispymod:opal_block",
     "chrispymod:opal_ore",
     "chrispymod:paryth_block",
