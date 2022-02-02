@@ -38,6 +38,6 @@ public class ChrispyModToolTiers {
     public static final ForgeTier LIGHTNING = new ForgeTier(    3, 850,     8.0f, 0.0f, 9, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ChrispyModItems.LIGHTNING.get()));
     public static final ForgeTier FLAME = new ForgeTier(        2, 275,     6.0f, 2.0f, 12, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(ChrispyModItems.FLAME.get()));
     public static final ForgeTier REDSTONE = new ForgeTier(     2, 250,     6.0f, 2.0f, 14, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(ChrispyModItems.REDSTONE_INGOT.get()));
-    public static final ForgeTier EMERALD = new ForgeTier(      3, 550,     7.0f, 2.5f, 12, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Items.EMERALD.getDefaultInstance()));
-    public static final ForgeTier HONEY = new ForgeTier(        2, 400,     4.0f, 1.5f, 15, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Blocks.HONEY_BLOCK.asItem()));
+    public static final ForgeTier EMERALD = new ForgeTier(      3, 550,     7.0f, 2.5f, 12, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Items.EMERALD));
+    public static final ForgeTier HONEY = new ForgeTier(        2, 400,     4.0f, 1.5f, 15, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Items.HONEY_BLOCK));
 }
