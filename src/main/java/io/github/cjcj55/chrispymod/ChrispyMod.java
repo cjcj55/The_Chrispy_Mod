@@ -2,6 +2,7 @@ package io.github.cjcj55.chrispymod;
 
 import io.github.cjcj55.chrispymod.core.init.ChrispyModBlocks;
 import io.github.cjcj55.chrispymod.core.init.ChrispyModItems;
+import io.github.cjcj55.chrispymod.core.init.ChrispyModPaintings;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
@@ -35,6 +36,8 @@ public class ChrispyMod {
 
         ChrispyModItems.register(bus);
         ChrispyModBlocks.register(bus);
+
+        ChrispyModPaintings.register(bus);
 
         bus.addListener(this::setup);
         bus.addListener(this::clientSetup);
