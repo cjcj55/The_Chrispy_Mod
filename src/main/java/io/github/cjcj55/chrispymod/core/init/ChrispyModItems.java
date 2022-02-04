@@ -98,6 +98,9 @@ public class ChrispyModItems {
     public static final RegistryObject<Item> LIGHTNING_CHESTPLATE = ITEMS.register("lightning_chestplate", () -> new ChrispyModArmorItem(ChrispyModArmorMaterials.LIGHTNING, EquipmentSlot.CHEST));
     public static final RegistryObject<Item> LIGHTNING_LEGGINGS = ITEMS.register("lightning_leggings", () -> new ChrispyModArmorItem(ChrispyModArmorMaterials.LIGHTNING, EquipmentSlot.LEGS));
     public static final RegistryObject<Item> LIGHTNING_BOOTS = ITEMS.register("lightning_boots", () -> new ChrispyModArmorItem(ChrispyModArmorMaterials.LIGHTNING, EquipmentSlot.FEET));
+    // Lightning Wand
+    public static final RegistryObject<Item> LIGHTNING_WAND = ITEMS.register("lightning_wand", () -> new LightningWandItem());
+
 
     public static final RegistryObject<Item> FLAME_SWORD = ITEMS.register("flame_sword", () -> new FlameSwordItem(ChrispyModToolTiers.FLAME, 3, -2.4F));
     public static final RegistryObject<Item> FLAME_SHOVEL = ITEMS.register("flame_shovel", () -> new ChrispyModShovelItem(ChrispyModToolTiers.FLAME, 1.5F, -3.0F));
