@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ChrispyModPaintings {
+public class PaintingsInit {
     public static final DeferredRegister<Motive> PAINTING_MOTIVES = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, ChrispyMod.MODID);
 
     public static final RegistryObject<Motive> MOUNTAIN = PAINTING_MOTIVES.register("mountain", () -> new Motive(64, 48));

@@ -2,6 +2,7 @@ package io.github.cjcj55.chrispymod.common.item;
 
 import com.google.common.collect.ImmutableMap;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
+import io.github.cjcj55.chrispymod.core.materials.ArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -15,7 +16,7 @@ import java.util.Map;
 
 public class FlameArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ChrispyModArmorMaterials.FLAME, new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20, 0)).build();
+            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ArmorMaterials.FLAME, new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20, 0)).build();
 
     public FlameArmorItem(ArmorMaterial material, EquipmentSlot slot) {
         super(material, slot, new Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));

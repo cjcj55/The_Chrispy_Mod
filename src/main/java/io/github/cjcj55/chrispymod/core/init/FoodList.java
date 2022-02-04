@@ -4,7 +4,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
-public class ChrispyModFoods {
+public class FoodList {
     // Candy Canes
     public static final FoodProperties BLACK_CANDY_CANE = (new FoodProperties.Builder().nutrition(2).saturationMod(0.2f).effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 100, 5), 1.0f).alwaysEat().fast().build());
     public static final FoodProperties BLUE_CANDY_CANE = (new FoodProperties.Builder().nutrition(2).saturationMod(0.2f).effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 5), 1.0f).alwaysEat().fast().build());

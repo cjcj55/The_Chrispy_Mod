@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraft.world.level.redstone.Redstone;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,8 +17,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class ChrispyModBlocks {
-    private ChrispyModBlocks() {}
+public class BlockInit {
+    private BlockInit() {}
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ChrispyMod.MODID);
 
@@ -106,7 +105,7 @@ public class ChrispyModBlocks {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ChrispyModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_BLOCKS_TAB)));
+        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_BLOCKS_TAB)));
     }
 
 
@@ -118,7 +117,7 @@ public class ChrispyModBlocks {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
-        return ChrispyModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
     public static void register(IEventBus eventBus) {

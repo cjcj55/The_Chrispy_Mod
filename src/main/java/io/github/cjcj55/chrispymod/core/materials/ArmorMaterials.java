@@ -1,10 +1,9 @@
-package io.github.cjcj55.chrispymod.common.item;
+package io.github.cjcj55.chrispymod.core.materials;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
-import io.github.cjcj55.chrispymod.core.init.ChrispyModItems;
+import io.github.cjcj55.chrispymod.core.init.ItemInit;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
@@ -13,7 +12,7 @@ import net.minecraftforge.common.util.Lazy;
 
 import java.util.function.Supplier;
 
-public enum ChrispyModArmorMaterials implements ArmorMaterial {
+public enum ArmorMaterials implements ArmorMaterial {
     /*
     LEATHER("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> { return Ingredient.of(Items.LEATHER); }),
     CHAIN("chainmail", 15, new int[]{1, 4, 5, 2}, 12, SoundEvents.ARMOR_EQUIP_CHAIN, 0.0F, 0.0F, () -> { return Ingredient.of(Items.IRON_INGOT); }),
@@ -24,17 +23,17 @@ public enum ChrispyModArmorMaterials implements ArmorMaterial {
     NETHERITE("netherite", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> { return Ingredient.of(Items.NETHERITE_INGOT); }),
     */
 
-    RUBY("ruby",                            15, new int[]{2, 5, 6, 2}, 14, SoundEvents.ARMOR_EQUIP_IRON,        0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.RUBY.get()); }),
-    OPAL("opal",                            12, new int[]{1, 4, 5, 1}, 17, SoundEvents.ARMOR_EQUIP_IRON,        0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.OPAL.get()); }),
-    TANGERINE("tangerine",                  8,  new int[]{2, 4, 5, 1}, 8, SoundEvents.ARMOR_EQUIP_IRON,        0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.TANGERINE.get()); }),
-    COBALT("cobalt",                        20, new int[]{2, 5, 6, 3}, 10, SoundEvents.ARMOR_EQUIP_DIAMOND,     0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.COBALT.get()); }),
-    BLUE_EMERALD("blue_emerald",            30, new int[]{3, 6, 9, 4}, 11, SoundEvents.ARMOR_EQUIP_DIAMOND,     2.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.BLUE_EMERALD.get()); }),
-    PARYTH("paryth",                        10, new int[]{1, 5, 6, 2}, 6, SoundEvents.ARMOR_EQUIP_GOLD,        0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.PARYTH.get()); }),
-    LIGHTNING("lightning",                  23, new int[]{2, 5, 6, 3}, 9, SoundEvents.ARMOR_EQUIP_DIAMOND,     1.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.LIGHTNING.get()); }),
-    FLAME("flame",                          13, new int[]{2, 4, 5, 2}, 12, SoundEvents.ARMOR_EQUIP_LEATHER,     0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.FLAME.get()); }),
-    REDSTONE("redstone",                    15, new int[]{2, 4, 5, 2}, 14, SoundEvents.ARMOR_EQUIP_GOLD,        0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.REDSTONE_INGOT.get()); }),
+    RUBY("ruby",                            15, new int[]{2, 5, 6, 2}, 14, SoundEvents.ARMOR_EQUIP_IRON,        0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.RUBY.get()); }),
+    OPAL("opal",                            12, new int[]{1, 4, 5, 1}, 17, SoundEvents.ARMOR_EQUIP_IRON,        0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.OPAL.get()); }),
+    TANGERINE("tangerine",                  8,  new int[]{2, 4, 5, 1}, 8, SoundEvents.ARMOR_EQUIP_IRON,        0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.TANGERINE.get()); }),
+    COBALT("cobalt",                        20, new int[]{2, 5, 6, 3}, 10, SoundEvents.ARMOR_EQUIP_DIAMOND,     0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.COBALT.get()); }),
+    BLUE_EMERALD("blue_emerald",            30, new int[]{3, 6, 9, 4}, 11, SoundEvents.ARMOR_EQUIP_DIAMOND,     2.0F, 0.0F, () -> { return Ingredient.of(ItemInit.BLUE_EMERALD.get()); }),
+    PARYTH("paryth",                        10, new int[]{1, 5, 6, 2}, 6, SoundEvents.ARMOR_EQUIP_GOLD,        0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.PARYTH.get()); }),
+    LIGHTNING("lightning",                  23, new int[]{2, 5, 6, 3}, 9, SoundEvents.ARMOR_EQUIP_DIAMOND,     1.0F, 0.0F, () -> { return Ingredient.of(ItemInit.LIGHTNING.get()); }),
+    FLAME("flame",                          13, new int[]{2, 4, 5, 2}, 12, SoundEvents.ARMOR_EQUIP_LEATHER,     0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.FLAME.get()); }),
+    REDSTONE("redstone",                    15, new int[]{2, 4, 5, 2}, 14, SoundEvents.ARMOR_EQUIP_GOLD,        0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.REDSTONE_INGOT.get()); }),
     EMERALD("emerald",                      28, new int[]{3, 6, 7, 3}, 12, SoundEvents.ARMOR_EQUIP_DIAMOND,     0.0F, 0.0F, () -> { return Ingredient.of(Items.EMERALD); }),
-    WHITE_DWARF_STAR("white_dwarf_star",    20, new int[]{2, 5, 6, 2}, 16, SoundEvents.ARMOR_EQUIP_NETHERITE,   0.0F, 0.0F, () -> { return Ingredient.of(ChrispyModItems.WHITE_DWARF_STAR.get()); }),
+    WHITE_DWARF_STAR("white_dwarf_star",    20, new int[]{2, 5, 6, 2}, 16, SoundEvents.ARMOR_EQUIP_NETHERITE,   0.0F, 0.0F, () -> { return Ingredient.of(ItemInit.WHITE_DWARF_STAR.get()); }),
     HONEY("honey",                          12, new int[]{1, 2, 3, 1}, 15, SoundEvents.HONEY_BLOCK_PLACE,       0.0F, 0.0F, () -> { return Ingredient.of(Items.HONEY_BLOCK); });
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
@@ -47,7 +46,7 @@ public enum ChrispyModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Lazy<Ingredient> repairIngredient;
 
-    private ChrispyModArmorMaterials(String name, int durabilityMultiplier, int[] slotsProtection, int enchantmentValue, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+    private ArmorMaterials(String name, int durabilityMultiplier, int[] slotsProtection, int enchantmentValue, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.slotProtections = slotsProtection; // boots to helmet

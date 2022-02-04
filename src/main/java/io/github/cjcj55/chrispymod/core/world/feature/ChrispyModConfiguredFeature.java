@@ -1,6 +1,6 @@
 package io.github.cjcj55.chrispymod.core.world.feature;
 
-import io.github.cjcj55.chrispymod.core.init.ChrispyModBlocks;
+import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -12,46 +12,46 @@ import java.util.List;
 public class ChrispyModConfiguredFeature {
 // Overworld
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_RUBY_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.COBALT_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_COBALT_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.COBALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_COBALT_ORE.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_OPAL_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.OPAL_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_OPAL_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.OPAL_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_OPAL_ORE.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_TANGERINE_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.TANGERINE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_TANGERINE_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.TANGERINE_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_TANGERINE_ORE.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_COBALT_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.COBALT_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_COBALT_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.COBALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_COBALT_ORE.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_PARYTH_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.PARYTH_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_PARYTH_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.PARYTH_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_PARYTH_ORE.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_WHITE_DWARF_STAR_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.WHITE_DWARF_STAR_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_WHITE_DWARF_STAR_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.WHITE_DWARF_STAR_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_WHITE_DWARF_STAR_ORE.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_NATURAL_ESSENCE_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.NATURAL_ESSENCE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_NATURAL_ESSENCE_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.NATURAL_ESSENCE_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_NATURAL_ESSENCE_ORE.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_EXPERIENCE_ORES = List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ChrispyModBlocks.EXPERIENCE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ChrispyModBlocks.DEEPSLATE_EXPERIENCE_ORE.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.EXPERIENCE_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_EXPERIENCE_ORE.get().defaultBlockState()));
 
 // Nether
     public static final List<OreConfiguration.TargetBlockState> NETHER_RUBY_ORES = List.of(
-            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, ChrispyModBlocks.RUBY_ORE_NETHER.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.RUBY_ORE_NETHER.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> NETHER_FLAME_ORES = List.of(
-            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, ChrispyModBlocks.FLAME_ORE_NETHER.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.FLAME_ORE_NETHER.get().defaultBlockState()));
 
     public static final List<OreConfiguration.TargetBlockState> NETHER_HELLFIRE_ORES = List.of(
-            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, ChrispyModBlocks.HELLFIRE_ORE_NETHER.get().defaultBlockState()));
+            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.HELLFIRE_ORE_NETHER.get().defaultBlockState()));
 
 
 
