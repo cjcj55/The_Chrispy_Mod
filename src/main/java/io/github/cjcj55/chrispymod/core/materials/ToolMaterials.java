@@ -8,23 +8,17 @@ import net.minecraftforge.common.ForgeTier;
 
 public class ToolMaterials {
     /*
-    WOOD(0, 59, 2.0F, 0.0F, 15, () -> {
-        return Ingredient.of(ItemTags.PLANKS);
+    WOOD(0, 59, 2.0F, 0.0F, 15, () -> { return Ingredient.of(ItemTags.PLANKS);
     }),
-    STONE(1, 131, 4.0F, 1.0F, 5, () -> {
-        return Ingredient.of(ItemTags.STONE_TOOL_MATERIALS);
+    STONE(1, 131, 4.0F, 1.0F, 5, () -> { return Ingredient.of(ItemTags.STONE_TOOL_MATERIALS);
     }),
-    IRON(2, 250, 6.0F, 2.0F, 14, () -> {
-        return Ingredient.of(Items.IRON_INGOT);
+    IRON(2, 250, 6.0F, 2.0F, 14, () -> { return Ingredient.of(Items.IRON_INGOT);
     }),
-    DIAMOND(3, 1561, 8.0F, 3.0F, 10, () -> {
-        return Ingredient.of(Items.DIAMOND);
+    DIAMOND(3, 1561, 8.0F, 3.0F, 10, () -> { return Ingredient.of(Items.DIAMOND);
     }),
-    GOLD(0, 32, 12.0F, 0.0F, 22, () -> {
-        return Ingredient.of(Items.GOLD_INGOT);
+    GOLD(0, 32, 12.0F, 0.0F, 22, () -> { return Ingredient.of(Items.GOLD_INGOT);
     }),
-    NETHERITE(4, 2031, 9.0F, 4.0F, 15, () -> {
-        return Ingredient.of(Items.NETHERITE_INGOT);
+    NETHERITE(4, 2031, 9.0F, 4.0F, 15, () -> { return Ingredient.of(Items.NETHERITE_INGOT);
     });
     */
     public static final ForgeTier RUBY = new ForgeTier(         2, 750,     6.0f, 2.0f, 14, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(ItemInit.RUBY.get()));

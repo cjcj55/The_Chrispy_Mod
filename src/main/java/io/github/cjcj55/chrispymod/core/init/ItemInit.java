@@ -102,6 +102,7 @@ public class ItemInit {
     public static final RegistryObject<Item> LIGHTNING_BOOTS = ITEMS.register("lightning_boots", () -> new ChrispyModArmorItem(ArmorMaterials.LIGHTNING, EquipmentSlot.FEET));
     // Lightning Wand
     public static final RegistryObject<Item> LIGHTNING_WAND = ITEMS.register("lightning_wand", () -> new LightningWandItem());
+    public static final RegistryObject<Item> FLAME_WAND = ITEMS.register("flame_wand", () -> new FlameWandItem());
 
 
     public static final RegistryObject<Item> FLAME_SWORD = ITEMS.register("flame_sword", () -> new FlameSwordItem(ToolMaterials.FLAME, 3, -2.4F));
