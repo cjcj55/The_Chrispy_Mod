@@ -7,9 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.entity.projectile.LargeFireball;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -28,7 +26,8 @@ public class FlameWandItem extends Item {
         Vec3 vec3 = player.getViewVector(1.0f);
         Random random = new Random();
         if (!level.isClientSide) {
-            LargeFireball largeFireball = new LargeFireball(level, player, player.getX(), player.getEyeY(), player.getZ(), 1);
+            LargeFireball largeFireball = new LargeFireball(level, player, 0, 0, 0, 1);
+            largeFireball.setPos(player.getX(), player.getEyeY(), player.getZ());
             largeFireball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 3.0F, 0.0F);
             level.addFreshEntity(largeFireball);
             level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.GHAST_SHOOT, SoundSource.NEUTRAL, 0.5F, 0.4F / (random.nextFloat() * 0.4F + 0.8F));
