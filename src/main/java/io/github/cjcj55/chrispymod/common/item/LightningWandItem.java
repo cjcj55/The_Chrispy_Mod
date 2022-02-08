@@ -27,7 +27,7 @@ public class LightningWandItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         ItemStack itemStack = player.getItemInHand(usedHand);
-
+        player.getCooldowns().addCooldown(this, 20);
         if (!level.isClientSide()) {
             HitResult rayTraceResult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE);
             if (rayTraceResult.getType() == HitResult.Type.BLOCK) {

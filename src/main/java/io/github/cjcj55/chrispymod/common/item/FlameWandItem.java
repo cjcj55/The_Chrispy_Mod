@@ -1,5 +1,6 @@
 package io.github.cjcj55.chrispymod.common.item;
 
+import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -25,6 +26,7 @@ public class FlameWandItem extends Item {
         ItemStack itemStack = player.getItemInHand(usedHand);
         Vec3 vec3 = player.getViewVector(1.0f);
         Random random = new Random();
+        player.getCooldowns().addCooldown(this, 20);
         if (!level.isClientSide) {
             LargeFireball largeFireball = new LargeFireball(level, player, 0, 0, 0, 1);
             largeFireball.setPos(player.getX(), player.getEyeY(), player.getZ());

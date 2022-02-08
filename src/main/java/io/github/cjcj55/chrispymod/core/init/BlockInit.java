@@ -66,6 +66,7 @@ public class BlockInit {
     public static final RegistryObject<Block> ROAD_BRICKS = registerBlock("road_bricks", () -> new Block(BlockBehaviour.Properties.copy(SKINNY_SLANTED_BRICKS.get()).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SOLID_BRICKS = registerBlock("solid_bricks", () -> new Block(BlockBehaviour.Properties.copy(SKINNY_SLANTED_BRICKS.get()).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WEAVER_BRICKS = registerBlock("weaver_bricks", () -> new Block(BlockBehaviour.Properties.copy(SKINNY_SLANTED_BRICKS.get()).requiresCorrectToolForDrops()));
+
     // REDSTONE LAMPS
     public static final RegistryObject<Block> BLACK_REDSTONE_LAMP = registerBlock("black_redstone_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BLACK)));
     public static final RegistryObject<Block> BLUE_REDSTONE_LAMP = registerBlock("blue_redstone_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BLUE)));
@@ -83,6 +84,7 @@ public class BlockInit {
     public static final RegistryObject<Block> RED_REDSTONE_LAMP = registerBlock("red_redstone_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_RED)));
     public static final RegistryObject<Block> WHITE_REDSTONE_LAMP = registerBlock("white_redstone_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_WHITE)));
     public static final RegistryObject<Block> YELLOW_REDSTONE_LAMP = registerBlock("yellow_redstone_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_YELLOW)));
+
     // MISC BLOCKS
     public static final RegistryObject<Block> SUGAR_BLOCK = registerBlock("sugar_block", () -> new Block(BlockBehaviour.Properties.of(Material.BAMBOO, MaterialColor.COLOR_GREEN).strength(1.0f, 8.0f).sound(SoundType.SWEET_BERRY_BUSH)));
     public static final RegistryObject<Block> SUGAR_CANE_BLOCK = registerBlock("sugar_cane_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.BAMBOO, MaterialColor.COLOR_GREEN).strength(1.2f, 10.0f).sound(SoundType.CROP)));

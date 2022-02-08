@@ -130,12 +130,12 @@ public class ItemInit {
     public static final RegistryObject<Item> EMERALD_PICKAXE = ITEMS.register("emerald_pickaxe", () -> new ChrispyModPickaxeItem(ToolMaterials.EMERALD, 1, -2.8F));
     public static final RegistryObject<Item> EMERALD_AXE = ITEMS.register("emerald_axe", () -> new ChrispyModAxeItem(ToolMaterials.EMERALD, 6.0F, -3.2F));
     public static final RegistryObject<Item> EMERALD_HOE = ITEMS.register("emerald_hoe", () -> new ChrispyModHoeItem(ToolMaterials.EMERALD, 0, -3.0F));
-    public static final RegistryObject<Item> HONEY_SWORD = ITEMS.register("honey_sword", () -> new ChrispyModSwordItem(ToolMaterials.HONEY, 3, -2.4F));
     public static final RegistryObject<Item> EMERALD_HELMET = ITEMS.register("emerald_helmet", () -> new ChrispyModArmorItem(ArmorMaterials.EMERALD, EquipmentSlot.HEAD));
     public static final RegistryObject<Item> EMERALD_CHESTPLATE = ITEMS.register("emerald_chestplate", () -> new ChrispyModArmorItem(ArmorMaterials.EMERALD, EquipmentSlot.CHEST));
     public static final RegistryObject<Item> EMERALD_LEGGINGS = ITEMS.register("emerald_leggings", () -> new ChrispyModArmorItem(ArmorMaterials.EMERALD, EquipmentSlot.LEGS));
     public static final RegistryObject<Item> EMERALD_BOOTS = ITEMS.register("emerald_boots", () -> new ChrispyModArmorItem(ArmorMaterials.EMERALD, EquipmentSlot.FEET));
-    
+
+    public static final RegistryObject<Item> HONEY_SWORD = ITEMS.register("honey_sword", () -> new ChrispyModSwordItem(ToolMaterials.HONEY, 3, -2.4F));
     public static final RegistryObject<Item> HONEY_SHOVEL = ITEMS.register("honey_shovel", () -> new ChrispyModShovelItem(ToolMaterials.HONEY, 1.5F, -3.0F));
     public static final RegistryObject<Item> HONEY_PICKAXE = ITEMS.register("honey_pickaxe", () -> new ChrispyModPickaxeItem(ToolMaterials.HONEY, 1, -2.8F));
     public static final RegistryObject<Item> HONEY_AXE = ITEMS.register("honey_axe", () -> new ChrispyModAxeItem(ToolMaterials.HONEY, 6.0F, -3.2F));

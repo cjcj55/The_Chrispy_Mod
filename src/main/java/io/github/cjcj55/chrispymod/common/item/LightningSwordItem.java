@@ -23,6 +23,6 @@ public class LightningSwordItem extends SwordItem {
 
     @Override
     public Rarity getRarity(ItemStack pStack) {
-        return Rarity.UNCOMMON;
+        return ChrispyModRarity.BLUE;
     }
 }

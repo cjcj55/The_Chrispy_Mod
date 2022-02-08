@@ -1,11 +1,9 @@
 package io.github.cjcj55.chrispymod.common.item;
 
+import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
 
 public class FlameSwordItem extends SwordItem {
 
