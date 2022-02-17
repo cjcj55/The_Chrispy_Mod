@@ -1,6 +1,8 @@
 package io.github.cjcj55.chrispymod.core.init;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
+import io.github.cjcj55.chrispymod.common.block.LavaSpongeBlock;
+import io.github.cjcj55.chrispymod.common.block.WetLavaSpongeBlock;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -94,6 +96,9 @@ public class BlockInit {
     public static final RegistryObject<Block> BAMBOO_WALL = registerBlock("bamboo_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get())));
     public static final RegistryObject<Block> BAMBOO_DOOR = registerBlock("bamboo_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get()).noOcclusion()));
 
+    public static final RegistryObject<Block> LAVA_SPONGE = registerBlock("lava_sponge", () -> new LavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BLACK).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_BLOCKS_TAB).fireResistant());
+    public static final RegistryObject<Block> WET_LAVA_SPONGE = registerBlock("wet_lava_sponge", () -> new WetLavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.FIRE).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_BLOCKS_TAB).fireResistant());
+
 
 
 
@@ -112,14 +117,14 @@ public class BlockInit {
 
 
     // helper methods with 3 params
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, Item.Properties properties) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn, tab);
+        registerBlockItem(name, toReturn, properties);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
-        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, Item.Properties properties) {
+        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
     }
 
     public static void register(IEventBus eventBus) {

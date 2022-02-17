@@ -13,18 +13,27 @@ public class ChrispyModOreGeneration {
         List<Supplier<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
 
 // Overworld
-        base.add(() -> ChrispyModPlacedFeatures.RUBY_ORE_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.OPAL_ORE_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.TANGERINE_ORE_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.COBALT_ORE_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.PARYTH_ORE_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.WHITE_DWARF_STAR_ORE_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.NATURAL_ESSENCE_ORE_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.EXPERIENCE_ORE_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_RUBY_SMALL_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_RUBY_LARGE_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_RUBY_HIDDEN_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_OPAL_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_OPAL_SMALL_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_TANGERINE_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_TANGERINE_SMALL_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_COBALT_SMALL_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_COBALT_LARGE_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_COBALT_HIDDEN_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_PARYTH_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_PARYTH_SMALL_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_WHITE_DWARF_STAR_SMALL_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_WHITE_DWARF_STAR_HIDDEN_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_NATURAL_ESSENCE_HIDDEN_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_EXPERIENCE_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.OVERWORLD_ORE_EXPERIENCE_HIDDEN_PLACED);
 
 // Nether
-        base.add(() -> ChrispyModPlacedFeatures.RUBY_ORE_NETHER_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.FLAME_ORE_NETHER_PLACED);
-        base.add(() -> ChrispyModPlacedFeatures.HELLFIRE_ORE_NETHER_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.NETHER_ORE_RUBY_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.NETHER_ORE_FLAME_PLACED);
+        base.add(() -> ChrispyModPlacedFeatures.NETHER_ORE_HELLFIRE_PLACED);
     }
 }

@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class SpeedBlock extends Block {
-    public SpeedBlock(Properties properties) {
+    public SpeedBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
 

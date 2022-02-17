@@ -7,51 +7,26 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class ChrispyModPlacedFeatures {
 // Overworld
-    public static final PlacedFeature RUBY_ORE_PLACED = PlacementUtils.register("ruby_ore_placed",
-            ChrispyModConfiguredFeature.RUBY_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature OPAL_ORE_PLACED = PlacementUtils.register("opal_ore_placed",
-            ChrispyModConfiguredFeature.OPAL_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature TANGERINE_ORE_PLACED = PlacementUtils.register("tangerine_ore_placed",
-            ChrispyModConfiguredFeature.TANGERINE_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature COBALT_ORE_PLACED = PlacementUtils.register("cobalt_ore_placed",
-            ChrispyModConfiguredFeature.COBALT_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature PARYTH_ORE_PLACED = PlacementUtils.register("paryth_ore_placed",
-            ChrispyModConfiguredFeature.PARYTH_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature WHITE_DWARF_STAR_ORE_PLACED = PlacementUtils.register("white_dwarf_star_ore_placed",
-            ChrispyModConfiguredFeature.WHITE_DWARF_STAR_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature NATURAL_ESSENCE_ORE_PLACED = PlacementUtils.register("natural_essence_ore_placed",
-            ChrispyModConfiguredFeature.NATURAL_ESSENCE_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature EXPERIENCE_ORE_PLACED = PlacementUtils.register("experience_ore_placed",
-            ChrispyModConfiguredFeature.EXPERIENCE_ORE.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-
-
+    public static final PlacedFeature OVERWORLD_ORE_RUBY_SMALL_PLACED = PlacementUtils.register("overworld_ore_ruby_small_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_RUBY_SMALL.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_RUBY_LARGE_PLACED = PlacementUtils.register("overworld_ore_ruby_large_placed_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_RUBY_LARGE.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_RUBY_HIDDEN_PLACED = PlacementUtils.register("overworld_ore_ruby_hidden_placed_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_RUBY_HIDDEN.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_OPAL_PLACED = PlacementUtils.register("overworld_ore_opal_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_OPAL.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_OPAL_SMALL_PLACED = PlacementUtils.register("overworld_ore_opal_small_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_OPAL_SMALL.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_TANGERINE_PLACED = PlacementUtils.register("overworld_ore_tangerine_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_TANGERINE.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_TANGERINE_SMALL_PLACED = PlacementUtils.register("overworld_ore_tangerine_small_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_TANGERINE_SMALL.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_COBALT_SMALL_PLACED = PlacementUtils.register("overworld_ore_cobalt_small_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_COBALT_SMALL.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_COBALT_LARGE_PLACED = PlacementUtils.register("overworld_ore_cobalt_large_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_COBALT_LARGE.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_COBALT_HIDDEN_PLACED = PlacementUtils.register("overworld_ore_cobalt_hidden_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_COBALT_HIDDEN.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_PARYTH_PLACED = PlacementUtils.register("overworld_ore_paryth_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_PARYTH.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_PARYTH_SMALL_PLACED = PlacementUtils.register("overworld_ore_paryth_small_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_PARYTH_SMALL.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_WHITE_DWARF_STAR_SMALL_PLACED = PlacementUtils.register("overworld_ore_white_dwarf_star_small_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_WHITE_DWARF_STAR_SMALL.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_WHITE_DWARF_STAR_HIDDEN_PLACED = PlacementUtils.register("overworld_ore_white_dwarf_star_hidden_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_WHITE_DWARF_STAR_HIDDEN.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_NATURAL_ESSENCE_HIDDEN_PLACED = PlacementUtils.register("overworld_ore_natural_essence_hidden_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_NATURAL_ESSENCE_HIDDEN.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_EXPERIENCE_PLACED = PlacementUtils.register("overworld_ore_experience_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_EXPERIENCE.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature OVERWORLD_ORE_EXPERIENCE_HIDDEN_PLACED = PlacementUtils.register("overworld_ore_experience_hidden_placed", ChrispyModConfiguredFeature.OVERWORLD_ORE_EXPERIENCE_HIDDEN.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
 // Nether
-    public static final PlacedFeature RUBY_ORE_NETHER_PLACED = PlacementUtils.register("ruby_ore_nether_placed",
-            ChrispyModConfiguredFeature.RUBY_ORE_NETHER.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature FLAME_ORE_NETHER_PLACED = PlacementUtils.register("flame_ore_nether_placed",
-            ChrispyModConfiguredFeature.FLAME_ORE_NETHER.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
-    public static final PlacedFeature HELLFIRE_ORE_NETHER_PLACED = PlacementUtils.register("hellfire_ore_nether_placed",
-            ChrispyModConfiguredFeature.HELLFIRE_ORE_NETHER.placed(ChrispyModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature NETHER_ORE_RUBY_PLACED = PlacementUtils.register("nether_ore_ruby_placed", ChrispyModConfiguredFeature.NETHER_ORE_RUBY.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature NETHER_ORE_FLAME_PLACED = PlacementUtils.register("nether_ore_flame_placed", ChrispyModConfiguredFeature.NETHER_ORE_FLAME.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature NETHER_ORE_HELLFIRE_PLACED = PlacementUtils.register("nether_ore_hellfire_placed", ChrispyModConfiguredFeature.NETHER_ORE_HELLFIRE.placed(ChrispyModOrePlacement.commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 }
