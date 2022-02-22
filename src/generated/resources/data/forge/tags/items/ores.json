@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "chrispymod:ruby_ore",
+    "chrispymod:deepslate_ruby_ore",
+    "chrispymod:ruby_ore_nether",
+    "chrispymod:opal_ore",
+    "chrispymod:deepslate_opal_ore",
+    "chrispymod:tangerine_ore",
+    "chrispymod:deepslate_tangerine_ore",
+    "chrispymod:cobalt_ore",
+    "chrispymod:deepslate_cobalt_ore",
+    "chrispymod:paryth_ore",
+    "chrispymod:deepslate_paryth_ore",
+    "chrispymod:white_dwarf_star_ore",
+    "chrispymod:deepslate_white_dwarf_star_ore",
+    "chrispymod:natural_essence_ore",
+    "chrispymod:deepslate_natural_essence_ore",
+    "chrispymod:experience_ore",
+    "chrispymod:deepslate_experience_ore",
+    "chrispymod:flame_ore_nether",
+    "chrispymod:hellfire_ore_nether"
+  ]
+}

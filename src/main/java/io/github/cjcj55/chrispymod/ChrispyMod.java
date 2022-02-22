@@ -16,8 +16,8 @@ import org.apache.logging.log4j.Logger;
 
 @Mod(ChrispyMod.MODID)
 public class ChrispyMod {
-    public static final String MODID = "chrispymod";
 
+    public static final String MODID = "chrispymod";
     private static final Logger LOGGER = LogManager.getLogger();
 
     public ChrispyMod() {
