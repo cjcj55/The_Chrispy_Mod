@@ -1,6 +1,7 @@
 package io.github.cjcj55.chrispymod.core.init;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
+import io.github.cjcj55.chrispymod.client.screen.AlloyFurnaceMenu;
 import io.github.cjcj55.chrispymod.client.screen.JamAndJellyMakerMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -14,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class MenuTypesInit {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.CONTAINERS, ChrispyMod.MODID);
 
+    public static final RegistryObject<MenuType<AlloyFurnaceMenu>> ALLOY_FURNACE_MENU = registerMenuType(AlloyFurnaceMenu::new, "alloy_furnace_menu");
     public static final RegistryObject<MenuType<JamAndJellyMakerMenu>> JAM_AND_JELLY_MAKER_MENU = registerMenuType(JamAndJellyMakerMenu::new, "jam_and_jelly_maker_menu");
 
 

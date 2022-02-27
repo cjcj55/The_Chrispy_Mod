@@ -29,8 +29,6 @@
     "chrispymod:ruby_ore_nether",
     "chrispymod:white_dwarf_star_ore",
     "chrispymod:deepslate_white_dwarf_star_ore",
-    "chrispymod:deepslate_white_dwarf_star_ore",
-
     "chrispymod:skinny_slanted_bricks",
     "chrispymod:slanted_bricks",
     "chrispymod:skinny_bricks",
@@ -41,6 +39,8 @@
     "chrispymod:ornate_bricks",
     "chrispymod:road_bricks",
     "chrispymod:solid_bricks",
-    "chrispymod:weaver_bricks"
+    "chrispymod:weaver_bricks",
+    "chrispymod:alloy_furnace",
+    "chrispymod:jam_and_jelly_maker"
   ]
 }

@@ -1,6 +1,7 @@
 package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
+import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +21,7 @@ public class CMBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
         /*registerGenerator();
         registerPowergen();
         registerPortal();

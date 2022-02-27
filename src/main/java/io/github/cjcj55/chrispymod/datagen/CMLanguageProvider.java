@@ -1,6 +1,7 @@
 package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
+import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -12,6 +13,8 @@ public class CMLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(BlockInit.ALLOY_FURNACE.get(), "Alloy Furnace");
+        add(BlockInit.JAM_AND_JELLY_MAKER.get(), "Jam and Jelly Maker");
         /*add("itemGroup." + TAB_NAME, "Tutorial");
         add(MESSAGE_POWERGEN, "Power generator generating %s per tick!");
         add(MESSAGE_GENERATOR, "Generate ores from ingots!");

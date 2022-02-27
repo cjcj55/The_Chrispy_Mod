@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "top": "chrispymod:block/alloy_furnace_top",
+        "front": "chrispymod:block/alloy_furnace_front",
+        "side": "chrispymod:block/alloy_furnace_side"
+    }
+}

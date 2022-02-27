@@ -1,3 +1,9 @@
+6cccfb436b4358201072de4f30869cd8c1deeee3 assets/chrispymod/lang/en_us.json
 25f8ba87f833443086bf0681519a8ed2f8fc4eb5 data/forge/tags/blocks/ores.json
 eca80b01f9bb50ba579b237764732d1243f59b9c data/forge/tags/items/gems.json
 25f8ba87f833443086bf0681519a8ed2f8fc4eb5 data/forge/tags/items/ores.json
+96c9e2e11b0b29bf7b394ad310819476bd5c7c9e data/minecraft/tags/blocks/mineable/axe.json
+e9c15ea418db021ec8dcb1ca6f84f04d11d56742 data/minecraft/tags/blocks/mineable/pickaxe.json
+a74a1abb72111df0a8373d25c4745db70b1054f5 data/minecraft/tags/blocks/needs_diamond_tool.json
+90326ad4b4986c5e461ce825f09fd886b3e29079 data/minecraft/tags/blocks/needs_iron_tool.json
+499f498173080a7591c2aa4ffe23f8ebb86e4098 data/minecraft/tags/blocks/needs_stone_tool.json
