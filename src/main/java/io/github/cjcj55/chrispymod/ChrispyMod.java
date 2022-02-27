@@ -1,8 +1,8 @@
 package io.github.cjcj55.chrispymod;
 
-import io.github.cjcj55.chrispymod.core.init.BlockInit;
-import io.github.cjcj55.chrispymod.core.init.ItemInit;
-import io.github.cjcj55.chrispymod.core.init.PaintingsInit;
+import io.github.cjcj55.chrispymod.client.screen.JamAndJellyMakerScreen;
+import io.github.cjcj55.chrispymod.core.init.*;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +29,9 @@ public class ChrispyMod {
 
         PaintingsInit.register(bus);
 
+        BlockEntityInit.register(bus);
+        MenuTypesInit.register(bus);
+
         bus.addListener(this::setup);
         bus.addListener(this::clientSetup);
 
@@ -38,6 +41,8 @@ public class ChrispyMod {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.BAMBOO_DOOR.get(), RenderType.cutout());
+
+        MenuScreens.register(MenuTypesInit.JAM_AND_JELLY_MAKER_MENU.get(), JamAndJellyMakerScreen::new);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

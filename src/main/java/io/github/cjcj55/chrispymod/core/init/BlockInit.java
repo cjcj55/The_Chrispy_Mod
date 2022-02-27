@@ -1,6 +1,7 @@
 package io.github.cjcj55.chrispymod.core.init;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
+import io.github.cjcj55.chrispymod.common.block.JamAndJellyMakerBlock;
 import io.github.cjcj55.chrispymod.common.block.LavaSpongeBlock;
 import io.github.cjcj55.chrispymod.common.block.WetLavaSpongeBlock;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
@@ -96,8 +97,10 @@ public class BlockInit {
     public static final RegistryObject<Block> BAMBOO_WALL = registerBlock("bamboo_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get())));
     public static final RegistryObject<Block> BAMBOO_DOOR = registerBlock("bamboo_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get()).noOcclusion()));
 
-    public static final RegistryObject<Block> LAVA_SPONGE = registerBlock("lava_sponge", () -> new LavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BLACK).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_BLOCKS_TAB).fireResistant());
-    public static final RegistryObject<Block> WET_LAVA_SPONGE = registerBlock("wet_lava_sponge", () -> new WetLavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.FIRE).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_BLOCKS_TAB).fireResistant());
+    public static final RegistryObject<Block> LAVA_SPONGE = registerBlock("lava_sponge", () -> new LavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BLACK).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().fireResistant());
+    public static final RegistryObject<Block> WET_LAVA_SPONGE = registerBlock("wet_lava_sponge", () -> new WetLavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.FIRE).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().fireResistant());
+
+    public static final RegistryObject<Block> JAM_AND_JELLY_MAKER = registerBlock("jam_and_jelly_maker", () -> new JamAndJellyMakerBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.8f, 4.0f).sound(SoundType.GRASS).requiresCorrectToolForDrops()));
 
 
 
