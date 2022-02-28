@@ -1,0 +1,14 @@
+{
+  "type": "chrispymod:alloy_smelting",
+  "ingredients": [
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "output": {
+    "item": "chrispymod:blue_emerald"
+  }
+}

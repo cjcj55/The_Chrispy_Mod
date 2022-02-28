@@ -1,6 +1,7 @@
 package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
+import io.github.cjcj55.chrispymod.common.tags.CMTags;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -131,6 +132,35 @@ public class CMBlockTags extends BlockTagsProvider {
                 .add(BlockInit.LIGHTNING_BLOCK.get())
                 .add(BlockInit.WHITE_DWARF_STAR_ORE.get())
                 .add(BlockInit.DEEPSLATE_WHITE_DWARF_STAR_ORE.get());
+
+        tag(BlockTags.WALLS)
+                .add(BlockInit.BAMBOO_WALL.get());
+
+        tag(CMTags.RUBY_ORE)
+                .add(BlockInit.RUBY_ORE.get())
+                .add(BlockInit.DEEPSLATE_RUBY_ORE.get())
+                .add(BlockInit.RUBY_ORE_NETHER.get());
+        tag(CMTags.OPAL_ORE)
+                .add(BlockInit.OPAL_ORE.get())
+                .add(BlockInit.DEEPSLATE_OPAL_ORE.get());
+        tag(CMTags.TANGERINE_ORE)
+                .add(BlockInit.TANGERINE_ORE.get())
+                .add(BlockInit.DEEPSLATE_TANGERINE_ORE.get());
+        tag(CMTags.COBALT_ORE)
+                .add(BlockInit.COBALT_ORE.get())
+                .add(BlockInit.DEEPSLATE_COBALT_ORE.get());
+        tag(CMTags.PARYTH_ORE)
+                .add(BlockInit.PARYTH_ORE.get())
+                .add(BlockInit.DEEPSLATE_PARYTH_ORE.get());
+        tag(CMTags.WHITE_DWARF_STAR_ORE)
+                .add(BlockInit.WHITE_DWARF_STAR_ORE.get())
+                .add(BlockInit.DEEPSLATE_WHITE_DWARF_STAR_ORE.get());
+        tag(CMTags.NATURAL_ESSENCE_ORE)
+                .add(BlockInit.NATURAL_ESSENCE_ORE.get())
+                .add(BlockInit.DEEPSLATE_NATURAL_ESSENCE_ORE.get());
+        tag(CMTags.EXPERIENCE_ORE)
+                .add(BlockInit.EXPERIENCE_ORE.get())
+                .add(BlockInit.DEEPSLATE_EXPERIENCE_ORE.get());
 
        /* tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(Registration.GENERATOR.get())

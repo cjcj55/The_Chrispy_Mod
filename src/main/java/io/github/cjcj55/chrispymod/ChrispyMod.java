@@ -1,5 +1,6 @@
 package io.github.cjcj55.chrispymod;
 
+import io.github.cjcj55.chrispymod.client.screen.AlloyFurnaceScreen;
 import io.github.cjcj55.chrispymod.client.screen.JamAndJellyMakerScreen;
 import io.github.cjcj55.chrispymod.core.init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -32,6 +33,8 @@ public class ChrispyMod {
         BlockEntityInit.register(bus);
         MenuTypesInit.register(bus);
 
+        RecipeInit.register(bus);
+
         bus.addListener(this::setup);
         bus.addListener(this::clientSetup);
 
@@ -42,6 +45,7 @@ public class ChrispyMod {
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.BAMBOO_DOOR.get(), RenderType.cutout());
 
+        MenuScreens.register(MenuTypesInit.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
         MenuScreens.register(MenuTypesInit.JAM_AND_JELLY_MAKER_MENU.get(), JamAndJellyMakerScreen::new);
     }
 
