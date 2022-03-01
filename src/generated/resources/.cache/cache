@@ -1,4 +1,4 @@
-75ebe0d8bdf093a492612cb1cce24219bd2b011b assets/chrispymod/lang/en_us.json
+297065591f91fb5e77701784535d6f0e7c146841 assets/chrispymod/lang/en_us.json
 c0bd324f0e316b1fe654650aced6e244f9f5a390 assets/chrispymod/models/item/acerola_cherry.json
 ee132d1aa7db98d9cdb596a7b47f362816f380aa assets/chrispymod/models/item/aronia_berry.json
 f409c7faf79c0ab8f4c393dc2286950a197ee782 assets/chrispymod/models/item/barberry.json
@@ -20,6 +20,7 @@ c7030d96ba81eb4684c694f52819eb4a6fb84007 assets/chrispymod/models/item/huckleber
 6d0e6cbc79a39007058a97030bb887f420b56c2a assets/chrispymod/models/item/lingonberry.json
 0d0bb1bd8d7477678de5931bde92c88ea0879515 assets/chrispymod/models/item/loganberry.json
 4bf3321869e56787007a19994df0a2fd3fddee6d assets/chrispymod/models/item/marionberry.json
+b03cc4bb653e1e4d506e17bcffe577b6cdd532d2 assets/chrispymod/models/item/mason_jar.json
 5c4d6a2b0e0d979cfb301ef4ff526bff0b379f87 assets/chrispymod/models/item/mulberry.json
 971cebfa94f5e64f0bfbc244c61874f1e2a84988 assets/chrispymod/models/item/olallieberry.json
 58fce065611a9bb47f0835585c7ad1d462a249d6 assets/chrispymod/models/item/red_raspberry.json
@@ -30,7 +31,16 @@ c7030d96ba81eb4684c694f52819eb4a6fb84007 assets/chrispymod/models/item/huckleber
 563990c12353ce381dc617586b364e4e76860f3d assets/chrispymod/models/item/white_raspberry.json
 ed870ba00f14cc046a795062881307b8bdbd5118 assets/chrispymod/models/item/wineberry.json
 5dc524c2eaa30a61edf58a1ecde878bda3c4b90c assets/chrispymod/models/item/wonderberry.json
-4e269514e9492434040e002a1d64fdb45ae3088a data/chrispymod/tags/blocks/cobalt_ore.json
+6a4a40f363e002abf3d05fa359926a5923a17868 data/chrispymod/advancements/recipes/chrispymod/mason_jar.json
+8eefbb45c4be66ef7e86b65fe1caf7e2f8b7f8e2 data/chrispymod/recipes/mason_jar.json
+b6c9ac111b54099d584de16a1d6d34c1833577ee data/chrispymod/tags/blocks/cobalt_ore.json
+dddfaa04253e16a6ecbc42377bf661191fd62267 data/chrispymod/tags/blocks/experience_ore.json
+4649baac47adb4d680937995e10217d39622bd67 data/chrispymod/tags/blocks/natural_essence_ore.json
+4107dbaa0ddb9e81f481ec7d9a0dfe37fca9109c data/chrispymod/tags/blocks/opal_ore.json
+acc25290d0de2bfc707d92b45346edb05f111640 data/chrispymod/tags/blocks/paryth_ore.json
+b37c2875e9a86401556c62598ebe3349e7b3f77a data/chrispymod/tags/blocks/ruby_ore.json
+ce8be94309fba5ff083533726e0b11fdd8aac664 data/chrispymod/tags/blocks/tangerine_ore.json
+a3164bcd83bf34eea3847709a85ec89e1d256e3b data/chrispymod/tags/blocks/white_dwarf_star_ore.json
 25f8ba87f833443086bf0681519a8ed2f8fc4eb5 data/forge/tags/blocks/ores.json
 eca80b01f9bb50ba579b237764732d1243f59b9c data/forge/tags/items/gems.json
 25f8ba87f833443086bf0681519a8ed2f8fc4eb5 data/forge/tags/items/ores.json

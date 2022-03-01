@@ -5,8 +5,6 @@
     "chrispymod:cobalt",
     "chrispymod:opal",
     "chrispymod:ruby",
-    "chrispymod:white_dwarf_star",
-    "chrispymod:cobalt",
-    "chrispymod:cobalt"
+    "chrispymod:white_dwarf_star"
   ]
 }

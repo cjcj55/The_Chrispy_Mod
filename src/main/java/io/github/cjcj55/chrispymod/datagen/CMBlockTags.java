@@ -17,6 +17,7 @@ public class CMBlockTags extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
+        //tag(BlockTags.CROPS)
         tag(Tags.Blocks.ORES)
                 .add(BlockInit.RUBY_ORE.get())
                 .add(BlockInit.DEEPSLATE_RUBY_ORE.get())

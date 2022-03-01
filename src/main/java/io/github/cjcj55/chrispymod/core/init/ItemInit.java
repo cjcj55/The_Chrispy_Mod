@@ -201,6 +201,8 @@ public class ItemInit {
     public static final RegistryObject<Item> BAYBERRY = ITEMS.register("bayberry", () -> new ChrispyModFoodItem(FoodList.BAYBERRY));
     public static final RegistryObject<Item> GOGI_BERRY = ITEMS.register("gogi_berry", () -> new ChrispyModFoodItem(FoodList.GOGI_BERRY));
 
+    public static final RegistryObject<Item> MASON_JAR = ITEMS.register("mason_jar", () -> new ChrispyModItem());
+
 
 
 

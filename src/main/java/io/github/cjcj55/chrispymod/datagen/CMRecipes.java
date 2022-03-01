@@ -1,11 +1,13 @@
 package io.github.cjcj55.chrispymod.datagen;
 
+import io.github.cjcj55.chrispymod.core.init.ItemInit;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 
@@ -19,6 +21,14 @@ public class CMRecipes extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+
+        ShapedRecipeBuilder.shaped(ItemInit.MASON_JAR.get())
+                .pattern("x x")
+                .pattern("xxx")
+                .define('x', Tags.Items.GLASS_PANES)
+                .group("chrispymod")
+                .unlockedBy("glass_panes", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS_PANE))
+                .save(consumer);
 
         /*ShapedRecipeBuilder.shaped(Registration.GENERATOR.get())
                 .pattern("mxm")

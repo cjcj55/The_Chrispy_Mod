@@ -229,6 +229,8 @@ public class CMLanguageProvider extends LanguageProvider {
         add(ItemInit.BAYBERRY.get(), "Bayberry");
         add(ItemInit.GOGI_BERRY.get(), "Gogi Berry");
 
+        add(ItemInit.MASON_JAR.get(), "Mason Jar");
+
         add(BlockInit.SUGAR_BLOCK.get(), "Sugar Block");
         add(BlockInit.SUGAR_CANE_BLOCK.get(), "Sugar Cane Block");
 
