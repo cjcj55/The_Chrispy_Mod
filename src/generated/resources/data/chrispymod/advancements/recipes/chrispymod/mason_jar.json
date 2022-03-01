@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:mason_jar"
+    ]
+  },
+  "criteria": {
+    "glass_panes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glass_pane"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:mason_jar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "glass_panes",
+      "has_the_recipe"
+    ]
+  ]
+}
