@@ -104,6 +104,13 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         return super.getCapability(cap, side);
     }
 
+    public void forceUpdateAllStates() {
+        BlockState state = level.getBlockState(worldPosition);
+        if (state.getValue(BlockStateProperties.LIT) != this.isBurning()) {
+            level.setBlock(worldPosition, state.setValue(BlockStateProperties.LIT, this.isBurning()), 3);
+        }
+    }
+
     @Override
     public void onLoad() {
         super.onLoad();
@@ -154,12 +161,18 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             blockEntity.fuelTime--;
         }
 
+        if (!isConsumingFuel(blockEntity)) {
+            blockEntity.forceUpdateAllStates();
+        }
+
         if(hasRecipe(blockEntity)) {
             if(hasFuelInFuelSlot(blockEntity) && !isConsumingFuel(blockEntity)) {
                 blockEntity.consumeFuel();
                 setChanged(level, blockPos, state);
             }
             if(isConsumingFuel(blockEntity)) {
+                blockEntity.forceUpdateAllStates();
+                blockEntity.level.setBlock(blockEntity.worldPosition, blockEntity.level.getBlockState(blockEntity.worldPosition).setValue(BlockStateProperties.LIT, blockEntity.isBurning()), 3);
                 blockEntity.progress++;
                 setChanged(level, blockPos, state);
                 if(blockEntity.progress > blockEntity.maxProgress) {
@@ -168,6 +181,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             }
         } else {
             blockEntity.resetProgress();
+            blockEntity.forceUpdateAllStates();
             setChanged(level, blockPos, state);
         }
     }
@@ -178,6 +192,10 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     private static boolean isConsumingFuel(AlloyFurnaceBlockEntity entity) {
         return entity.fuelTime > 0;
+    }
+
+    public boolean isBurning() {
+        return this.fuelTime > 0;
     }
 
     private static boolean hasRecipe(AlloyFurnaceBlockEntity entity) {

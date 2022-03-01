@@ -13,6 +13,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -90,7 +91,10 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
 
 
 
-
+    @Override
+    public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {
+        return state.getValue(BlockStateProperties.LIT) ? 14 : 0;
+    }
 
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, Random pRand) {
         if (pState.getValue(LIT)) {

@@ -1,10 +1,7 @@
 package io.github.cjcj55.chrispymod.core.init;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
-import io.github.cjcj55.chrispymod.common.block.AlloyFurnaceBlock;
-import io.github.cjcj55.chrispymod.common.block.JamAndJellyMakerBlock;
-import io.github.cjcj55.chrispymod.common.block.LavaSpongeBlock;
-import io.github.cjcj55.chrispymod.common.block.WetLavaSpongeBlock;
+import io.github.cjcj55.chrispymod.common.block.*;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -104,6 +101,8 @@ public class BlockInit {
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnaceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).strength(4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> JAM_AND_JELLY_MAKER = registerBlock("jam_and_jelly_maker", () -> new JamAndJellyMakerBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.8f, 4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
+    // BERRY BLOCKS
+    //public static final RegistryObject<Block> STRAWBERRY_BUSH = registerBlock("strawberry_bush", () -> new BerryBlockBase());
 
 
 

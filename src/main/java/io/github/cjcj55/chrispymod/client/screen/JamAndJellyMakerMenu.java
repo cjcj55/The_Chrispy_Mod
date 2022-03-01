@@ -1,7 +1,9 @@
 package io.github.cjcj55.chrispymod.client.screen;
 
+import com.mojang.serialization.Decoder;
 import io.github.cjcj55.chrispymod.client.screen.slot.ModFuelSlot;
 import io.github.cjcj55.chrispymod.client.screen.slot.ModResultSlot;
+import io.github.cjcj55.chrispymod.client.screen.slot.ModSugarSlot;
 import io.github.cjcj55.chrispymod.common.block.entity.JamAndJellyMakerBlockEntity;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import io.github.cjcj55.chrispymod.core.init.MenuTypesInit;
@@ -14,31 +16,64 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.Nullable;
 
 public class JamAndJellyMakerMenu extends AbstractContainerMenu {
     private final JamAndJellyMakerBlockEntity blockEntity;
     private final Level level;
+    private final ContainerData data;
 
     public JamAndJellyMakerMenu(int windowId, Inventory inv, FriendlyByteBuf extraData) {
-        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()));
+        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(10));
     }
 
-    public JamAndJellyMakerMenu(int windowId, Inventory inv, BlockEntity entity) {
+    public JamAndJellyMakerMenu(int windowId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(MenuTypesInit.JAM_AND_JELLY_MAKER_MENU.get(), windowId);
-        checkContainerSize(inv, 4);
+        checkContainerSize(inv, 10);
         blockEntity = ((JamAndJellyMakerBlockEntity) entity);
         this.level = inv.player.level;
+        this.data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new ModFuelSlot(handler, 0, 18, 50));
-            this.addSlot(new SlotItemHandler(handler, 1, 66, 16));
-            this.addSlot(new SlotItemHandler(handler, 2, 66, 50));
-            this.addSlot(new ModResultSlot(handler, 3, 114, 33));
+            this.addSlot(new ModFuelSlot(handler, 0, 9, 37));
+            this.addSlot(new SlotItemHandler(handler, 1, 40, 19));  // item 1
+            this.addSlot(new SlotItemHandler(handler, 2, 58, 19));  // item 2
+            this.addSlot(new SlotItemHandler(handler, 3, 76, 19));  // item 3
+            this.addSlot(new SlotItemHandler(handler, 4, 40, 37));  // item 4
+            this.addSlot(new SlotItemHandler(handler, 5, 58, 37));  // item 5
+            this.addSlot(new SlotItemHandler(handler, 6, 76, 37));  // item 6
+            this.addSlot(new ModSugarSlot(handler, 7, 113, 63));  // sugar
+            this.addSlot(new SlotItemHandler(handler, 8, 131, 63));  // glass jar
+            this.addSlot(new ModResultSlot(handler, 9, 117, 29));   // jam
         });
+
+        addDataSlots(data);
+    }
+
+    public boolean isCrafting() {
+        return data.get(0) > 0;
+    }
+
+    public boolean hasFuel() {
+        return data.get(2) > 0;
+    }
+
+    public int getScaledProgress() {
+        int progress = this.data.get(0);
+        int maxProgress = this.data.get(1);  // Max Progress
+        int progressArrowSize = 20; // This is the width in pixels of your arrow
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledFuelProgress() {
+        int fuelProgress = this.data.get(2);
+        int maxFuelProgress = this.data.get(3);
+        int fuelProgressSize = 14;
+
+        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -57,7 +92,7 @@ public class JamAndJellyMakerMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 10;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {

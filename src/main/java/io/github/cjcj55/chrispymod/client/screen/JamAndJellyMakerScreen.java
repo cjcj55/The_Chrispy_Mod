@@ -30,6 +30,15 @@ public class JamAndJellyMakerScreen extends AbstractContainerScreen<JamAndJellyM
         int y = (height - imageHeight) / 2;
 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
+
+        if(menu.isCrafting()) {
+            blit(pPoseStack, x + 94, y + 31, 176, 14, menu.getScaledProgress(), 10);
+        }
+
+        if(menu.hasFuel()) {
+            blit(pPoseStack, x + 9, y + 20 + 14 - menu.getScaledFuelProgress(), 176,
+                    14 - menu.getScaledFuelProgress(), 14, menu.getScaledFuelProgress());
+        }
     }
 
     @Override

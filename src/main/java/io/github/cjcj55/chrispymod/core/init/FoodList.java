@@ -28,4 +28,41 @@ public class FoodList {
 
     // Honey Stick
     public static final FoodProperties HONEY_STICK = (new FoodProperties.Builder().nutrition(3).saturationMod(0.6f).fast().build());
+
+    // Berries
+    public static final FoodProperties STRAWBERRY = berry(2).build();
+    public static final FoodProperties BLUEBERRY = berry(2).build();
+    public static final FoodProperties LOGANBERRY = berry(2).build();
+    public static final FoodProperties RED_RASPBERRY = berry(2).build();
+    public static final FoodProperties BLACK_RASPBERRY = berry(2).build();
+    public static final FoodProperties GOLDEN_RASPBERRY = berry(2).build();
+    public static final FoodProperties WHITE_RASPBERRY = berry(2).build();
+    public static final FoodProperties MARIONBERRY = berry(2).build();
+    public static final FoodProperties BLACKCURRANT = berry(2).build();
+    public static final FoodProperties REDCURRANT = berry(2).build();
+    public static final FoodProperties HUCKLEBERRY = berry(2).build();
+    public static final FoodProperties WINEBERRY = berry(2).build();
+    public static final FoodProperties ELDERBERRY = berry(2).build();
+    public static final FoodProperties BLACKBERRY = berry(2).build();
+    public static final FoodProperties BOYSENBERRY = berry(2).build();
+    public static final FoodProperties GROUND_CHERRY = berry(2).build();
+    public static final FoodProperties ARONIA_BERRY = berry(2).build();
+    public static final FoodProperties SERVICEBERRY = berry(2).build();
+    public static final FoodProperties WONDERBERRY = berry(2).build();
+    public static final FoodProperties MULBERRY = berry(2).build();
+    public static final FoodProperties LINGONBERRY = berry(2).build();
+    public static final FoodProperties CRANBERRY = berry(2).build();
+    public static final FoodProperties DEWBERRY = berry(2).build();
+    public static final FoodProperties THIMBLEBERRY = berry(2).build();
+    public static final FoodProperties GOOSEBERRY = berry(2).build();
+    public static final FoodProperties CHOKEBERRY = berry(2).build();
+    public static final FoodProperties OLALLIEBERRY = berry(2).build();
+    public static final FoodProperties ACEROLA_CHERRY = berry(2).build();
+    public static final FoodProperties BARBERRY = berry(2).build();
+    public static final FoodProperties BAYBERRY = berry(2).build();
+    public static final FoodProperties GOGI_BERRY = berry(2).build();
+
+    private static FoodProperties.Builder berry(int pNutrition) {
+        return (new FoodProperties.Builder()).nutrition(pNutrition).saturationMod(0.1F).fast();
+    }
 }
