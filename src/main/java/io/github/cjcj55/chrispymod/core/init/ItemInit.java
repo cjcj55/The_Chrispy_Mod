@@ -201,6 +201,38 @@ public class ItemInit {
     public static final RegistryObject<Item> BAYBERRY = ITEMS.register("bayberry", () -> new ChrispyModFoodItem(FoodList.BAYBERRY));
     public static final RegistryObject<Item> GOGI_BERRY = ITEMS.register("gogi_berry", () -> new ChrispyModFoodItem(FoodList.GOGI_BERRY));
 
+    public static final RegistryObject<Item> STRAWBERRY_JAM = ITEMS.register("strawberry_jam", () -> new ChrispyModFoodItem(FoodList.STRAWBERRY_JAM));
+    public static final RegistryObject<Item> BLUEBERRY_JAM = ITEMS.register("blueberry_jam", () -> new ChrispyModFoodItem(FoodList.BLUEBERRY_JAM));
+    public static final RegistryObject<Item> LOGANBERRY_JAM = ITEMS.register("loganberry_jam", () -> new ChrispyModFoodItem(FoodList.LOGANBERRY_JAM));
+    public static final RegistryObject<Item> RED_RASPBERRY_JAM = ITEMS.register("red_raspberry_jam", () -> new ChrispyModFoodItem(FoodList.RED_RASPBERRY_JAM));
+    public static final RegistryObject<Item> BLACK_RASPBERRY_JAM = ITEMS.register("black_raspberry_jam", () -> new ChrispyModFoodItem(FoodList.BLACK_RASPBERRY_JAM));
+    public static final RegistryObject<Item> GOLDEN_RASPBERRY_JAM = ITEMS.register("golden_raspberry_jam", () -> new ChrispyModFoodItem(FoodList.GOLDEN_RASPBERRY_JAM));
+    public static final RegistryObject<Item> WHITE_RASPBERRY_JAM = ITEMS.register("white_raspberry_jam", () -> new ChrispyModFoodItem(FoodList.WHITE_RASPBERRY_JAM));
+    public static final RegistryObject<Item> MARIONBERRY_JAM = ITEMS.register("marionberry_jam", () -> new ChrispyModFoodItem(FoodList.MARIONBERRY_JAM));
+    public static final RegistryObject<Item> BLACKCURRANT_JAM = ITEMS.register("blackcurrant_jam", () -> new ChrispyModFoodItem(FoodList.BLACKCURRANT_JAM));
+    public static final RegistryObject<Item> REDCURRANT_JAM = ITEMS.register("redcurrant_jam", () -> new ChrispyModFoodItem(FoodList.REDCURRANT_JAM));
+    public static final RegistryObject<Item> HUCKLEBERRY_JAM = ITEMS.register("huckleberry_jam", () -> new ChrispyModFoodItem(FoodList.HUCKLEBERRY_JAM));
+    public static final RegistryObject<Item> WINEBERRY_JAM = ITEMS.register("wineberry_jam", () -> new ChrispyModFoodItem(FoodList.WINEBERRY_JAM));
+    public static final RegistryObject<Item> ELDERBERRY_JAM = ITEMS.register("elderberry_jam", () -> new ChrispyModFoodItem(FoodList.ELDERBERRY_JAM));
+    public static final RegistryObject<Item> BLACKBERRY_JAM = ITEMS.register("blackberry_jam", () -> new ChrispyModFoodItem(FoodList.BLACKBERRY_JAM));
+    public static final RegistryObject<Item> BOYSENBERRY_JAM = ITEMS.register("boysenberry_jam", () -> new ChrispyModFoodItem(FoodList.BOYSENBERRY_JAM));
+    public static final RegistryObject<Item> GROUND_CHERRY_JAM = ITEMS.register("ground_cherry_jam", () -> new ChrispyModFoodItem(FoodList.GROUND_CHERRY_JAM));
+    public static final RegistryObject<Item> ARONIA_BERRY_JAM = ITEMS.register("aronia_berry_jam", () -> new ChrispyModFoodItem(FoodList.ARONIA_BERRY_JAM));
+    public static final RegistryObject<Item> SERVICEBERRY_JAM = ITEMS.register("serviceberry_jam", () -> new ChrispyModFoodItem(FoodList.SERVICEBERRY_JAM));
+    public static final RegistryObject<Item> WONDERBERRY_JAM = ITEMS.register("wonderberry_jam", () -> new ChrispyModFoodItem(FoodList.WONDERBERRY_JAM));
+    public static final RegistryObject<Item> MULBERRY_JAM = ITEMS.register("mulberry_jam", () -> new ChrispyModFoodItem(FoodList.MULBERRY_JAM));
+    public static final RegistryObject<Item> LINGONBERRY_JAM = ITEMS.register("lingonberry_jam", () -> new ChrispyModFoodItem(FoodList.LINGONBERRY_JAM));
+    public static final RegistryObject<Item> CRANBERRY_JAM = ITEMS.register("cranberry_jam", () -> new ChrispyModFoodItem(FoodList.CRANBERRY_JAM));
+    public static final RegistryObject<Item> DEWBERRY_JAM = ITEMS.register("dewberry_jam", () -> new ChrispyModFoodItem(FoodList.DEWBERRY_JAM));
+    public static final RegistryObject<Item> THIMBLEBERRY_JAM = ITEMS.register("thimbleberry_jam", () -> new ChrispyModFoodItem(FoodList.THIMBLEBERRY_JAM));
+    public static final RegistryObject<Item> GOOSEBERRY_JAM = ITEMS.register("gooseberry_jam", () -> new ChrispyModFoodItem(FoodList.GOOSEBERRY_JAM));
+    public static final RegistryObject<Item> CHOKEBERRY_JAM = ITEMS.register("chokeberry_jam", () -> new ChrispyModFoodItem(FoodList.CHOKEBERRY_JAM));
+    public static final RegistryObject<Item> OLALLIEBERRY_JAM = ITEMS.register("olallieberry_jam", () -> new ChrispyModFoodItem(FoodList.OLALLIEBERRY_JAM));
+    public static final RegistryObject<Item> ACEROLA_CHERRY_JAM = ITEMS.register("acerola_cherry_jam", () -> new ChrispyModFoodItem(FoodList.ACEROLA_CHERRY_JAM));
+    public static final RegistryObject<Item> BARBERRY_JAM = ITEMS.register("barberry_jam", () -> new ChrispyModFoodItem(FoodList.BARBERRY_JAM));
+    public static final RegistryObject<Item> BAYBERRY_JAM = ITEMS.register("bayberry_jam", () -> new ChrispyModFoodItem(FoodList.BAYBERRY_JAM));
+    public static final RegistryObject<Item> GOGI_BERRY_JAM = ITEMS.register("gogi_berry_jam", () -> new ChrispyModFoodItem(FoodList.GOGI_BERRY_JAM));
+
     public static final RegistryObject<Item> MASON_JAR = ITEMS.register("mason_jar", () -> new ChrispyModItem());
 
 

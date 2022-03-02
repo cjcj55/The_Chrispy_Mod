@@ -62,6 +62,38 @@ public class FoodList {
     public static final FoodProperties BAYBERRY = berry(2).build();
     public static final FoodProperties GOGI_BERRY = berry(2).build();
 
+    public static final FoodProperties STRAWBERRY_JAM = berry(5).build();
+    public static final FoodProperties BLUEBERRY_JAM = berry(5).build();
+    public static final FoodProperties LOGANBERRY_JAM = berry(5).build();
+    public static final FoodProperties RED_RASPBERRY_JAM = berry(5).build();
+    public static final FoodProperties BLACK_RASPBERRY_JAM = berry(5).build();
+    public static final FoodProperties GOLDEN_RASPBERRY_JAM = berry(5).build();
+    public static final FoodProperties WHITE_RASPBERRY_JAM = berry(5).build();
+    public static final FoodProperties MARIONBERRY_JAM = berry(5).build();
+    public static final FoodProperties BLACKCURRANT_JAM = berry(5).build();
+    public static final FoodProperties REDCURRANT_JAM = berry(5).build();
+    public static final FoodProperties HUCKLEBERRY_JAM = berry(5).build();
+    public static final FoodProperties WINEBERRY_JAM = berry(5).build();
+    public static final FoodProperties ELDERBERRY_JAM = berry(5).build();
+    public static final FoodProperties BLACKBERRY_JAM = berry(5).build();
+    public static final FoodProperties BOYSENBERRY_JAM = berry(5).build();
+    public static final FoodProperties GROUND_CHERRY_JAM = berry(5).build();
+    public static final FoodProperties ARONIA_BERRY_JAM = berry(5).build();
+    public static final FoodProperties SERVICEBERRY_JAM = berry(5).build();
+    public static final FoodProperties WONDERBERRY_JAM = berry(5).build();
+    public static final FoodProperties MULBERRY_JAM = berry(5).build();
+    public static final FoodProperties LINGONBERRY_JAM = berry(5).build();
+    public static final FoodProperties CRANBERRY_JAM = berry(5).build();
+    public static final FoodProperties DEWBERRY_JAM = berry(5).build();
+    public static final FoodProperties THIMBLEBERRY_JAM = berry(5).build();
+    public static final FoodProperties GOOSEBERRY_JAM = berry(5).build();
+    public static final FoodProperties CHOKEBERRY_JAM = berry(5).build();
+    public static final FoodProperties OLALLIEBERRY_JAM = berry(5).build();
+    public static final FoodProperties ACEROLA_CHERRY_JAM = berry(5).build();
+    public static final FoodProperties BARBERRY_JAM = berry(5).build();
+    public static final FoodProperties BAYBERRY_JAM = berry(5).build();
+    public static final FoodProperties GOGI_BERRY_JAM = berry(5).build();
+
     private static FoodProperties.Builder berry(int pNutrition) {
         return (new FoodProperties.Builder()).nutrition(pNutrition).saturationMod(0.1F).fast();
     }

@@ -32,6 +32,10 @@ public class CMBlockStates extends BlockStateProvider {
         simpleBlock(Registration.MYSTERIOUS_ORE_DEEPSLATE.get());*/
     }
 
+    private void registerBerryBushes() {
+
+    }
+
     private void registerPortal() {
         /*Block block = Registration.PORTAL_BLOCK.get();
         ResourceLocation side = modLoc("block/portal_side");

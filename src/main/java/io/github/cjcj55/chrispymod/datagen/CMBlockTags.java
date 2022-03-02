@@ -134,6 +134,7 @@ public class CMBlockTags extends BlockTagsProvider {
                 .add(BlockInit.WHITE_DWARF_STAR_ORE.get())
                 .add(BlockInit.DEEPSLATE_WHITE_DWARF_STAR_ORE.get());
 
+
         tag(BlockTags.WALLS)
                 .add(BlockInit.BAMBOO_WALL.get());
 

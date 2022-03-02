@@ -16,9 +16,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
@@ -29,7 +31,7 @@ public class BerryBlockBase extends SweetBerryBushBlock {
     boolean hurt, slow;
 
     public BerryBlockBase(Supplier<Item> itemSupplier, boolean hurt, boolean slow) {
-        super(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH));
+        super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH));
         this.itemSupplier = itemSupplier;
         this.hurt = hurt;
         this.slow = slow;

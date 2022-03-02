@@ -102,7 +102,37 @@ public class BlockInit {
     public static final RegistryObject<Block> JAM_AND_JELLY_MAKER = registerBlock("jam_and_jelly_maker", () -> new JamAndJellyMakerBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.8f, 4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     // BERRY BLOCKS
-    //public static final RegistryObject<Block> STRAWBERRY_BUSH = registerBlock("strawberry_bush", () -> new BerryBlockBase());
+    public static final RegistryObject<Block> STRAWBERRY_BUSH = registerBlock("strawberry_bush", () -> new BerryBlockBase(ItemInit.STRAWBERRY, false, false));
+    public static final RegistryObject<Block> BLUEBERRY_BUSH = registerBlock("blueberry_bush", () -> new BerryBlockBase(ItemInit.BLUEBERRY, false, false));
+    public static final RegistryObject<Block> LOGANBERRY_BUSH = registerBlock("loganberry_bush", () -> new BerryBlockBase(ItemInit.LOGANBERRY, false, false));
+    public static final RegistryObject<Block> RED_RASPBERRY_BUSH = registerBlock("red_raspberry_bush", () -> new BerryBlockBase(ItemInit.RED_RASPBERRY, false, false));
+    public static final RegistryObject<Block> BLACK_RASPBERRY_BUSH = registerBlock("black_raspberry_bush", () -> new BerryBlockBase(ItemInit.BLACK_RASPBERRY, false, false));
+    public static final RegistryObject<Block> GOLDEN_RASPBERRY_BUSH = registerBlock("golden_raspberry_bush", () -> new BerryBlockBase(ItemInit.GOLDEN_RASPBERRY, false, false));
+    public static final RegistryObject<Block> WHITE_RASPBERRY_BUSH = registerBlock("white_raspberry_bush", () -> new BerryBlockBase(ItemInit.WHITE_RASPBERRY, false, false));
+    public static final RegistryObject<Block> MARIONBERRY_BUSH = registerBlock("marionberry_bush", () -> new BerryBlockBase(ItemInit.MARIONBERRY, false, false));
+    public static final RegistryObject<Block> BLACKCURRANT_BUSH = registerBlock("blackcurrant_bush", () -> new BerryBlockBase(ItemInit.BLACKCURRANT, false, false));
+    public static final RegistryObject<Block> REDCURRANT_BUSH = registerBlock("redcurrant_bush", () -> new BerryBlockBase(ItemInit.REDCURRANT, false, false));
+    public static final RegistryObject<Block> HUCKLEBERRY_BUSH = registerBlock("huckleberry_bush", () -> new BerryBlockBase(ItemInit.HUCKLEBERRY, false, false));
+    public static final RegistryObject<Block> WINEBERRY_BUSH = registerBlock("wineberry_bush", () -> new BerryBlockBase(ItemInit.WINEBERRY, false, false));
+    public static final RegistryObject<Block> ELDERBERRY_BUSH = registerBlock("elderberry_bush", () -> new BerryBlockBase(ItemInit.ELDERBERRY, false, false));
+    public static final RegistryObject<Block> BLACKBERRY_BUSH = registerBlock("blackberry_bush", () -> new BerryBlockBase(ItemInit.BLACKBERRY, false, false));
+    public static final RegistryObject<Block> BOYSENBERRY_BUSH = registerBlock("boysenberry_bush", () -> new BerryBlockBase(ItemInit.BOYSENBERRY, false, false));
+    public static final RegistryObject<Block> GROUND_CHERRY_BUSH = registerBlock("ground_cherry_bush", () -> new BerryBlockBase(ItemInit.GROUND_CHERRY, false, false));
+    public static final RegistryObject<Block> ARONIA_BERRY_BUSH = registerBlock("aronia_berry_bush", () -> new BerryBlockBase(ItemInit.ARONIA_BERRY, false, false));
+    public static final RegistryObject<Block> SERVICEBERRY_BUSH = registerBlock("serviceberry_bush", () -> new BerryBlockBase(ItemInit.SERVICEBERRY, false, false));
+    public static final RegistryObject<Block> WONDERBERRY_BUSH = registerBlock("wonderberry_bush", () -> new BerryBlockBase(ItemInit.WONDERBERRY, false, false));
+    public static final RegistryObject<Block> MULBERRY_BUSH = registerBlock("mulberry_bush", () -> new BerryBlockBase(ItemInit.MULBERRY, false, false));
+    public static final RegistryObject<Block> LINGONBERRY_BUSH = registerBlock("lingonberry_bush", () -> new BerryBlockBase(ItemInit.LINGONBERRY, false, false));
+    public static final RegistryObject<Block> CRANBERRY_BUSH = registerBlock("cranberry_bush", () -> new BerryBlockBase(ItemInit.CRANBERRY, false, false));
+    public static final RegistryObject<Block> DEWBERRY_BUSH = registerBlock("dewberry_bush", () -> new BerryBlockBase(ItemInit.DEWBERRY, false, false));
+    public static final RegistryObject<Block> THIMBLEBERRY_BUSH = registerBlock("thimbleberry_bush", () -> new BerryBlockBase(ItemInit.THIMBLEBERRY, false, false));
+    public static final RegistryObject<Block> GOOSEBERRY_BUSH = registerBlock("gooseberry_bush", () -> new BerryBlockBase(ItemInit.GOOSEBERRY, false, false));
+    public static final RegistryObject<Block> CHOKEBERRY_BUSH = registerBlock("chokeberry_bush", () -> new BerryBlockBase(ItemInit.CHOKEBERRY, false, false));
+    public static final RegistryObject<Block> OLALLIEBERRY_BUSH = registerBlock("olallieberry_bush", () -> new BerryBlockBase(ItemInit.OLALLIEBERRY, false, false));
+    public static final RegistryObject<Block> ACEROLA_CHERRY_BUSH = registerBlock("acerola_cherry_bush", () -> new BerryBlockBase(ItemInit.ACEROLA_CHERRY, false, false));
+    public static final RegistryObject<Block> BARBERRY_BUSH = registerBlock("barberry_bush", () -> new BerryBlockBase(ItemInit.BARBERRY, false, false));
+    public static final RegistryObject<Block> BAYBERRY_BUSH = registerBlock("bayberry_bush", () -> new BerryBlockBase(ItemInit.BAYBERRY, false, false));
+    public static final RegistryObject<Block> GOGI_BERRY_BUSH = registerBlock("gogi_berry_bush", () -> new BerryBlockBase(ItemInit.GOGI_BERRY, false, false));
 
 
 
