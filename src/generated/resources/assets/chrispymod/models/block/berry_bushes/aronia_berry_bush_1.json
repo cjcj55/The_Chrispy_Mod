@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "chrispymod:block/berry_bushes/aronia_berry_bush/stage_1"
+  }
+}

@@ -1,16 +1,18 @@
 package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
+import io.github.cjcj55.chrispymod.common.block.BerryBlockBase;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
+import io.github.cjcj55.chrispymod.datafixers.CMResourceLocation;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.CustomLoaderBuilder;
-import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class CMBlockStates extends BlockStateProvider {
@@ -21,93 +23,104 @@ public class CMBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-
-        /*registerGenerator();
-        registerPowergen();
-        registerPortal();
-
-        simpleBlock(Registration.MYSTERIOUS_ORE_OVERWORLD.get());
-        simpleBlock(Registration.MYSTERIOUS_ORE_NETHER.get());
-        simpleBlock(Registration.MYSTERIOUS_ORE_END.get());
-        simpleBlock(Registration.MYSTERIOUS_ORE_DEEPSLATE.get());*/
+        berryBush(BlockInit.STRAWBERRY_BUSH.get());
+        berryBush(BlockInit.BLUEBERRY_BUSH.get());
+        berryBush(BlockInit.LOGANBERRY_BUSH.get());
+        berryBush(BlockInit.RED_RASPBERRY_BUSH.get());
+        berryBush(BlockInit.BLACK_RASPBERRY_BUSH.get());
+        berryBush(BlockInit.GOLDEN_RASPBERRY_BUSH.get());
+        berryBush(BlockInit.WHITE_RASPBERRY_BUSH.get());
+        berryBush(BlockInit.MARIONBERRY_BUSH.get());
+        berryBush(BlockInit.BLACKCURRANT_BUSH.get());
+        berryBush(BlockInit.REDCURRANT_BUSH.get());
+        berryBush(BlockInit.HUCKLEBERRY_BUSH.get());
+        berryBush(BlockInit.WINEBERRY_BUSH.get());
+        berryBush(BlockInit.ELDERBERRY_BUSH.get());
+        berryBush(BlockInit.BLACKBERRY_BUSH.get());
+        berryBush(BlockInit.BOYSENBERRY_BUSH.get());
+        berryBush(BlockInit.GROUND_CHERRY_BUSH.get());
+        berryBush(BlockInit.ARONIA_BERRY_BUSH.get());
+        berryBush(BlockInit.SERVICEBERRY_BUSH.get());
+        berryBush(BlockInit.WONDERBERRY_BUSH.get());
+        berryBush(BlockInit.MULBERRY_BUSH.get());
+        berryBush(BlockInit.LINGONBERRY_BUSH.get());
+        berryBush(BlockInit.CRANBERRY_BUSH.get());
+        berryBush(BlockInit.DEWBERRY_BUSH.get());
+        berryBush(BlockInit.THIMBLEBERRY_BUSH.get());
+        berryBush(BlockInit.GOOSEBERRY_BUSH.get());
+        berryBush(BlockInit.CHOKEBERRY_BUSH.get());
+        berryBush(BlockInit.OLALLIEBERRY_BUSH.get());
+        berryBush(BlockInit.ACEROLA_CHERRY_BUSH.get());
+        berryBush(BlockInit.BARBERRY_BUSH.get());
+        berryBush(BlockInit.BAYBERRY_BUSH.get());
+        berryBush(BlockInit.GOGI_BERRY_BUSH.get());
     }
 
-    private void registerBerryBushes() {
-
+    private void cross(Block block) {
+        getVariantBuilder(block).partialState().setModels(new ConfiguredModel(crossModel(block, blockTexture(block))));
     }
 
-    private void registerPortal() {
-        /*Block block = Registration.PORTAL_BLOCK.get();
-        ResourceLocation side = modLoc("block/portal_side");
-        ResourceLocation top = modLoc("block/portal_top");
-        simpleBlock(block, models().cube(block.getRegistryName().getPath(), side, top, side, side, side, side));*/
+    public void berryBush(Block block) {
+        getVariantBuilder(block).partialState().with(BerryBlockBase.AGE, 0).modelForState()
+                .modelFile(models().cross("block/berry_bushes/" + name(block) + "_0", berryBushModel(block, 0))).addModel()
+                .partialState().with(BerryBlockBase.AGE, 1).modelForState()
+                .modelFile(models().cross("block/berry_bushes/" + name(block) + "_1", berryBushModel(block, 1))).addModel()
+                .partialState().with(BerryBlockBase.AGE, 2).modelForState()
+                .modelFile(models().cross("block/berry_bushes/" + name(block) + "_2", berryBushModel(block, 2))).addModel()
+                .partialState().with(BerryBlockBase.AGE, 3).modelForState()
+                .modelFile(models().cross("block/berry_bushes/" + name(block) + "_3", berryBushModel(block, 3))).addModel();
     }
 
-    private void registerGenerator() {
-        /*// Using CustomLoaderBuilder we can define a json file for our model that will use our baked model
-        BlockModelBuilder generatorModel = models().getBuilder(Registration.GENERATOR.get().getRegistryName().getPath())
-                .parent(models().getExistingFile(mcLoc("cube")))
-                .customLoader((blockModelBuilder, helper) -> new CustomLoaderBuilder<BlockModelBuilder>(GENERATOR_LOADER, blockModelBuilder, helper) { })
-                .end();
-        directionalBlock(Registration.GENERATOR.get(), generatorModel);*/
+    public void cropBlock(Block block) {
+        getVariantBuilder(block).partialState().with(CropBlock.AGE, 0).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_0", cropModel(block, 0))).addModel()
+            .partialState().with(CropBlock.AGE, 1).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_1", cropModel(block, 1))).addModel()
+            .partialState().with(CropBlock.AGE, 2).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_2", cropModel(block, 2))).addModel()
+            .partialState().with(CropBlock.AGE, 3).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_3", cropModel(block, 3))).addModel()
+            .partialState().with(CropBlock.AGE, 4).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_4", cropModel(block, 4))).addModel()
+            .partialState().with(CropBlock.AGE, 5).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_5", cropModel(block, 5))).addModel()
+            .partialState().with(CropBlock.AGE, 6).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_6", cropModel(block, 6))).addModel()
+            .partialState().with(CropBlock.AGE, 7).modelForState()
+            .modelFile(models().cross("block/crop/" + name(block) + "_7", cropModel(block, 7))).addModel();
     }
 
-    private void registerPowergen() {
-        /*BlockModelBuilder frame = models().getBuilder("block/powergen/main");
-        frame.parent(models().getExistingFile(mcLoc("cube")));
-
-        floatingCube(frame, 0f, 0f, 0f, 1f, 16f, 1f);
-        floatingCube(frame, 15f, 0f, 0f, 16f, 16f, 1f);
-        floatingCube(frame, 0f, 0f, 15f, 1f, 16f, 16f);
-        floatingCube(frame, 15f, 0f, 15f, 16f, 16f, 16f);
-
-        floatingCube(frame, 1f, 0f, 0f, 15f, 1f, 1f);
-        floatingCube(frame, 1f, 15f, 0f, 15f, 16f, 1f);
-        floatingCube(frame, 1f, 0f, 15f, 15f, 1f, 16f);
-        floatingCube(frame, 1f, 15f, 15f, 15f, 16f, 16f);
-
-        floatingCube(frame, 0f, 0f, 1f, 1f, 1f, 15f);
-        floatingCube(frame, 15f, 0f, 1f, 16f, 1f, 15f);
-        floatingCube(frame, 0f, 15f, 1f, 1f, 16f, 15f);
-        floatingCube(frame, 15f, 15f, 1f, 16f, 16f, 15f);
-
-        floatingCube(frame, 1f, 1f, 1f, 15f, 15f, 15f);
-
-        frame.texture("window", modLoc("block/powergen_window"));
-        frame.texture("particle", modLoc("block/powergen_off"));
-
-        createPowergenModel(Registration.POWERGEN.get(), frame);*/
+    public String name(Block block) {
+        return block.getRegistryName().getPath();
     }
 
-    private void floatingCube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz) {
-        /*builder.element()
-                .from(fx, fy, fz)
-                .to(tx, ty, tz)
-                .allFaces((direction, faceBuilder) -> faceBuilder.texture("#window"))
-                .end();*/
+    public ModelFile crossModel(Block block, ResourceLocation name) {
+        return models().cross(name(block), name);
     }
 
-    private void createPowergenModel(Block block, BlockModelBuilder frame) {
-        /*BlockModelBuilder singleOff = models().getBuilder("block/powergen/singleoff")
-                .element().from(3, 3, 3).to(13, 13, 13).face(Direction.DOWN).texture("#single").end().end()
-                .texture("single", modLoc("block/powergen_off"));
-        BlockModelBuilder singleOn = models().getBuilder("block/powergen/singleon")
-                .element().from(3, 3, 3).to(13, 13, 13).face(Direction.DOWN).texture("#single").end().end()
-                .texture("single", modLoc("block/powergen_on"));
+    public ResourceLocation berryBushModel(Block block, int age) {
+        return new ResourceLocation(ChrispyMod.MODID, "block/berry_bushes/" + name(block) + "/stage_" + age);
+    }
 
-        MultiPartBlockStateBuilder bld = getMultipartBuilder(block);
+    public ResourceLocation cropModel(Block block, int age) {
+        return new ResourceLocation(ChrispyMod.MODID, "block/crops/" + name(block) + "/stage_" + age);
+    }
 
-        bld.part().modelFile(frame).addModel();
+    public void logBlock(Block block) {
+        axisBlock((RotatedPillarBlock) block, blockTexture(block), extend(blockTexture(block), "_top"));
+    }
 
-        BlockModelBuilder[] models = new BlockModelBuilder[] { singleOff, singleOn };
-        for (int i = 0 ; i < 2 ; i++) {
-            boolean powered = i == 1;
-            bld.part().modelFile(models[i]).addModel().condition(BlockStateProperties.POWERED, powered);
-            bld.part().modelFile(models[i]).rotationX(180).addModel().condition(BlockStateProperties.POWERED, powered);
-            bld.part().modelFile(models[i]).rotationX(90).addModel().condition(BlockStateProperties.POWERED, powered);
-            bld.part().modelFile(models[i]).rotationX(270).addModel().condition(BlockStateProperties.POWERED, powered);
-            bld.part().modelFile(models[i]).rotationY(90).rotationX(90).addModel().condition(BlockStateProperties.POWERED, powered);
-            bld.part().modelFile(models[i]).rotationY(270).rotationX(90).addModel().condition(BlockStateProperties.POWERED, powered);
-        }*/
+    @Override
+    public ResourceLocation blockTexture(Block block) {
+        ResourceLocation name = block.getRegistryName();
+        return new ResourceLocation(name.getNamespace(), "blocks" + "/" + name.getPath());
+    }
+
+    private ResourceLocation extend(ResourceLocation rl, String suffix) {
+        return new ResourceLocation(rl.getNamespace(), rl.getPath() + suffix);
+    }
+
+    public ModelFile cubeAll(Block block, String texturePath) {
+        return models().cubeAll(name(block), new CMResourceLocation("blocks/" + texturePath));
     }
 }

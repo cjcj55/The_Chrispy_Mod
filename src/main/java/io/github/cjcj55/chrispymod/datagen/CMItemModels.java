@@ -47,7 +47,7 @@ public class CMItemModels extends ItemModelProvider {
         singleTexture(ItemInit.BARBERRY.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/barberry"));
         singleTexture(ItemInit.BAYBERRY.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/bayberry"));
         singleTexture(ItemInit.GOGI_BERRY.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/gogi_berry"));
-
+        
         singleTexture(ItemInit.MASON_JAR.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/mason_jar"));
 
         singleTexture(ItemInit.STRAWBERRY_JAM.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/strawberry_jam"));

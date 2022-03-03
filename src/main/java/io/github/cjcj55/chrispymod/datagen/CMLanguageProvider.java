@@ -229,6 +229,70 @@ public class CMLanguageProvider extends LanguageProvider {
         add(ItemInit.BAYBERRY.get(), "Bayberry");
         add(ItemInit.GOGI_BERRY.get(), "Gogi Berry");
 
+        add(ItemInit.STRAWBERRY_JAM.get(), "Strawberry Jam");
+        add(ItemInit.BLUEBERRY_JAM.get(), "Blueberry Jam");
+        add(ItemInit.LOGANBERRY_JAM.get(), "Loganberry Jam");
+        add(ItemInit.RED_RASPBERRY_JAM.get(), "Red Raspberry Jam");
+        add(ItemInit.BLACK_RASPBERRY_JAM.get(), "Black Raspberry Jam");
+        add(ItemInit.GOLDEN_RASPBERRY_JAM.get(), "Golden Raspberry Jam");
+        add(ItemInit.WHITE_RASPBERRY_JAM.get(), "White Raspberry Jam");
+        add(ItemInit.MARIONBERRY_JAM.get(), "Marionberry Jam");
+        add(ItemInit.BLACKCURRANT_JAM.get(), "Blackcurrant Jam");
+        add(ItemInit.REDCURRANT_JAM.get(), "Redcurrant Jam");
+        add(ItemInit.HUCKLEBERRY_JAM.get(), "Huckleberry Jam");
+        add(ItemInit.WINEBERRY_JAM.get(), "Wineberry Jam");
+        add(ItemInit.ELDERBERRY_JAM.get(), "Elderberry Jam");
+        add(ItemInit.BLACKBERRY_JAM.get(), "Blackberry Jam");
+        add(ItemInit.BOYSENBERRY_JAM.get(), "Boysenberry Jam");
+        add(ItemInit.GROUND_CHERRY_JAM.get(), "Ground Cherry Jam");
+        add(ItemInit.ARONIA_BERRY_JAM.get(), "Aronia Berry Jam");
+        add(ItemInit.SERVICEBERRY_JAM.get(), "Serviceberry Jam");
+        add(ItemInit.WONDERBERRY_JAM.get(), "Wonderberry Jam");
+        add(ItemInit.MULBERRY_JAM.get(), "Mulberry Jam");
+        add(ItemInit.LINGONBERRY_JAM.get(), "Lingonberry Jam");
+        add(ItemInit.CRANBERRY_JAM.get(), "Cranberry Jam");
+        add(ItemInit.DEWBERRY_JAM.get(), "Dewberry Jam");
+        add(ItemInit.THIMBLEBERRY_JAM.get(), "Thimbleberry Jam");
+        add(ItemInit.GOOSEBERRY_JAM.get(), "Gooseberry Jam");
+        add(ItemInit.CHOKEBERRY_JAM.get(), "Chokeberry Jam");
+        add(ItemInit.OLALLIEBERRY_JAM.get(), "Olallieberry Jam");
+        add(ItemInit.ACEROLA_CHERRY_JAM.get(), "Acerola Cherry Jam");
+        add(ItemInit.BARBERRY_JAM.get(), "Barberry Jam");
+        add(ItemInit.BAYBERRY_JAM.get(), "Bayberry Jam");
+        add(ItemInit.GOGI_BERRY_JAM.get(), "Gogi Berry Jam");
+
+        add(BlockInit.STRAWBERRY_BUSH.get(), "Strawberry Bush");
+        add(BlockInit.BLUEBERRY_BUSH.get(), "Blueberry Bush");
+        add(BlockInit.LOGANBERRY_BUSH.get(), "Loganberry Bush");
+        add(BlockInit.RED_RASPBERRY_BUSH.get(), "Red Raspberry Bush");
+        add(BlockInit.BLACK_RASPBERRY_BUSH.get(), "Black Raspberry Bush");
+        add(BlockInit.GOLDEN_RASPBERRY_BUSH.get(), "Golden Raspberry Bush");
+        add(BlockInit.WHITE_RASPBERRY_BUSH.get(), "White Raspberry Bush");
+        add(BlockInit.MARIONBERRY_BUSH.get(), "Marionberry Bush");
+        add(BlockInit.BLACKCURRANT_BUSH.get(), "Blackcurrant Bush");
+        add(BlockInit.REDCURRANT_BUSH.get(), "Redcurrant Bush");
+        add(BlockInit.HUCKLEBERRY_BUSH.get(), "Huckleberry Bush");
+        add(BlockInit.WINEBERRY_BUSH.get(), "Wineberry Bush");
+        add(BlockInit.ELDERBERRY_BUSH.get(), "Elderberry Bush");
+        add(BlockInit.BLACKBERRY_BUSH.get(), "Blackberry Bush");
+        add(BlockInit.BOYSENBERRY_BUSH.get(), "Boysenberry Bush");
+        add(BlockInit.GROUND_CHERRY_BUSH.get(), "Ground Cherry Bush");
+        add(BlockInit.ARONIA_BERRY_BUSH.get(), "Aronia Berry Bush");
+        add(BlockInit.SERVICEBERRY_BUSH.get(), "Serviceberry Bush");
+        add(BlockInit.WONDERBERRY_BUSH.get(), "Wonderberry Bush");
+        add(BlockInit.MULBERRY_BUSH.get(), "Mulberry Bush");
+        add(BlockInit.LINGONBERRY_BUSH.get(), "Lingonberry Bush");
+        add(BlockInit.CRANBERRY_BUSH.get(), "Cranberry Bush");
+        add(BlockInit.DEWBERRY_BUSH.get(), "Dewberry Bush");
+        add(BlockInit.THIMBLEBERRY_BUSH.get(), "Thimbleberry Bush");
+        add(BlockInit.GOOSEBERRY_BUSH.get(), "Gooseberry Bush");
+        add(BlockInit.CHOKEBERRY_BUSH.get(), "Chokeberry Bush");
+        add(BlockInit.OLALLIEBERRY_BUSH.get(), "Olallieberry Bush");
+        add(BlockInit.ACEROLA_CHERRY_BUSH.get(), "Acerola Cherry Bush");
+        add(BlockInit.BARBERRY_BUSH.get(), "Barberry Bush");
+        add(BlockInit.BAYBERRY_BUSH.get(), "Bayberry Bush");
+        add(BlockInit.GOGI_BERRY_BUSH.get(), "Gogi Berry Bush");
+
         add(ItemInit.MASON_JAR.get(), "Mason Jar");
 
         add(BlockInit.SUGAR_BLOCK.get(), "Sugar Block");
@@ -279,29 +343,5 @@ public class CMLanguageProvider extends LanguageProvider {
 
         add("itemGroup.chrispymod", "Chrispy Mod Items");
         add("itemGroup.chrispymod1", "Chrispy Mod Blocks");
-
-        /*add("itemGroup." + TAB_NAME, "Tutorial");
-        add(MESSAGE_POWERGEN, "Power generator generating %s per tick!");
-        add(MESSAGE_GENERATOR, "Generate ores from ingots!");
-        add(SCREEN_TUTORIAL_POWERGEN, "Power generator");
-
-        add(Registration.GENERATOR.get(), "Generator");
-        add(Registration.POWERGEN.get(), "Power generator");
-        add(Registration.PORTAL_BLOCK.get(), "Mysterious Portal");
-
-        add(Registration.MYSTERIOUS_ORE_OVERWORLD.get(), "Mysterious ore");
-        add(Registration.MYSTERIOUS_ORE_NETHER.get(), "Mysterious ore");
-        add(Registration.MYSTERIOUS_ORE_END.get(), "Mysterious ore");
-        add(Registration.MYSTERIOUS_ORE_DEEPSLATE.get(), "Mysterious ore");
-
-        add(Registration.RAW_MYSTERIOUS_CHUNK.get(), "Mysterious Raw Chunk");
-        add(Registration.MYSTERIOUS_INGOT.get(), "Mysterious Ingot");
-        add(Registration.THIEF_EGG.get(), "Thief Egg");
-
-        add(Registration.THIEF.get(), "Thief");
-
-        add(KeyBindings.KEY_CATEGORIES_TUTORIAL, "Tutorial Keys");
-        add(KeyBindings.KEY_GATHER_MANA, "Gather Mana");
-        add(PacketGatherMana.MESSAGE_NO_MANA, "No mana on this location");*/
     }
 }
