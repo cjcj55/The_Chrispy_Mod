@@ -5,7 +5,6 @@ import io.github.cjcj55.chrispymod.common.block.*;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -102,41 +101,46 @@ public class BlockInit {
     public static final RegistryObject<Block> JAM_AND_JELLY_MAKER = registerBlock("jam_and_jelly_maker", () -> new JamAndJellyMakerBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.8f, 4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     // BERRY BLOCKS
-    public static final RegistryObject<Block> STRAWBERRY_BUSH = registerBlock("strawberry_bush", () -> new BerryBlockBase(ItemInit.STRAWBERRY::get, false, false));
-    public static final RegistryObject<Block> BLUEBERRY_BUSH = registerBlock("blueberry_bush", () -> new BerryBlockBase(ItemInit.BLUEBERRY::get, false, false));
-    public static final RegistryObject<Block> LOGANBERRY_BUSH = registerBlock("loganberry_bush", () -> new BerryBlockBase(ItemInit.LOGANBERRY::get, false, false));
-    public static final RegistryObject<Block> RED_RASPBERRY_BUSH = registerBlock("red_raspberry_bush", () -> new BerryBlockBase(ItemInit.RED_RASPBERRY::get, false, false));
-    public static final RegistryObject<Block> BLACK_RASPBERRY_BUSH = registerBlock("black_raspberry_bush", () -> new BerryBlockBase(ItemInit.BLACK_RASPBERRY::get, false, false));
-    public static final RegistryObject<Block> GOLDEN_RASPBERRY_BUSH = registerBlock("golden_raspberry_bush", () -> new BerryBlockBase(ItemInit.GOLDEN_RASPBERRY::get, false, false));
-    public static final RegistryObject<Block> WHITE_RASPBERRY_BUSH = registerBlock("white_raspberry_bush", () -> new BerryBlockBase(ItemInit.WHITE_RASPBERRY::get, false, false));
-    public static final RegistryObject<Block> MARIONBERRY_BUSH = registerBlock("marionberry_bush", () -> new BerryBlockBase(ItemInit.MARIONBERRY::get, false, false));
-    public static final RegistryObject<Block> BLACKCURRANT_BUSH = registerBlock("blackcurrant_bush", () -> new BerryBlockBase(ItemInit.BLACKCURRANT::get, false, false));
-    public static final RegistryObject<Block> REDCURRANT_BUSH = registerBlock("redcurrant_bush", () -> new BerryBlockBase(ItemInit.REDCURRANT::get, false, false));
-    public static final RegistryObject<Block> HUCKLEBERRY_BUSH = registerBlock("huckleberry_bush", () -> new BerryBlockBase(ItemInit.HUCKLEBERRY::get, false, false));
-    public static final RegistryObject<Block> WINEBERRY_BUSH = registerBlock("wineberry_bush", () -> new BerryBlockBase(ItemInit.WINEBERRY::get, false, false));
-    public static final RegistryObject<Block> ELDERBERRY_BUSH = registerBlock("elderberry_bush", () -> new BerryBlockBase(ItemInit.ELDERBERRY::get, false, false));
-    public static final RegistryObject<Block> BLACKBERRY_BUSH = registerBlock("blackberry_bush", () -> new BerryBlockBase(ItemInit.BLACKBERRY::get, false, false));
-    public static final RegistryObject<Block> BOYSENBERRY_BUSH = registerBlock("boysenberry_bush", () -> new BerryBlockBase(ItemInit.BOYSENBERRY::get, false, false));
-    public static final RegistryObject<Block> GROUND_CHERRY_BUSH = registerBlock("ground_cherry_bush", () -> new BerryBlockBase(ItemInit.GROUND_CHERRY::get, false, false));
-    public static final RegistryObject<Block> ARONIA_BERRY_BUSH = registerBlock("aronia_berry_bush", () -> new BerryBlockBase(ItemInit.ARONIA_BERRY::get, false, false));
-    public static final RegistryObject<Block> SERVICEBERRY_BUSH = registerBlock("serviceberry_bush", () -> new BerryBlockBase(ItemInit.SERVICEBERRY::get, false, false));
-    public static final RegistryObject<Block> WONDERBERRY_BUSH = registerBlock("wonderberry_bush", () -> new BerryBlockBase(ItemInit.WONDERBERRY::get, false, false));
-    public static final RegistryObject<Block> MULBERRY_BUSH = registerBlock("mulberry_bush", () -> new BerryBlockBase(ItemInit.MULBERRY::get, false, false));
-    public static final RegistryObject<Block> LINGONBERRY_BUSH = registerBlock("lingonberry_bush", () -> new BerryBlockBase(ItemInit.LINGONBERRY::get, false, false));
-    public static final RegistryObject<Block> CRANBERRY_BUSH = registerBlock("cranberry_bush", () -> new BerryBlockBase(ItemInit.CRANBERRY::get, false, false));
-    public static final RegistryObject<Block> DEWBERRY_BUSH = registerBlock("dewberry_bush", () -> new BerryBlockBase(ItemInit.DEWBERRY::get, false, false));
-    public static final RegistryObject<Block> THIMBLEBERRY_BUSH = registerBlock("thimbleberry_bush", () -> new BerryBlockBase(ItemInit.THIMBLEBERRY::get, false, false));
-    public static final RegistryObject<Block> GOOSEBERRY_BUSH = registerBlock("gooseberry_bush", () -> new BerryBlockBase(ItemInit.GOOSEBERRY::get, false, false));
-    public static final RegistryObject<Block> CHOKEBERRY_BUSH = registerBlock("chokeberry_bush", () -> new BerryBlockBase(ItemInit.CHOKEBERRY::get, false, false));
-    public static final RegistryObject<Block> OLALLIEBERRY_BUSH = registerBlock("olallieberry_bush", () -> new BerryBlockBase(ItemInit.OLALLIEBERRY::get, false, false));
-    public static final RegistryObject<Block> ACEROLA_CHERRY_BUSH = registerBlock("acerola_cherry_bush", () -> new BerryBlockBase(ItemInit.ACEROLA_CHERRY::get, false, false));
-    public static final RegistryObject<Block> BARBERRY_BUSH = registerBlock("barberry_bush", () -> new BerryBlockBase(ItemInit.BARBERRY::get, false, false));
-    public static final RegistryObject<Block> BAYBERRY_BUSH = registerBlock("bayberry_bush", () -> new BerryBlockBase(ItemInit.BAYBERRY::get, false, false));
-    public static final RegistryObject<Block> GOGI_BERRY_BUSH = registerBlock("gogi_berry_bush", () -> new BerryBlockBase(ItemInit.GOGI_BERRY::get, false, false));
+    public static final RegistryObject<Block> STRAWBERRY_BUSH = registerOnlyBlock("strawberry_bush", () -> new BerryBlockBase(ItemInit.STRAWBERRY::get, false, false));
+    public static final RegistryObject<Block> BLUEBERRY_BUSH = registerOnlyBlock("blueberry_bush", () -> new BerryBlockBase(ItemInit.BLUEBERRY::get, false, false));
+    public static final RegistryObject<Block> LOGANBERRY_BUSH = registerOnlyBlock("loganberry_bush", () -> new BerryBlockBase(ItemInit.LOGANBERRY::get, false, false));
+    public static final RegistryObject<Block> RED_RASPBERRY_BUSH = registerOnlyBlock("red_raspberry_bush", () -> new BerryBlockBase(ItemInit.RED_RASPBERRY::get, false, false));
+    public static final RegistryObject<Block> BLACK_RASPBERRY_BUSH = registerOnlyBlock("black_raspberry_bush", () -> new BerryBlockBase(ItemInit.BLACK_RASPBERRY::get, false, false));
+    public static final RegistryObject<Block> GOLDEN_RASPBERRY_BUSH = registerOnlyBlock("golden_raspberry_bush", () -> new BerryBlockBase(ItemInit.GOLDEN_RASPBERRY::get, false, false));
+    public static final RegistryObject<Block> WHITE_RASPBERRY_BUSH = registerOnlyBlock("white_raspberry_bush", () -> new BerryBlockBase(ItemInit.WHITE_RASPBERRY::get, false, false));
+    public static final RegistryObject<Block> MARIONBERRY_BUSH = registerOnlyBlock("marionberry_bush", () -> new BerryBlockBase(ItemInit.MARIONBERRY::get, false, false));
+    public static final RegistryObject<Block> BLACKCURRANT_BUSH = registerOnlyBlock("blackcurrant_bush", () -> new BerryBlockBase(ItemInit.BLACKCURRANT::get, false, false));
+    public static final RegistryObject<Block> REDCURRANT_BUSH = registerOnlyBlock("redcurrant_bush", () -> new BerryBlockBase(ItemInit.REDCURRANT::get, false, false));
+    public static final RegistryObject<Block> HUCKLEBERRY_BUSH = registerOnlyBlock("huckleberry_bush", () -> new BerryBlockBase(ItemInit.HUCKLEBERRY::get, false, false));
+    public static final RegistryObject<Block> WINEBERRY_BUSH = registerOnlyBlock("wineberry_bush", () -> new BerryBlockBase(ItemInit.WINEBERRY::get, false, false));
+    public static final RegistryObject<Block> ELDERBERRY_BUSH = registerOnlyBlock("elderberry_bush", () -> new BerryBlockBase(ItemInit.ELDERBERRY::get, false, false));
+    public static final RegistryObject<Block> BLACKBERRY_BUSH = registerOnlyBlock("blackberry_bush", () -> new BerryBlockBase(ItemInit.BLACKBERRY::get, false, false));
+    public static final RegistryObject<Block> BOYSENBERRY_BUSH = registerOnlyBlock("boysenberry_bush", () -> new BerryBlockBase(ItemInit.BOYSENBERRY::get, false, false));
+    public static final RegistryObject<Block> GROUND_CHERRY_BUSH = registerOnlyBlock("ground_cherry_bush", () -> new BerryBlockBase(ItemInit.GROUND_CHERRY::get, false, false));
+    public static final RegistryObject<Block> ARONIA_BERRY_BUSH = registerOnlyBlock("aronia_berry_bush", () -> new BerryBlockBase(ItemInit.ARONIA_BERRY::get, false, false));
+    public static final RegistryObject<Block> SERVICEBERRY_BUSH = registerOnlyBlock("serviceberry_bush", () -> new BerryBlockBase(ItemInit.SERVICEBERRY::get, false, false));
+    public static final RegistryObject<Block> WONDERBERRY_BUSH = registerOnlyBlock("wonderberry_bush", () -> new BerryBlockBase(ItemInit.WONDERBERRY::get, false, false));
+    public static final RegistryObject<Block> MULBERRY_BUSH = registerOnlyBlock("mulberry_bush", () -> new BerryBlockBase(ItemInit.MULBERRY::get, false, false));
+    public static final RegistryObject<Block> LINGONBERRY_BUSH = registerOnlyBlock("lingonberry_bush", () -> new BerryBlockBase(ItemInit.LINGONBERRY::get, false, false));
+    public static final RegistryObject<Block> CRANBERRY_BUSH = registerOnlyBlock("cranberry_bush", () -> new BerryBlockBase(ItemInit.CRANBERRY::get, false, false));
+    public static final RegistryObject<Block> DEWBERRY_BUSH = registerOnlyBlock("dewberry_bush", () -> new BerryBlockBase(ItemInit.DEWBERRY::get, false, false));
+    public static final RegistryObject<Block> THIMBLEBERRY_BUSH = registerOnlyBlock("thimbleberry_bush", () -> new BerryBlockBase(ItemInit.THIMBLEBERRY::get, false, false));
+    public static final RegistryObject<Block> GOOSEBERRY_BUSH = registerOnlyBlock("gooseberry_bush", () -> new BerryBlockBase(ItemInit.GOOSEBERRY::get, false, false));
+    public static final RegistryObject<Block> CHOKEBERRY_BUSH = registerOnlyBlock("chokeberry_bush", () -> new BerryBlockBase(ItemInit.CHOKEBERRY::get, false, false));
+    public static final RegistryObject<Block> OLALLIEBERRY_BUSH = registerOnlyBlock("olallieberry_bush", () -> new BerryBlockBase(ItemInit.OLALLIEBERRY::get, false, false));
+    public static final RegistryObject<Block> ACEROLA_CHERRY_BUSH = registerOnlyBlock("acerola_cherry_bush", () -> new BerryBlockBase(ItemInit.ACEROLA_CHERRY::get, false, false));
+    public static final RegistryObject<Block> BARBERRY_BUSH = registerOnlyBlock("barberry_bush", () -> new BerryBlockBase(ItemInit.BARBERRY::get, false, false));
+    public static final RegistryObject<Block> BAYBERRY_BUSH = registerOnlyBlock("bayberry_bush", () -> new BerryBlockBase(ItemInit.BAYBERRY::get, false, false));
+    public static final RegistryObject<Block> GOGI_BERRY_BUSH = registerOnlyBlock("gogi_berry_bush", () -> new BerryBlockBase(ItemInit.GOGI_BERRY::get, false, false));
 
 
 
 
+
+    private static <T extends Block> RegistryObject<T> registerOnlyBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        return toReturn;
+    }
 
     // helper methods with 2 params
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

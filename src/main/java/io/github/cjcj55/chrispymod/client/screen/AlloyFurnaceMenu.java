@@ -1,6 +1,5 @@
 package io.github.cjcj55.chrispymod.client.screen;
 
-import com.mojang.serialization.Decoder;
 import io.github.cjcj55.chrispymod.client.screen.slot.ModFuelSlot;
 import io.github.cjcj55.chrispymod.client.screen.slot.ModResultSlot;
 import io.github.cjcj55.chrispymod.common.block.entity.AlloyFurnaceBlockEntity;

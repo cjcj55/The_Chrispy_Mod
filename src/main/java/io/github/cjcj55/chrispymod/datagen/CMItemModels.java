@@ -4,7 +4,6 @@ import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import io.github.cjcj55.chrispymod.core.init.ItemInit;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -47,6 +46,38 @@ public class CMItemModels extends ItemModelProvider {
         singleTexture(ItemInit.BARBERRY.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/barberry"));
         singleTexture(ItemInit.BAYBERRY.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/bayberry"));
         singleTexture(ItemInit.GOGI_BERRY.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/gogi_berry"));
+
+        singleTexture(BlockInit.STRAWBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/strawberry_bush/stage_3"));
+        singleTexture(BlockInit.BLUEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/blueberry_bush/stage_3"));
+        singleTexture(BlockInit.LOGANBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/loganberry_bush/stage_3"));
+        singleTexture(BlockInit.RED_RASPBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/red_raspberry_bush/stage_3"));
+        singleTexture(BlockInit.BLACK_RASPBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/black_raspberry_bush/stage_3"));
+        singleTexture(BlockInit.GOLDEN_RASPBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/golden_raspberry_bush/stage_3"));
+        singleTexture(BlockInit.WHITE_RASPBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/white_raspberry_bush/stage_3"));
+        singleTexture(BlockInit.MARIONBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/marionberry_bush/stage_3"));
+        singleTexture(BlockInit.BLACKCURRANT_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/blackcurrant_bush/stage_3"));
+        singleTexture(BlockInit.REDCURRANT_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/redcurrant_bush/stage_3"));
+        singleTexture(BlockInit.HUCKLEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/huckleberry_bush/stage_3"));
+        singleTexture(BlockInit.WINEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/wineberry_bush/stage_3"));
+        singleTexture(BlockInit.ELDERBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/elderberry_bush/stage_3"));
+        singleTexture(BlockInit.BLACKBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/blackberry_bush/stage_3"));
+        singleTexture(BlockInit.BOYSENBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/boysenberry_bush/stage_3"));
+        singleTexture(BlockInit.GROUND_CHERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/ground_cherry_bush/stage_3"));
+        singleTexture(BlockInit.ARONIA_BERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/aronia_berry_bush/stage_3"));
+        singleTexture(BlockInit.SERVICEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/serviceberry_bush/stage_3"));
+        singleTexture(BlockInit.WONDERBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/wonderberry_bush/stage_3"));
+        singleTexture(BlockInit.MULBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/mulberry_bush/stage_3"));
+        singleTexture(BlockInit.LINGONBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/lingonberry_bush/stage_3"));
+        singleTexture(BlockInit.CRANBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/cranberry_bush/stage_3"));
+        singleTexture(BlockInit.DEWBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/dewberry_bush/stage_3"));
+        singleTexture(BlockInit.THIMBLEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/thimbleberry_bush/stage_3"));
+        singleTexture(BlockInit.GOOSEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/gooseberry_bush/stage_3"));
+        singleTexture(BlockInit.CHOKEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/chokeberry_bush/stage_3"));
+        singleTexture(BlockInit.OLALLIEBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/olallieberry_bush/stage_3"));
+        singleTexture(BlockInit.ACEROLA_CHERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/acerola_cherry_bush/stage_3"));
+        singleTexture(BlockInit.BARBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/barberry_bush/stage_3"));
+        singleTexture(BlockInit.BAYBERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/bayberry_bush/stage_3"));
+        singleTexture(BlockInit.GOGI_BERRY_BUSH.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/berry_bushes/gogi_berry_bush/stage_3"));
         
         singleTexture(ItemInit.MASON_JAR.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/mason_jar"));
 

@@ -1,12 +1,10 @@
 package io.github.cjcj55.chrispymod.common.item;
 
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
-import net.minecraft.ChatFormatting;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 
 public class ChrispyModArmorItem extends ArmorItem {
     public ChrispyModArmorItem(ArmorMaterial material, EquipmentSlot slot) {

@@ -2,7 +2,6 @@ package io.github.cjcj55.chrispymod.core.init;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import net.minecraft.world.entity.decoration.Motive;
-import net.minecraft.world.entity.decoration.Painting;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

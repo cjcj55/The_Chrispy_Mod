@@ -2,7 +2,6 @@ package io.github.cjcj55.chrispymod.common.item;
 
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 

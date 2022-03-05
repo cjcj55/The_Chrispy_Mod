@@ -2,7 +2,6 @@ package io.github.cjcj55.chrispymod.client.screen.slot;
 
 import io.github.cjcj55.chrispymod.core.init.ItemInit;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 

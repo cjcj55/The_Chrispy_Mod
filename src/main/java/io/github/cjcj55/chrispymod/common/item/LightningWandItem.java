@@ -3,7 +3,6 @@ package io.github.cjcj55.chrispymod.common.item;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -17,7 +16,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.Vec3;
 
 public class LightningWandItem extends Item {
     public LightningWandItem() {

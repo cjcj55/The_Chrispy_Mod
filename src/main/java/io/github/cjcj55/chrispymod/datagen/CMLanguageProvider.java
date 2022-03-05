@@ -6,9 +6,6 @@ import io.github.cjcj55.chrispymod.core.init.ItemInit;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
-import static io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups.CHRISPY_BLOCKS_TAB;
-import static io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups.CHRISPY_ITEMS_TAB;
-
 public class CMLanguageProvider extends LanguageProvider {
 
     public CMLanguageProvider(DataGenerator gen, String locale) {

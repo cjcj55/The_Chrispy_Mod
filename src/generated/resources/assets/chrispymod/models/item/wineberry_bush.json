@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chrispymod:block/berry_bushes/wineberry_bush/stage_3"
+  }
+}

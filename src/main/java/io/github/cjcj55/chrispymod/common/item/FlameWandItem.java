@@ -1,6 +1,5 @@
 package io.github.cjcj55.chrispymod.common.item;
 
-import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

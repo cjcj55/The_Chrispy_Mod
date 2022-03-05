@@ -1,6 +1,5 @@
 package io.github.cjcj55.chrispymod.client.screen;
 
-import com.mojang.serialization.Decoder;
 import io.github.cjcj55.chrispymod.client.screen.slot.ModFuelSlot;
 import io.github.cjcj55.chrispymod.client.screen.slot.ModMasonJarSlot;
 import io.github.cjcj55.chrispymod.client.screen.slot.ModResultSlot;

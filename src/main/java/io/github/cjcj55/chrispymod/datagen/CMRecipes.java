@@ -6,9 +6,8 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
@@ -28,6 +27,12 @@ public class CMRecipes extends RecipeProvider {
                 .define('x', Tags.Items.GLASS_PANES)
                 .group("chrispymod")
                 .unlockedBy("glass_panes", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS_PANE))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ItemInit.STRAWBERRY_JAM.get())
+                .requires(ItemInit.STRAWBERRY.get(), 6)
+                .group("chrispymod")
+                .unlockedBy("strawberry", InventoryChangeTrigger.TriggerInstance.hasItems(ItemInit.STRAWBERRY.get()))
                 .save(consumer);
 
         /*ShapedRecipeBuilder.shaped(Registration.GENERATOR.get())
