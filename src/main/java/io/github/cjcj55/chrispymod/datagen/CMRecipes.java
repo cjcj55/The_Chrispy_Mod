@@ -29,11 +29,15 @@ public class CMRecipes extends RecipeProvider {
                 .unlockedBy("glass_panes", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS_PANE))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ItemInit.STRAWBERRY_JAM.get())
-                .requires(ItemInit.STRAWBERRY.get(), 6)
+        /*ShapedRecipeBuilder.shaped(ItemInit.RUBY_AXE.get())
+                .pattern("xx")
+                .pattern("xs")
+                .pattern(" s")
+                .define('x', Tags.Items.RODS_WOODEN)
+                .define('s', Tags.Items.RODS_WOODEN)
                 .group("chrispymod")
-                .unlockedBy("strawberry", InventoryChangeTrigger.TriggerInstance.hasItems(ItemInit.STRAWBERRY.get()))
-                .save(consumer);
+                .unlockedBy("ruby", InventoryChangeTrigger.TriggerInstance.hasItems())
+                .save(consumer);*/
 
         /*ShapedRecipeBuilder.shaped(Registration.GENERATOR.get())
                 .pattern("mxm")

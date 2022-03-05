@@ -6,7 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 
-public class CMTags {
+public class ModBlockTags {
     public static final Tags.IOptionalNamedTag<Block> RUBY_ORE = BlockTags.createOptional(new ResourceLocation(ChrispyMod.MODID, "ruby_ore"));
     public static final Tags.IOptionalNamedTag<Block> OPAL_ORE = BlockTags.createOptional(new ResourceLocation(ChrispyMod.MODID, "opal_ore"));
     public static final Tags.IOptionalNamedTag<Block> TANGERINE_ORE = BlockTags.createOptional(new ResourceLocation(ChrispyMod.MODID, "tangerine_ore"));
