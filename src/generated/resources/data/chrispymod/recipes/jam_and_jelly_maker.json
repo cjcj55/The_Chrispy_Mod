@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chrispymod",
+  "pattern": [
+    "iii",
+    "rgr",
+    "iii"
+  ],
+  "key": {
+    "g": {
+      "tag": "forge:glass"
+    },
+    "i": {
+      "tag": "forge:ingots/iron"
+    },
+    "r": {
+      "tag": "forge:dusts/redstone"
+    }
+  },
+  "result": {
+    "item": "chrispymod:jam_and_jelly_maker"
+  }
+}
