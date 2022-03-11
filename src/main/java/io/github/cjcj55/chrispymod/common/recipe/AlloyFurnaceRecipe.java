@@ -17,11 +17,15 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
+    private final float experience;
+    private final int cookTime;
 
-    public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems) {
+    public AlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems, float experience, int cookTime) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
+        this.experience = experience;
+        this.cookTime = cookTime;
     }
 
     // Need to have more checks if more than 2 inputs
@@ -67,6 +71,10 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
+    public float getExperience() {
+        return this.experience;
+    }
+
     public static class Type implements RecipeType<AlloyFurnaceRecipe> {
         public Type() { }
         public static final Type INSTANCE = new Type();
@@ -88,7 +96,10 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new AlloyFurnaceRecipe(id, output, inputs);
+            final float experienceIn = GsonHelper.getAsFloat(json, "experience", 0.0F);
+            final int cookTimeIn = GsonHelper.getAsInt(json, "cookingtime", 200);
+
+            return new AlloyFurnaceRecipe(id, output, inputs, experienceIn, cookTimeIn);
         }
 
         @Override
@@ -100,8 +111,10 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
             }
 
             ItemStack output = buf.readItem();
+            float experienceIn = buf.readFloat();
+            int cookTimeIn = buf.readVarInt();
 
-            return new AlloyFurnaceRecipe(id, output, inputs);
+            return new AlloyFurnaceRecipe(id, output, inputs, experienceIn, cookTimeIn);
         }
 
         @Override
@@ -111,6 +124,8 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
                 ing.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
+            buf.writeFloat(recipe.experience);
+            buf.writeVarInt(recipe.cookTime);
         }
 
         @Override

@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
@@ -49,7 +50,9 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof AlloyFurnaceBlockEntity) {
+                AlloyFurnaceBlockEntity alloyFurnaceBlockEntity = (AlloyFurnaceBlockEntity) blockEntity;
                 ((AlloyFurnaceBlockEntity) blockEntity).drops();
+                alloyFurnaceBlockEntity.grantStoredRecipeExperience(pLevel, Vec3.atCenterOf(pPos));
             }
         }
     }

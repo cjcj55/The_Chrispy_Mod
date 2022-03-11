@@ -4,24 +4,31 @@ import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.client.screen.AlloyFurnaceMenu;
 import io.github.cjcj55.chrispymod.common.recipe.AlloyFurnaceRecipe;
 import io.github.cjcj55.chrispymod.core.init.BlockEntityInit;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
@@ -47,8 +54,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 100;
-    private int fuelTime = 0;
-    private int maxFuelTime = 0;
+    private int fuelTime;
+    private int maxFuelTime;
+    private final Object2IntOpenHashMap<ResourceLocation> experienceTracker;
 
     public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(BlockEntityInit.ALLOY_FURNACE.get(), pWorldPosition, pBlockState);
@@ -71,11 +79,11 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                     case 3: AlloyFurnaceBlockEntity.this.maxFuelTime = value; break;
                 }
             }
-
             public int getCount() {
                 return 4;
             }
         };
+        this.experienceTracker = new Object2IntOpenHashMap<>();
     }
 
     @Override
@@ -221,6 +229,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
             entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
                     entity.itemHandler.getStackInSlot(3).getCount() + 1));
+            entity.experienceTracker.addTo(match.get().getId(), 1);
 
             entity.resetProgress();
         }
@@ -236,5 +245,37 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
         return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
+    }
+
+    public void trackRecipeExperience(@Nullable Recipe<?> recipe) {
+        if (recipe != null) {
+            ResourceLocation recipeID = recipe.getId();
+            experienceTracker.addTo(recipeID, 1);
+        }
+    }
+
+    public void clearUsedRecipes(Player player) {
+        grantStoredRecipeExperience(player.level, player.position());
+        experienceTracker.clear();
+    }
+
+    public void grantStoredRecipeExperience(Level world, Vec3 pos) {
+        for (Object2IntMap.Entry<ResourceLocation> entry : experienceTracker.object2IntEntrySet()) {
+            world.getRecipeManager().byKey(entry.getKey()).ifPresent((recipe) -> splitAndSpawnExperience(world, pos, entry.getIntValue(), ((AlloyFurnaceRecipe) recipe).getExperience()));
+        }
+    }
+
+    private static void splitAndSpawnExperience(Level world, Vec3 pos, int craftedAmount, float experience) {
+        int expTotal = Mth.floor((float) craftedAmount * experience);
+        float expFraction = Mth.frac((float) craftedAmount * experience);
+        if (expFraction != 0.0F && Math.random() < (double) expFraction) {
+            ++expTotal;
+        }
+
+        while (expTotal > 0) {
+            int expValue = ExperienceOrb.getExperienceValue(expTotal);
+            expTotal -= expValue;
+            world.addFreshEntity(new ExperienceOrb(world, pos.x, pos.y, pos.z, expValue));
+        }
     }
 }

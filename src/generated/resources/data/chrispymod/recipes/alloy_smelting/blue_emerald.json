@@ -2,13 +2,15 @@
   "type": "chrispymod:alloy_smelting",
   "ingredients": [
     {
-      "item": "minecraft:emerald"
+      "item": "minecraft:diamond"
     },
     {
-      "item": "minecraft:diamond"
+      "item": "minecraft:emerald"
     }
   ],
   "output": {
     "item": "chrispymod:blue_emerald"
-  }
+  },
+  "experience": 0.5,
+  "cookingtime": 500
 }

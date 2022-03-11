@@ -1,6 +1,7 @@
 package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.core.init.ItemInit;
+import io.github.cjcj55.chrispymod.datagen.builder.AlloyFurnaceRecipeBuilder;
 import io.github.cjcj55.chrispymod.datagen.builder.JamAndJellyMakerRecipeBuilder;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
@@ -10,6 +11,7 @@ import java.util.function.Consumer;
 public class CustomRecipes {
     public static void register(Consumer<FinishedRecipe> consumer) {
         buildJamAndJellyMakerRecipes(consumer);
+        buildAlloyFurnaceRecipes(consumer);
     }
 
     public static void buildJamAndJellyMakerRecipes(Consumer<FinishedRecipe> consumer) {
@@ -44,5 +46,9 @@ public class CustomRecipes {
         JamAndJellyMakerRecipeBuilder.jamAndJellyMakerRecipe(ItemInit.BARBERRY_JAM.get(), 1).addIngredient(ItemInit.BARBERRY.get(), 6).addIngredient(Items.SUGAR).addIngredient(ItemInit.MASON_JAR.get()).build(consumer);
         JamAndJellyMakerRecipeBuilder.jamAndJellyMakerRecipe(ItemInit.BAYBERRY_JAM.get(), 1).addIngredient(ItemInit.BAYBERRY.get(), 6).addIngredient(Items.SUGAR).addIngredient(ItemInit.MASON_JAR.get()).build(consumer);
         JamAndJellyMakerRecipeBuilder.jamAndJellyMakerRecipe(ItemInit.GOGI_BERRY_JAM.get(), 1).addIngredient(ItemInit.GOGI_BERRY.get(), 6).addIngredient(Items.SUGAR).addIngredient(ItemInit.MASON_JAR.get()).build(consumer);
+    }
+
+    public static void buildAlloyFurnaceRecipes(Consumer<FinishedRecipe> consumer) {
+        AlloyFurnaceRecipeBuilder.alloyFurnaceRecipe(ItemInit.BLUE_EMERALD.get(), 1, 500, 0.5f).addIngredient(Items.DIAMOND).addIngredient(Items.EMERALD).build(consumer);
     }
 }
