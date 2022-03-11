@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "blast_furnace": {
+    "has_blast_furnace": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -27,7 +27,7 @@
   },
   "requirements": [
     [
-      "blast_furnace",
+      "has_blast_furnace",
       "has_the_recipe"
     ]
   ]

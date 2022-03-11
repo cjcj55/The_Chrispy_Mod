@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "redstone": {
+    "has_redstone": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -27,7 +27,7 @@
   },
   "requirements": [
     [
-      "redstone",
+      "has_redstone",
       "has_the_recipe"
     ]
   ]

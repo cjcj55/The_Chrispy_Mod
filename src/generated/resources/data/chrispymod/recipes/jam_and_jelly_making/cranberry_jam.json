@@ -1,0 +1,32 @@
+{
+  "type": "chrispymod:jam_and_jelly_making",
+  "ingredients": [
+    {
+      "item": "chrispymod:cranberry"
+    },
+    {
+      "item": "chrispymod:cranberry"
+    },
+    {
+      "item": "chrispymod:cranberry"
+    },
+    {
+      "item": "chrispymod:cranberry"
+    },
+    {
+      "item": "chrispymod:cranberry"
+    },
+    {
+      "item": "chrispymod:cranberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "chrispymod:mason_jar"
+    }
+  ],
+  "output": {
+    "item": "chrispymod:cranberry_jam"
+  }
+}

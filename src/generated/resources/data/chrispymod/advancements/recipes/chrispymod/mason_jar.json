@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "glass_panes": {
+    "has_glass_panes": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -27,7 +27,7 @@
   },
   "requirements": [
     [
-      "glass_panes",
+      "has_glass_panes",
       "has_the_recipe"
     ]
   ]

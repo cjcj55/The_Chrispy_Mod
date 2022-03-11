@@ -1,0 +1,32 @@
+{
+  "type": "chrispymod:jam_and_jelly_making",
+  "ingredients": [
+    {
+      "item": "chrispymod:black_raspberry"
+    },
+    {
+      "item": "chrispymod:black_raspberry"
+    },
+    {
+      "item": "chrispymod:black_raspberry"
+    },
+    {
+      "item": "chrispymod:black_raspberry"
+    },
+    {
+      "item": "chrispymod:black_raspberry"
+    },
+    {
+      "item": "chrispymod:black_raspberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "chrispymod:mason_jar"
+    }
+  ],
+  "output": {
+    "item": "chrispymod:black_raspberry_jam"
+  }
+}

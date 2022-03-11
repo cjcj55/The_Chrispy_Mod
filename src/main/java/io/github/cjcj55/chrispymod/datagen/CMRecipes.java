@@ -22,12 +22,14 @@ public class CMRecipes extends RecipeProvider {
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 
+        CustomRecipes.register(consumer);
+
         ShapedRecipeBuilder.shaped(ItemInit.MASON_JAR.get())
                 .pattern("x x")
                 .pattern("xxx")
                 .define('x', Tags.Items.GLASS_PANES)
                 .group("chrispymod")
-                .unlockedBy("glass_panes", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS_PANE))
+                .unlockedBy("has_glass_panes", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS_PANE))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(BlockInit.ALLOY_FURNACE.get())
@@ -39,7 +41,7 @@ public class CMRecipes extends RecipeProvider {
                 .define('s', Tags.Items.STONE)
                 .define('b', Items.IRON_BLOCK)
                 .group("chrispymod")
-                .unlockedBy("blast_furnace", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLAST_FURNACE))
+                .unlockedBy("has_blast_furnace", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLAST_FURNACE))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(BlockInit.JAM_AND_JELLY_MAKER.get())
@@ -50,7 +52,7 @@ public class CMRecipes extends RecipeProvider {
                 .define('i', Tags.Items.INGOTS_IRON)
                 .define('r', Tags.Items.DUSTS_REDSTONE)
                 .group("chrispymod")
-                .unlockedBy("redstone", InventoryChangeTrigger.TriggerInstance.hasItems(Items.REDSTONE))
+                .unlockedBy("has_redstone", InventoryChangeTrigger.TriggerInstance.hasItems(Items.REDSTONE))
                 .save(consumer);
 
         /*ShapedRecipeBuilder.shaped(ItemInit.RUBY_AXE.get())

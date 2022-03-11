@@ -45,7 +45,7 @@ public class JamAndJellyMakerMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 5, 58, 37));  // item 5
             this.addSlot(new SlotItemHandler(handler, 6, 76, 37));  // item 6
             this.addSlot(new ModSugarSlot(handler, 7, 113, 63));  // sugar
-            this.addSlot(new ModMasonJarSlot(handler, 8, 131, 63));  // glass jar
+            this.addSlot(new ModMasonJarSlot(handler, 8, 131, 63));  // mason jar
             this.addSlot(new ModResultSlot(handler, 9, 117, 29));   // jam
         });
 
