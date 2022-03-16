@@ -2,6 +2,7 @@ package io.github.cjcj55.chrispymod.integration.jei;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.common.recipe.AlloyFurnaceRecipe;
+import io.github.cjcj55.chrispymod.core.init.RecipeInit;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
