@@ -343,4 +343,7 @@ e9c15ea418db021ec8dcb1ca6f84f04d11d56742 data/minecraft/tags/blocks/mineable/pic
 a74a1abb72111df0a8373d25c4745db70b1054f5 data/minecraft/tags/blocks/needs_diamond_tool.json
 90326ad4b4986c5e461ce825f09fd886b3e29079 data/minecraft/tags/blocks/needs_iron_tool.json
 499f498173080a7591c2aa4ffe23f8ebb86e4098 data/minecraft/tags/blocks/needs_stone_tool.json
+8a738f8edc6b9d86acb228f57f585ac3ee4487bb data/minecraft/tags/blocks/slabs.json
+4d0fce8618abc0aa07733cc5030c8405ae6facb8 data/minecraft/tags/blocks/stairs.json
 2028caa4e39e4020c6d098164a674fd3460cc63c data/minecraft/tags/blocks/walls.json
+78f5fa16262e8248b15a9af94215ae94949d4f72 data/minecraft/tags/blocks/wooden_doors.json

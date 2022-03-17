@@ -52,7 +52,6 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
             if (blockEntity instanceof AlloyFurnaceBlockEntity) {
                 AlloyFurnaceBlockEntity alloyFurnaceBlockEntity = (AlloyFurnaceBlockEntity) blockEntity;
                 ((AlloyFurnaceBlockEntity) blockEntity).drops();
-                alloyFurnaceBlockEntity.grantStoredRecipeExperience(pLevel, Vec3.atCenterOf(pPos));
             }
         }
     }

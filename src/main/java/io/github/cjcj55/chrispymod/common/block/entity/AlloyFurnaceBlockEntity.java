@@ -56,7 +56,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private int maxProgress = 100;
     private int fuelTime;
     private int maxFuelTime;
-    private final Object2IntOpenHashMap<ResourceLocation> experienceTracker;
 
     public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(BlockEntityInit.ALLOY_FURNACE.get(), pWorldPosition, pBlockState);
@@ -83,7 +82,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 return 4;
             }
         };
-        this.experienceTracker = new Object2IntOpenHashMap<>();
     }
 
     @Override
@@ -229,7 +227,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
             entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
                     entity.itemHandler.getStackInSlot(3).getCount() + 1));
-            entity.experienceTracker.addTo(match.get().getId(), 1);
 
             entity.resetProgress();
         }
@@ -245,37 +242,5 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
         return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
-    }
-
-    public void trackRecipeExperience(@Nullable Recipe<?> recipe) {
-        if (recipe != null) {
-            ResourceLocation recipeID = recipe.getId();
-            experienceTracker.addTo(recipeID, 1);
-        }
-    }
-
-    public void clearUsedRecipes(Player player) {
-        grantStoredRecipeExperience(player.level, player.position());
-        experienceTracker.clear();
-    }
-
-    public void grantStoredRecipeExperience(Level world, Vec3 pos) {
-        for (Object2IntMap.Entry<ResourceLocation> entry : experienceTracker.object2IntEntrySet()) {
-            world.getRecipeManager().byKey(entry.getKey()).ifPresent((recipe) -> splitAndSpawnExperience(world, pos, entry.getIntValue(), ((AlloyFurnaceRecipe) recipe).getExperience()));
-        }
-    }
-
-    private static void splitAndSpawnExperience(Level world, Vec3 pos, int craftedAmount, float experience) {
-        int expTotal = Mth.floor((float) craftedAmount * experience);
-        float expFraction = Mth.frac((float) craftedAmount * experience);
-        if (expFraction != 0.0F && Math.random() < (double) expFraction) {
-            ++expTotal;
-        }
-
-        while (expTotal > 0) {
-            int expValue = ExperienceOrb.getExperienceValue(expTotal);
-            expTotal -= expValue;
-            world.addFreshEntity(new ExperienceOrb(world, pos.x, pos.y, pos.z, expValue));
-        }
     }
 }

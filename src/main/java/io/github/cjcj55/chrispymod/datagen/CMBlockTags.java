@@ -164,6 +164,15 @@ public class CMBlockTags extends BlockTagsProvider {
                 .add(BlockInit.EXPERIENCE_ORE.get())
                 .add(BlockInit.DEEPSLATE_EXPERIENCE_ORE.get());
 
+        tag(BlockTags.WOODEN_DOORS)
+                .add(BlockInit.BAMBOO_DOOR.get());
+
+        tag(BlockTags.SLABS)
+                .add(BlockInit.BAMBOO_SLAB.get());
+
+        tag(BlockTags.STAIRS)
+                .add(BlockInit.BAMBOO_STAIRS.get());
+
        /* tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(Registration.GENERATOR.get())
                 .add(Registration.POWERGEN.get())
