@@ -1,4 +1,4 @@
-package io.github.cjcj55.chrispymod.datagen.builder;
+/*package io.github.cjcj55.chrispymod.datagen.builder;
 
 import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
@@ -160,4 +160,4 @@ public class AlloyFurnaceRecipeBuilder
             return null;
         }
     }
-}
+}*/

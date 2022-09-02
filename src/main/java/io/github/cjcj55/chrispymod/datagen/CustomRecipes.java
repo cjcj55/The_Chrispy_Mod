@@ -1,4 +1,4 @@
-package io.github.cjcj55.chrispymod.datagen;
+/*package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.core.init.ItemInit;
 import io.github.cjcj55.chrispymod.datagen.builder.AlloyFurnaceRecipeBuilder;
@@ -51,4 +51,4 @@ public class CustomRecipes {
     public static void buildAlloyFurnaceRecipes(Consumer<FinishedRecipe> consumer) {
         AlloyFurnaceRecipeBuilder.alloyFurnaceRecipe(ItemInit.BLUE_EMERALD.get(), 1, 500, 0.5f).addIngredient(Items.DIAMOND).addIngredient(Items.EMERALD).build(consumer);
     }
-}
+}*/

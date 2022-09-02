@@ -50,10 +50,10 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof AlloyFurnaceBlockEntity) {
-                AlloyFurnaceBlockEntity alloyFurnaceBlockEntity = (AlloyFurnaceBlockEntity) blockEntity;
                 ((AlloyFurnaceBlockEntity) blockEntity).drops();
             }
         }
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 
     @Override

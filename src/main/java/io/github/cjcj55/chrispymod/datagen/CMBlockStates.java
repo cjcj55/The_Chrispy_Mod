@@ -2,6 +2,7 @@ package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.common.block.BerryBlockBase;
+import io.github.cjcj55.chrispymod.common.block.JamAndJellyMakerBlock;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import io.github.cjcj55.chrispymod.datafixers.CMResourceLocation;
 import net.minecraft.data.DataGenerator;
@@ -22,6 +23,8 @@ public class CMBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        registerJamAndJellyMaker();
+
         berryBush(BlockInit.STRAWBERRY_BUSH.get());
         berryBush(BlockInit.BLUEBERRY_BUSH.get());
         berryBush(BlockInit.LOGANBERRY_BUSH.get());
@@ -53,6 +56,20 @@ public class CMBlockStates extends BlockStateProvider {
         berryBush(BlockInit.BARBERRY_BUSH.get());
         berryBush(BlockInit.BAYBERRY_BUSH.get());
         berryBush(BlockInit.GOGI_BERRY_BUSH.get());
+    }
+
+    private void registerJamAndJellyMaker() {
+        ResourceLocation top = modLoc("block/jam_and_jelly_maker_top");
+        ResourceLocation side = modLoc("block/jam_and_jelly_maker_side");
+        ResourceLocation side_handle = modLoc("block/jam_and_jelly_maker_side_handle");
+        ResourceLocation bottom = modLoc("block/jam_and_jelly_maker_bottom");
+        ResourceLocation front_off = modLoc("block/jam_and_jelly_maker_front");
+        ResourceLocation front_on = modLoc("block/jam_and_jelly_maker_front_on");
+
+        getVariantBuilder(BlockInit.JAM_AND_JELLY_MAKER.get()).partialState().with(JamAndJellyMakerBlock.LIT, false).modelForState()
+                .modelFile(models().cube(BlockInit.JAM_AND_JELLY_MAKER.get().getRegistryName().getPath(), bottom, top, front_off, side, side_handle, side)).addModel()
+                .partialState().with(JamAndJellyMakerBlock.LIT, true).modelForState()
+                .modelFile(models().cube(BlockInit.JAM_AND_JELLY_MAKER.get().getRegistryName().getPath(), bottom, top, front_on, side, side_handle, side)).addModel();
     }
 
     private void cross(Block block) {

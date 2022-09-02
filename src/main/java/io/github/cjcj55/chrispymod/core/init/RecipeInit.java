@@ -22,7 +22,5 @@ public class RecipeInit {
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
-        Registry.register(Registry.RECIPE_TYPE, AlloyFurnaceRecipe.Type.ID, AlloyFurnaceRecipe.Type.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, AlloyFurnaceRecipe.Type.ID, JamAndJellyMakerRecipe.Type.INSTANCE);
     }
 }

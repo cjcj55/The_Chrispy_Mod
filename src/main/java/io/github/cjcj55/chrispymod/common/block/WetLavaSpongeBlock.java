@@ -6,11 +6,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.BiomeDictionary;
 
 import java.util.Random;
 
@@ -20,7 +23,7 @@ public class WetLavaSpongeBlock extends Block {
     }
 
     public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
-        if (pLevel.getBiome(pPos).coldEnoughToSnow(pPos)) {
+        if (pLevel.getBiome(pPos).containsTag(BiomeTags.IS_TAIGA)) {
             pLevel.setBlock(pPos, BlockInit.LAVA_SPONGE.get().defaultBlockState(), 3);
             pLevel.levelEvent(2009, pPos, 0);
             pLevel.playSound((Player)null, pPos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, (1.0F + pLevel.getRandom().nextFloat() * 0.2F) * 0.7F);

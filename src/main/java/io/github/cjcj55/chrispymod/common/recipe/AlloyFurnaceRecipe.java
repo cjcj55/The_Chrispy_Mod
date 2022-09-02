@@ -38,6 +38,11 @@ public class AlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return recipeItems;
+    }
+
+    @Override
     public ItemStack assemble(SimpleContainer pContainer) {
         return output;
     }

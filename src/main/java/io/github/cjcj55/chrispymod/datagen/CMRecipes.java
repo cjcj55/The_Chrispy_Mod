@@ -22,7 +22,7 @@ public class CMRecipes extends RecipeProvider {
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 
-        CustomRecipes.register(consumer);
+        //CustomRecipes.register(consumer);
 
         ShapedRecipeBuilder.shaped(ItemInit.MASON_JAR.get())
                 .pattern("x x")
