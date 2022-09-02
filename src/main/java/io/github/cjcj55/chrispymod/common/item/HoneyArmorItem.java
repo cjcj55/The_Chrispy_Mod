@@ -53,7 +53,7 @@ public class HoneyArmorItem extends ArmorItem {
             player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
 
-            if(new Random().nextFloat() > 0.6f) { // 40% of damaging the armor! Possibly!
+            if(new Random().nextFloat() > 0.99f) { // 1% of damaging the armor! Possibly!
                 player.getInventory().hurtArmor(DamageSource.MAGIC, 1f, new int[]{0, 1, 2, 3});
             }
         }
