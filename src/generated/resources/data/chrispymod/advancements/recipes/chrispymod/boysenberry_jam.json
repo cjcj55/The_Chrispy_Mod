@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:boysenberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_boysenberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:boysenberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:boysenberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_boysenberry",
+      "has_the_recipe"
+    ]
+  ]
+}

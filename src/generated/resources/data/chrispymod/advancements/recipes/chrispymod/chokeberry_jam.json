@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:chokeberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_chokeberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:chokeberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:chokeberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chokeberry",
+      "has_the_recipe"
+    ]
+  ]
+}

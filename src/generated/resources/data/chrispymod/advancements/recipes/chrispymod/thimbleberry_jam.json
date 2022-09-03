@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:thimbleberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_thimbleberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:thimbleberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:thimbleberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_thimbleberry",
+      "has_the_recipe"
+    ]
+  ]
+}

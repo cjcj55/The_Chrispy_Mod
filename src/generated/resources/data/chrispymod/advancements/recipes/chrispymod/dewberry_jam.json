@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:dewberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_dewberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:dewberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:dewberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dewberry",
+      "has_the_recipe"
+    ]
+  ]
+}

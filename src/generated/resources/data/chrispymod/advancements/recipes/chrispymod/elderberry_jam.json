@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:elderberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_elderberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:elderberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:elderberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_elderberry",
+      "has_the_recipe"
+    ]
+  ]
+}

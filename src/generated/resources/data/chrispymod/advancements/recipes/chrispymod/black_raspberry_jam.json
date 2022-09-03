@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:black_raspberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_black_raspberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:black_raspberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:black_raspberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_black_raspberry",
+      "has_the_recipe"
+    ]
+  ]
+}

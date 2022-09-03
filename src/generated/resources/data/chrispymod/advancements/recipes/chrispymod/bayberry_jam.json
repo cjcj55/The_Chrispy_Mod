@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:bayberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_bayberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:bayberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:bayberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bayberry",
+      "has_the_recipe"
+    ]
+  ]
+}

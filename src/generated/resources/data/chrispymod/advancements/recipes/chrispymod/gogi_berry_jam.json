@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:gogi_berry_jam"
+    ]
+  },
+  "criteria": {
+    "has_gogi_berry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:gogi_berry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:gogi_berry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gogi_berry",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:serviceberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_serviceberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:serviceberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:serviceberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_serviceberry",
+      "has_the_recipe"
+    ]
+  ]
+}

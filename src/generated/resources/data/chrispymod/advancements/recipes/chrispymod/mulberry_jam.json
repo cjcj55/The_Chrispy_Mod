@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:mulberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_mulberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:mulberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:mulberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mulberry",
+      "has_the_recipe"
+    ]
+  ]
+}

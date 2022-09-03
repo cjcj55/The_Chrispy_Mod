@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:loganberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_loganberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:loganberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:loganberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_loganberry",
+      "has_the_recipe"
+    ]
+  ]
+}

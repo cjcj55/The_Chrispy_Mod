@@ -25,6 +25,7 @@ public class ChrispyModConfiguredFeature {
     public static final List<OreConfiguration.TargetBlockState> NETHER_ORE_RUBY_TARGET_LIST = List.of(OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.RUBY_ORE_NETHER.get().defaultBlockState()));
     public static final List<OreConfiguration.TargetBlockState> NETHER_ORE_FLAME_TARGET_LIST = List.of(OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.FLAME_ORE_NETHER.get().defaultBlockState()));
     public static final List<OreConfiguration.TargetBlockState> NETHER_ORE_HELLFIRE_TARGET_LIST = List.of(OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.HELLFIRE_ORE_NETHER.get().defaultBlockState()));
+    // For END, instead of OreFeatures.NETHER_ORE_REPLACEABLES do:  new BlockMatchTest(Blocks.END_STONE)
 
 
 

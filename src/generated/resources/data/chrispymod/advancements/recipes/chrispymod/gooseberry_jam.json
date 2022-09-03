@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:gooseberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_gooseberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:gooseberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:gooseberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gooseberry",
+      "has_the_recipe"
+    ]
+  ]
+}

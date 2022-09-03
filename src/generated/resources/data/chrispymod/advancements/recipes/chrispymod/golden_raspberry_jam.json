@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:golden_raspberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_golden_raspberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:golden_raspberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:golden_raspberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_golden_raspberry",
+      "has_the_recipe"
+    ]
+  ]
+}

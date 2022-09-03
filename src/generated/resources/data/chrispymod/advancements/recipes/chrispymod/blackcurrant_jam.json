@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:blackcurrant_jam"
+    ]
+  },
+  "criteria": {
+    "has_blackcurrant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:blackcurrant"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:blackcurrant_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blackcurrant",
+      "has_the_recipe"
+    ]
+  ]
+}

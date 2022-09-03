@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:wonderberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_wonderberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:wonderberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:wonderberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wonderberry",
+      "has_the_recipe"
+    ]
+  ]
+}

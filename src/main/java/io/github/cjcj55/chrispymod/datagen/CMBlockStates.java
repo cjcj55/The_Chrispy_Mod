@@ -23,7 +23,7 @@ public class CMBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        registerJamAndJellyMaker();
+        //registerJamAndJellyMaker();
 
         berryBush(BlockInit.STRAWBERRY_BUSH.get());
         berryBush(BlockInit.BLUEBERRY_BUSH.get());
@@ -58,7 +58,7 @@ public class CMBlockStates extends BlockStateProvider {
         berryBush(BlockInit.GOGI_BERRY_BUSH.get());
     }
 
-    private void registerJamAndJellyMaker() {
+    /*private void registerJamAndJellyMaker() {
         ResourceLocation top = modLoc("block/jam_and_jelly_maker_top");
         ResourceLocation side = modLoc("block/jam_and_jelly_maker_side");
         ResourceLocation side_handle = modLoc("block/jam_and_jelly_maker_side_handle");
@@ -70,7 +70,7 @@ public class CMBlockStates extends BlockStateProvider {
                 .modelFile(models().cube(BlockInit.JAM_AND_JELLY_MAKER.get().getRegistryName().getPath(), bottom, top, front_off, side, side_handle, side)).addModel()
                 .partialState().with(JamAndJellyMakerBlock.LIT, true).modelForState()
                 .modelFile(models().cube(BlockInit.JAM_AND_JELLY_MAKER.get().getRegistryName().getPath(), bottom, top, front_on, side, side_handle, side)).addModel();
-    }
+    }*/
 
     private void cross(Block block) {
         getVariantBuilder(block).partialState().setModels(new ConfiguredModel(crossModel(block, blockTexture(block))));

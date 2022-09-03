@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:olallieberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_olallieberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:olallieberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:olallieberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_olallieberry",
+      "has_the_recipe"
+    ]
+  ]
+}

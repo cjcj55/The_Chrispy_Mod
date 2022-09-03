@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:ground_cherry_jam"
+    ]
+  },
+  "criteria": {
+    "has_ground_cherry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:ground_cherry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:ground_cherry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ground_cherry",
+      "has_the_recipe"
+    ]
+  ]
+}

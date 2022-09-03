@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:marionberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_marionberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:marionberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:marionberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_marionberry",
+      "has_the_recipe"
+    ]
+  ]
+}

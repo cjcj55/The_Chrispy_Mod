@@ -1,146 +1,108 @@
-/*package io.github.cjcj55.chrispymod.datagen.builder;
+package io.github.cjcj55.chrispymod.datagen.builder;
 
-import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.common.recipe.AlloyFurnaceRecipe;
-import mezz.jei.api.MethodsReturnNonnullByDefault;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRewards;
+import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.List;
 import java.util.function.Consumer;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
-public class AlloyFurnaceRecipeBuilder
-{
-    private final List<Ingredient> ingredients = Lists.newArrayList();
+public class AlloyFurnaceRecipeBuilder implements RecipeBuilder {
     private final Item result;
+    private final Ingredient ingredient1;
+    private final Ingredient ingredient2;
     private final int count;
-    private final int cookingTime;
-    private final float experience;
-    private final Item container;
+    private final Advancement.Builder advancement = Advancement.Builder.advancement();
 
-    private AlloyFurnaceRecipeBuilder(ItemLike resultIn, int count, int cookingTime, float experience, @Nullable ItemLike container) {
-        this.result = resultIn.asItem();
+    public AlloyFurnaceRecipeBuilder(ItemLike ingredient1, ItemLike ingredient2, ItemLike result, int count) {
+        this.ingredient1 = Ingredient.of(ingredient1);
+        this.ingredient2 = Ingredient.of(ingredient2);
+        this.result = result.asItem();
         this.count = count;
-        this.cookingTime = cookingTime;
-        this.experience = experience;
-        this.container = container != null ? container.asItem() : null;
     }
 
-    public static AlloyFurnaceRecipeBuilder alloyFurnaceRecipe(ItemLike mainResult, int count, int cookingTime, float experience) {
-        return new AlloyFurnaceRecipeBuilder(mainResult, count, cookingTime, experience, null);
-    }
-
-    public static AlloyFurnaceRecipeBuilder alloyFurnaceRecipe(ItemLike mainResult, int count, int cookingTime, float experience, ItemLike container) {
-        return new AlloyFurnaceRecipeBuilder(mainResult, count, cookingTime, experience, container);
-    }
-
-    public AlloyFurnaceRecipeBuilder addIngredient(Tag<Item> tagIn) {
-        return this.addIngredient(Ingredient.of(tagIn));
-    }
-
-    public AlloyFurnaceRecipeBuilder addIngredient(ItemLike itemIn) {
-        return this.addIngredient(itemIn, 1);
-    }
-
-    public AlloyFurnaceRecipeBuilder addIngredient(ItemLike itemIn, int quantity) {
-        for (int i = 0; i < quantity; ++i) {
-            this.addIngredient(Ingredient.of(itemIn));
-        }
+    @Override
+    public RecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
+        this.advancement.addCriterion(pCriterionName, pCriterionTrigger);
         return this;
     }
 
-    public AlloyFurnaceRecipeBuilder addIngredient(Ingredient ingredientIn) {
-        return this.addIngredient(ingredientIn, 1);
-    }
-
-    public AlloyFurnaceRecipeBuilder addIngredient(Ingredient ingredientIn, int quantity) {
-        for (int i = 0; i < quantity; ++i) {
-            this.ingredients.add(ingredientIn);
-        }
+    @Override
+    public RecipeBuilder group(@Nullable String pGroupName) {
         return this;
     }
 
-    public void build(Consumer<FinishedRecipe> consumerIn) {
-        ResourceLocation location = ForgeRegistries.ITEMS.getKey(this.result);
-        this.build(consumerIn, ChrispyMod.MODID + ":alloy_smelting/" + location.getPath());
+    @Override
+    public Item getResult() {
+        return result;
     }
 
-    public void build(Consumer<FinishedRecipe> consumerIn, String save) {
-        ResourceLocation resourcelocation = ForgeRegistries.ITEMS.getKey(this.result);
-        if ((new ResourceLocation(save)).equals(resourcelocation)) {
-            throw new IllegalStateException("Alloy Smelting Recipe " + save + " should remove its 'save' argument");
-        } else {
-            this.build(consumerIn, new ResourceLocation(save));
-        }
+    @Override
+    public void save(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ResourceLocation pRecipeId) {
+        this.advancement.parent(new ResourceLocation("recipes/root"))
+                .addCriterion("has_the_recipe",
+                        RecipeUnlockedTrigger.unlocked(pRecipeId))
+                .rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
+
+        pFinishedRecipeConsumer.accept(new AlloyFurnaceRecipeBuilder.Result(pRecipeId, this.result, this.count, this.ingredient1, this.ingredient2,
+                this.advancement, new ResourceLocation(pRecipeId.getNamespace(), "recipes/" +
+                this.result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath())));
+
     }
 
-    public void build(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
-        consumerIn.accept(new AlloyFurnaceRecipeBuilder.Result(id, this.result, this.count, this.ingredients, this.cookingTime, this.experience, this.container));
-    }
-
-    public static class Result implements FinishedRecipe
-    {
+    public static class Result implements FinishedRecipe {
         private final ResourceLocation id;
-        private final List<Ingredient> ingredients;
         private final Item result;
+        private final Ingredient ingredient1;
+        private final Ingredient ingredient2;
         private final int count;
-        private final int cookingTime;
-        private final float experience;
-        private final Item container;
+        private final Advancement.Builder advancement;
+        private final ResourceLocation advancementId;
 
-        public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn, int cookingTimeIn, float experienceIn, @Nullable Item containerIn) {
-            this.id = idIn;
-            this.ingredients = ingredientsIn;
-            this.result = resultIn;
-            this.count = countIn;
-            this.cookingTime = cookingTimeIn;
-            this.experience = experienceIn;
-            this.container = containerIn;
+        public Result(ResourceLocation pId, Item pResult, int pCount, Ingredient ingredient1, Ingredient ingredient2, Advancement.Builder pAdvancement,
+                      ResourceLocation pAdvancementId) {
+            this.id = pId;
+            this.result = pResult;
+            this.count = pCount;
+            this.ingredient1 = ingredient1;
+            this.ingredient2 = ingredient2;
+            this.advancement = pAdvancement;
+            this.advancementId = pAdvancementId;
         }
 
         @Override
-        public void serializeRecipeData(JsonObject json) {
-            JsonArray arrayIngredients = new JsonArray();
+        public void serializeRecipeData(JsonObject pJson) {
+            JsonArray jsonarray = new JsonArray();
+            jsonarray.add(ingredient1.toJson());
+            jsonarray.add(ingredient2.toJson());
 
-            for (Ingredient ingredient : this.ingredients) {
-                arrayIngredients.add(ingredient.toJson());
-            }
-            json.add("ingredients", arrayIngredients);
-
-            JsonObject objectResult = new JsonObject();
-            objectResult.addProperty("item", ForgeRegistries.ITEMS.getKey(this.result).toString());
+            pJson.add("ingredients", jsonarray);
+            JsonObject jsonobject = new JsonObject();
+            jsonobject.addProperty("item", this.result.getRegistryName().toString());
             if (this.count > 1) {
-                objectResult.addProperty("count", this.count);
+                jsonobject.addProperty("count", this.count);
             }
-            json.add("output", objectResult);
 
-            if (this.container != null) {
-                JsonObject objectContainer = new JsonObject();
-                objectContainer.addProperty("item", ForgeRegistries.ITEMS.getKey(this.container).toString());
-                json.add("container", objectContainer);
-            }
-            if (this.experience > 0) {
-                json.addProperty("experience", this.experience);
-            }
-            json.addProperty("cookingtime", this.cookingTime);
+            pJson.add("output", jsonobject);
         }
 
         @Override
         public ResourceLocation getId() {
-            return this.id;
+            return new ResourceLocation(ChrispyMod.MODID,
+                    this.result.getRegistryName().getPath() + "_from_alloy_furnace");
         }
 
         @Override
@@ -148,16 +110,14 @@ public class AlloyFurnaceRecipeBuilder
             return AlloyFurnaceRecipe.Serializer.INSTANCE;
         }
 
-        @Nullable
-        @Override
+        @javax.annotation.Nullable
         public JsonObject serializeAdvancement() {
-            return null;
+            return this.advancement.serializeToJson();
         }
 
-        @Nullable
-        @Override
+        @javax.annotation.Nullable
         public ResourceLocation getAdvancementId() {
-            return null;
+            return this.advancementId;
         }
     }
-}*/
+}

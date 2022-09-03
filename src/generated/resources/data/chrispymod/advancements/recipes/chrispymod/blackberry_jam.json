@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:blackberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_blackberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:blackberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:blackberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blackberry",
+      "has_the_recipe"
+    ]
+  ]
+}

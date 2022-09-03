@@ -2,6 +2,7 @@ package io.github.cjcj55.chrispymod.core.world.gen;
 
 import io.github.cjcj55.chrispymod.core.world.feature.ChrispyModPlacedFeatures;
 import net.minecraft.core.Holder;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
@@ -36,5 +37,10 @@ public class ChrispyModOreGeneration {
         base.add(ChrispyModPlacedFeatures.NETHER_ORE_RUBY_PLACED);
         base.add(ChrispyModPlacedFeatures.NETHER_ORE_FLAME_PLACED);
         base.add(ChrispyModPlacedFeatures.NETHER_ORE_HELLFIRE_PLACED);
+
+// The End
+        /*if (event.getCategory() == Biome.BiomeCategory.THEEND) {
+            base.add(ChrispyModPlacedFeatures.X_END_ORE_PLACED);
+        }*/
     }
 }

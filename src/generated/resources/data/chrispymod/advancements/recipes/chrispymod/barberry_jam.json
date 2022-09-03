@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chrispymod:barberry_jam"
+    ]
+  },
+  "criteria": {
+    "has_barberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:barberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chrispymod:barberry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_barberry",
+      "has_the_recipe"
+    ]
+  ]
+}
