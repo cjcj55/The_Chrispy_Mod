@@ -29,12 +29,12 @@ displayName="The Chrispy Mod" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
+credits="Thanks for downloading this mod!" #optional
 # A text field displayed in the mod UI
 authors="cjcj55" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-
+A kitchen sink-style mod that adds a bit of everything to enhance the game!
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.examplemod]] #optional
