@@ -27,6 +27,10 @@ public class JamAndJellyMakerRecipe implements Recipe<SimpleContainer> {
     // Need to have more checks if more than 2 inputs
     @Override
     public boolean matches(SimpleContainer pContainer, net.minecraft.world.level.Level pLevel) {
+        if (pLevel.isClientSide()) {
+            return false;
+        }
+
         if(recipeItems.get(0).test(pContainer.getItem(1)) && recipeItems.get(1).test(pContainer.getItem(2)) && recipeItems.get(2).test(pContainer.getItem(3)) && recipeItems.get(3).test(pContainer.getItem(4)) && recipeItems.get(4).test(pContainer.getItem(5)) && recipeItems.get(5).test(pContainer.getItem(6)) && recipeItems.get(6).test(pContainer.getItem(7)) && recipeItems.get(7).test(pContainer.getItem(8))) {
             return true;
         }
@@ -113,22 +117,6 @@ public class JamAndJellyMakerRecipe implements Recipe<SimpleContainer> {
                 ing.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
-        }
-
-        @Override
-        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
-            return INSTANCE;
-        }
-
-        @Nullable
-        @Override
-        public ResourceLocation getRegistryName() {
-            return ID;
-        }
-
-        @Override
-        public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass(RecipeSerializer.class);
         }
 
         @SuppressWarnings("unchecked") // Need this wrapper, because generics

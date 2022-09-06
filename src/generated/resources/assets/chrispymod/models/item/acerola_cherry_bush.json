@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chrispymod:block/berry_bushes/acerola_cherry_bush/stage_3"
-  }
-}

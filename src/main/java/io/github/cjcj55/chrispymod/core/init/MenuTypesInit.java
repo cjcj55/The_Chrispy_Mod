@@ -13,7 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class MenuTypesInit {
-    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.CONTAINERS, ChrispyMod.MODID);
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, ChrispyMod.MODID);
 
     public static final RegistryObject<MenuType<AlloyFurnaceMenu>> ALLOY_FURNACE_MENU = registerMenuType(AlloyFurnaceMenu::new, "alloy_furnace_menu");
     public static final RegistryObject<MenuType<JamAndJellyMakerMenu>> JAM_AND_JELLY_MAKER_MENU = registerMenuType(JamAndJellyMakerMenu::new, "jam_and_jelly_maker_menu");

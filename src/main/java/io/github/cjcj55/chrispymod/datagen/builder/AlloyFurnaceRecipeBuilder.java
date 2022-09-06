@@ -16,6 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
@@ -91,7 +92,7 @@ public class AlloyFurnaceRecipeBuilder implements RecipeBuilder {
 
             pJson.add("ingredients", jsonarray);
             JsonObject jsonobject = new JsonObject();
-            jsonobject.addProperty("item", this.result.getRegistryName().toString());
+            jsonobject.addProperty("item", ForgeRegistries.ITEMS.getKey(this.result).getNamespace() + ":" + ForgeRegistries.ITEMS.getKey(this.result).getPath());
             if (this.count > 1) {
                 jsonobject.addProperty("count", this.count);
             }
@@ -102,7 +103,7 @@ public class AlloyFurnaceRecipeBuilder implements RecipeBuilder {
         @Override
         public ResourceLocation getId() {
             return new ResourceLocation(ChrispyMod.MODID,
-                    this.result.getRegistryName().getPath() + "_from_alloy_furnace");
+                    ForgeRegistries.ITEMS.getKey(this.result).getPath() + "_from_alloy_smelting");
         }
 
         @Override

@@ -1,7 +1,9 @@
 package io.github.cjcj55.chrispymod.core.world.feature;
 
+import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.block.Blocks;
@@ -12,6 +14,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureCo
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.registries.DeferredRegister;
 
 import java.util.List;
 

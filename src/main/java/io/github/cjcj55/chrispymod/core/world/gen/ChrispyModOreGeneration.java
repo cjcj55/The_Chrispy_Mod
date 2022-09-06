@@ -1,4 +1,4 @@
-package io.github.cjcj55.chrispymod.core.world.gen;
+/*package io.github.cjcj55.chrispymod.core.world.gen;
 
 import io.github.cjcj55.chrispymod.core.world.feature.ChrispyModPlacedFeatures;
 import net.minecraft.core.Holder;
@@ -39,8 +39,8 @@ public class ChrispyModOreGeneration {
         base.add(ChrispyModPlacedFeatures.NETHER_ORE_HELLFIRE_PLACED);
 
 // The End
-        /*if (event.getCategory() == Biome.BiomeCategory.THEEND) {
-            base.add(ChrispyModPlacedFeatures.X_END_ORE_PLACED);
-        }*/
+        //if (event.getCategory() == Biome.BiomeCategory.THEEND) {
+            //base.add(ChrispyModPlacedFeatures.X_END_ORE_PLACED);
+        //}
     }
-}
+}*/

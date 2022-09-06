@@ -107,7 +107,9 @@ public class CMBlockStates extends BlockStateProvider {
     }
 
     public String name(Block block) {
-        return block.getRegistryName().getPath();
+        String blockName = block.getLootTable().toString();
+        blockName = blockName.replaceAll("chrispymod:blocks/", "");
+        return blockName;
     }
 
     public ModelFile crossModel(Block block, ResourceLocation name) {
@@ -128,7 +130,7 @@ public class CMBlockStates extends BlockStateProvider {
 
     @Override
     public ResourceLocation blockTexture(Block block) {
-        ResourceLocation name = block.getRegistryName();
+        ResourceLocation name = block.getLootTable();
         return new ResourceLocation(name.getNamespace(), "blocks" + "/" + name.getPath());
     }
 

@@ -2,13 +2,13 @@ package io.github.cjcj55.chrispymod.common.block.entity;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.client.screen.JamAndJellyMakerMenu;
+import io.github.cjcj55.chrispymod.common.block.AlloyFurnaceBlock;
 import io.github.cjcj55.chrispymod.common.recipe.JamAndJellyMakerRecipe;
 import io.github.cjcj55.chrispymod.core.init.BlockEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -53,6 +53,7 @@ public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProv
     public JamAndJellyMakerBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(BlockEntityInit.JAM_AND_JELLY_MAKER.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
+            @Override
             public int get(int index) {
                 switch (index) {
                     case 0: return JamAndJellyMakerBlockEntity.this.progress;
@@ -62,7 +63,7 @@ public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProv
                     default: return 0;
                 }
             }
-
+            @Override
             public void set(int index, int value) {
                 switch(index) {
                     case 0: JamAndJellyMakerBlockEntity.this.progress = value; break;
@@ -71,7 +72,7 @@ public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProv
                     case 3: JamAndJellyMakerBlockEntity.this.maxFuelTime = value; break;
                 }
             }
-
+            @Override
             public int getCount() {
                 return 4;
             }
@@ -80,7 +81,7 @@ public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProv
 
     @Override
     public Component getDisplayName() {
-        return new TranslatableComponent("container." + ChrispyMod.MODID + ".jam_and_jelly_maker");
+        return Component.translatable("container." + ChrispyMod.MODID + ".jam_and_jelly_maker");
     }
 
     @Nullable
@@ -151,6 +152,23 @@ public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProv
     }
 
     public static void tick(Level level, BlockPos blockPos, BlockState state, JamAndJellyMakerBlockEntity blockEntity) {
+        if (level.isClientSide()) {
+            return;
+        }
+
+        // TODO:  this if/else clause is new.  unsure if necessary or not
+        if (hasRecipe(blockEntity)) {
+            blockEntity.progress++;
+            setChanged(level, blockPos, state);
+
+            if (blockEntity.progress >= blockEntity.maxProgress) {
+                craftItem(blockEntity);
+            }
+        } else {
+            blockEntity.resetProgress();
+            setChanged(level, blockPos, state);
+        }
+
         if(isConsumingFuel(blockEntity)) {
             blockEntity.fuelTime--;
         }
@@ -167,6 +185,8 @@ public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProv
             if(isConsumingFuel(blockEntity)) {
                 blockEntity.forceUpdateAllStates();
                 blockEntity.level.setBlock(blockEntity.worldPosition, blockEntity.level.getBlockState(blockEntity.worldPosition).setValue(BlockStateProperties.LIT, blockEntity.isBurning()), 3);
+                state = state.setValue(AlloyFurnaceBlock.LIT, Boolean.valueOf(blockEntity.isBurning()));
+                level.setBlock(blockPos, state, 3);
                 blockEntity.progress++;
                 setChanged(level, blockPos, state);
                 if(blockEntity.progress > blockEntity.maxProgress) {

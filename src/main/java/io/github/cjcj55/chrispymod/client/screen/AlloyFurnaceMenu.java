@@ -121,8 +121,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player pPlayer) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, BlockInit.ALLOY_FURNACE.get());
+        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), pPlayer, BlockInit.ALLOY_FURNACE.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

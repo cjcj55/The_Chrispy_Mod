@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "chrispymod",
-  "pattern": [
-    "x x",
-    "xxx"
-  ],
   "key": {
     "x": {
       "tag": "forge:glass_panes"
     }
   },
+  "pattern": [
+    "x x",
+    "xxx"
+  ],
   "result": {
     "item": "chrispymod:mason_jar"
   }

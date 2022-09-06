@@ -17,6 +17,9 @@ import java.util.Objects;
 
 @JeiPlugin
 public class ChrispyModJei implements IModPlugin {
+    public static RecipeType<AlloyFurnaceRecipe> ALLOY_SMELTING_TYPE = new RecipeType<>(AlloyFurnaceRecipeCategory.UID, AlloyFurnaceRecipe.class);
+    public static RecipeType<JamAndJellyMakerRecipe> JAM_AND_JELLY_MAKING_TYPE = new RecipeType<>(JamAndJellyMakerRecipeCategory.UID, JamAndJellyMakerRecipe.class);
+
     @Override
     public ResourceLocation getPluginUid() {
         return new ResourceLocation(ChrispyMod.MODID, "jei_plugin");
@@ -33,9 +36,9 @@ public class ChrispyModJei implements IModPlugin {
         RecipeManager rm = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
 
         List<AlloyFurnaceRecipe> alloyFurnaceRecipes = rm.getAllRecipesFor(AlloyFurnaceRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(AlloyFurnaceRecipeCategory.UID, AlloyFurnaceRecipe.class), alloyFurnaceRecipes);
+        registration.addRecipes(ALLOY_SMELTING_TYPE, alloyFurnaceRecipes);
 
         List<JamAndJellyMakerRecipe> jamAndJellyMakerRecipes = rm.getAllRecipesFor(JamAndJellyMakerRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(JamAndJellyMakerRecipeCategory.UID, JamAndJellyMakerRecipe.class), jamAndJellyMakerRecipes);
+        registration.addRecipes(JAM_AND_JELLY_MAKING_TYPE, jamAndJellyMakerRecipes);
     }
 }

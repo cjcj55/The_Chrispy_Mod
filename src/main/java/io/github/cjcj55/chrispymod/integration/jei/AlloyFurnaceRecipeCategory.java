@@ -8,9 +8,11 @@ import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -28,23 +30,18 @@ public class AlloyFurnaceRecipeCategory implements IRecipeCategory<AlloyFurnaceR
 
     public AlloyFurnaceRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(BlockInit.ALLOY_FURNACE.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BlockInit.ALLOY_FURNACE.get()));
         this.flame = helper.createDrawable(TEXTURE, 176, 0, 14, 14);
     }
 
     @Override
-    public ResourceLocation getUid() {
-        return UID;
-    }
-
-    @Override
-    public Class<? extends AlloyFurnaceRecipe> getRecipeClass() {
-        return AlloyFurnaceRecipe.class;
+    public RecipeType<AlloyFurnaceRecipe> getRecipeType() {
+        return ChrispyModJei.ALLOY_SMELTING_TYPE;
     }
 
     @Override
     public Component getTitle() {
-        return BlockInit.ALLOY_FURNACE.get().getName();
+        return Component.translatable("container." + ChrispyMod.MODID + ".alloy_furnace");
     }
 
     @Override
@@ -90,7 +87,7 @@ public class AlloyFurnaceRecipeCategory implements IRecipeCategory<AlloyFurnaceR
     }*/
 
     @Override
-    public void draw(AlloyFurnaceRecipe recipe, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(AlloyFurnaceRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         this.flame.draw(stack, 20, 35);
     }
 }

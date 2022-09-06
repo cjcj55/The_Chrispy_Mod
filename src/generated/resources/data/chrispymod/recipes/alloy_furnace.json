@@ -1,25 +1,25 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "chrispymod",
-  "pattern": [
-    "iii",
-    "aia",
-    "sbs"
-  ],
   "key": {
     "a": {
       "item": "minecraft:blast_furnace"
+    },
+    "b": {
+      "item": "minecraft:iron_block"
     },
     "i": {
       "tag": "forge:ingots/iron"
     },
     "s": {
       "tag": "forge:stone"
-    },
-    "b": {
-      "item": "minecraft:iron_block"
     }
   },
+  "pattern": [
+    "iii",
+    "aia",
+    "sbs"
+  ],
   "result": {
     "item": "chrispymod:alloy_furnace"
   }

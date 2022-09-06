@@ -53,6 +53,6 @@ public class CMLootTables extends BaseLootTableProvider {
     }
 
     private void addBerryBushTable(RegistryObject<Block> block, RegistryObject<Item> item, int min, int max) {
-        lootTables.put(block.get(), createBerryTable(block.get().getRegistryName().toString(), block.get(), item.get(), min, max));
+        lootTables.put(block.get(), createBerryTable(block.get().getLootTable().toString(), block.get(), item.get(), min, max));
     }
 }

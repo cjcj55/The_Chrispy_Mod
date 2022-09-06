@@ -2,33 +2,26 @@ package io.github.cjcj55.chrispymod.common.block.entity;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.client.screen.AlloyFurnaceMenu;
+import io.github.cjcj55.chrispymod.common.block.AlloyFurnaceBlock;
 import io.github.cjcj55.chrispymod.common.recipe.AlloyFurnaceRecipe;
 import io.github.cjcj55.chrispymod.core.init.BlockEntityInit;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
@@ -57,9 +50,10 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private int fuelTime;
     private int maxFuelTime;
 
-    public AlloyFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(BlockEntityInit.ALLOY_FURNACE.get(), pWorldPosition, pBlockState);
+    public AlloyFurnaceBlockEntity(BlockPos pos, BlockState state) {
+        super(BlockEntityInit.ALLOY_FURNACE.get(), pos, state);
         this.data = new ContainerData() {
+            @Override
             public int get(int index) {
                 switch (index) {
                     case 0: return AlloyFurnaceBlockEntity.this.progress;
@@ -69,7 +63,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                     default: return 0;
                 }
             }
-
+            @Override
             public void set(int index, int value) {
                 switch(index) {
                     case 0: AlloyFurnaceBlockEntity.this.progress = value; break;
@@ -78,6 +72,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                     case 3: AlloyFurnaceBlockEntity.this.maxFuelTime = value; break;
                 }
             }
+            @Override
             public int getCount() {
                 return 4;
             }
@@ -86,7 +81,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     @Override
     public Component getDisplayName() {
-        return new TranslatableComponent("container." + ChrispyMod.MODID + ".alloy_furnace");
+        return Component.translatable("container." + ChrispyMod.MODID + ".alloy_furnace");
     }
 
     @Nullable
@@ -95,9 +90,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         return new AlloyFurnaceMenu(pContainerId, pInventory, this, this.data);
     }
 
-    @NotNull
     @Override
-    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             return lazyItemHandler.cast();
         }
@@ -124,12 +118,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     @Override
-    protected void saveAdditional(@NotNull CompoundTag tag) {
-        tag.put("inventory", itemHandler.serializeNBT());
-        tag.putInt("alloy_smelting.progress", progress);
-        tag.putInt("alloy_smelting.fuelTime", fuelTime);
-        tag.putInt("alloy_smelting.maxFuelTime", maxFuelTime);
-        super.saveAdditional(tag);
+    protected void saveAdditional(CompoundTag nbt) {
+        nbt.put("inventory", itemHandler.serializeNBT());
+        nbt.putInt("alloy_smelting.progress", progress);
+        nbt.putInt("alloy_smelting.fuelTime", fuelTime);
+        nbt.putInt("alloy_smelting.maxFuelTime", maxFuelTime);
+        super.saveAdditional(nbt);
     }
 
     @Override
@@ -157,6 +151,23 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     public static void tick(Level level, BlockPos blockPos, BlockState state, AlloyFurnaceBlockEntity blockEntity) {
+        if (level.isClientSide()) {
+            return;
+        }
+
+        // TODO:  this if/else clause is new.  unsure if necessary or not
+        if (hasRecipe(blockEntity)) {
+            blockEntity.progress++;
+            setChanged(level, blockPos, state);
+
+            if (blockEntity.progress >= blockEntity.maxProgress) {
+                craftItem(blockEntity);
+            }
+        } else {
+            blockEntity.resetProgress();
+            setChanged(level, blockPos, state);
+        }
+
         if(isConsumingFuel(blockEntity)) {
             blockEntity.fuelTime--;
         }
@@ -173,6 +184,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             if(isConsumingFuel(blockEntity)) {
                 blockEntity.forceUpdateAllStates();
                 blockEntity.level.setBlock(blockEntity.worldPosition, blockEntity.level.getBlockState(blockEntity.worldPosition).setValue(BlockStateProperties.LIT, blockEntity.isBurning()), 3);
+                state = state.setValue(AlloyFurnaceBlock.LIT, Boolean.valueOf(blockEntity.isBurning()));
+                level.setBlock(blockPos, state, 3);
                 blockEntity.progress++;
                 setChanged(level, blockPos, state);
                 if(blockEntity.progress > blockEntity.maxProgress) {

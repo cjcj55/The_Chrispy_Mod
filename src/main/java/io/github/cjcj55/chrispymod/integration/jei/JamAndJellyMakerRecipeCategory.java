@@ -10,6 +10,7 @@ import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -26,22 +27,17 @@ public class JamAndJellyMakerRecipeCategory implements IRecipeCategory<JamAndJel
 
     public JamAndJellyMakerRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(BlockInit.JAM_AND_JELLY_MAKER.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BlockInit.JAM_AND_JELLY_MAKER.get()));
     }
 
     @Override
-    public ResourceLocation getUid() {
-        return UID;
-    }
-
-    @Override
-    public Class<? extends JamAndJellyMakerRecipe> getRecipeClass() {
-        return JamAndJellyMakerRecipe.class;
+    public RecipeType<JamAndJellyMakerRecipe> getRecipeType() {
+        return ChrispyModJei.JAM_AND_JELLY_MAKING_TYPE;
     }
 
     @Override
     public Component getTitle() {
-        return BlockInit.JAM_AND_JELLY_MAKER.get().getName();
+        return Component.translatable("container." + ChrispyMod.MODID + ".jam_and_jelly_maker");
     }
 
     @Override
