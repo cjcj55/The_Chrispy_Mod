@@ -1,6 +1,8 @@
 package io.github.cjcj55.chrispymod;
 
 import io.github.cjcj55.chrispymod.core.init.*;
+import io.github.cjcj55.chrispymod.core.world.feature.CMVegetationFeatures;
+import io.github.cjcj55.chrispymod.core.world.feature.CMVegetationPlacements;
 import io.github.cjcj55.chrispymod.core.world.feature.ChrispyModConfiguredFeatures;
 import io.github.cjcj55.chrispymod.core.world.feature.ChrispyModPlacedFeatures;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,7 +29,9 @@ public class ChrispyMod {
         PaintingsInit.register(bus);
 
         ChrispyModConfiguredFeatures.register(bus);
+        //CMVegetationFeatures.register(bus);
         ChrispyModPlacedFeatures.register(bus);
+        //CMVegetationPlacements.register(bus);
 
         BlockEntityInit.register(bus);
         MenuTypesInit.register(bus);

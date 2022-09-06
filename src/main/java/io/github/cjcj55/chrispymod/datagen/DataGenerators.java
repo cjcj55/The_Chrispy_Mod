@@ -18,6 +18,7 @@ public class DataGenerators {
             CMBlockTags blockTags = new CMBlockTags(generator, event.getExistingFileHelper());
             generator.addProvider(true, blockTags);
             generator.addProvider(true, new CMItemTags(generator, blockTags, event.getExistingFileHelper()));
+            //generator.addProvider(true, new CMBiomeModifierProvider());
         }
         if (event.includeClient()) {
             generator.addProvider(true, new CMBlockStates(generator, event.getExistingFileHelper()));

@@ -19,10 +19,10 @@ public class ChrispyModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> OVERWORLD_ORE_RUBY_SMALL_PLACED = PLACED_FEATURES.register("overworld_ore_ruby_small_placed",
             () -> new PlacedFeature(ChrispyModConfiguredFeatures.OVERWORLD_ORE_RUBY_SMALL.getHolder().get(),
                     commonOrePlacement(6, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-    public static final RegistryObject<PlacedFeature> OVERWORLD_ORE_RUBY_LARGE_PLACED = PLACED_FEATURES.register("overworld_ore_ruby_large_placed_placed",
+    public static final RegistryObject<PlacedFeature> OVERWORLD_ORE_RUBY_LARGE_PLACED = PLACED_FEATURES.register("overworld_ore_ruby_large_placed",
             () -> new PlacedFeature(ChrispyModConfiguredFeatures.OVERWORLD_ORE_RUBY_LARGE.getHolder().get(),
                     rareOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-    public static final RegistryObject<PlacedFeature> OVERWORLD_ORE_RUBY_HIDDEN_PLACED = PLACED_FEATURES.register("overworld_ore_ruby_hidden_placed_placed",
+    public static final RegistryObject<PlacedFeature> OVERWORLD_ORE_RUBY_HIDDEN_PLACED = PLACED_FEATURES.register("overworld_ore_ruby_hidden_placed",
             () -> new PlacedFeature(ChrispyModConfiguredFeatures.OVERWORLD_ORE_RUBY_HIDDEN.getHolder().get(),
                     commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
     public static final RegistryObject<PlacedFeature> OVERWORLD_ORE_OPAL_PLACED = PLACED_FEATURES.register("overworld_ore_opal_placed",
