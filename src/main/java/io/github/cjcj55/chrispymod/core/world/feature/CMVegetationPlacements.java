@@ -4,13 +4,12 @@ import io.github.cjcj55.chrispymod.ChrispyMod;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.world.level.levelgen.placement.BiomeFilter;
-import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class CMVegetationPlacements {
     public static final DeferredRegister<PlacedFeature> PLACED_VEGETATION_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, ChrispyMod.MODID);
@@ -47,7 +46,24 @@ public class CMVegetationPlacements {
     //public static final Holder<PlacedFeature> PATCH_BAYBERRY_COMMON = PlacementUtils.register("patch_bayberry_common", CMVegetationFeatures.PATCH_BAYBERRY_BUSH, RarityFilter.onAverageOnceEvery(128), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     //public static final Holder<PlacedFeature> PATCH_GOGI_BERRY_COMMON = PlacementUtils.register("patch_gogi_berry_common", CMVegetationFeatures.PATCH_GOGI_BERRY_BUSH, RarityFilter.onAverageOnceEvery(128), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
-    public static final RegistryObject<PlacedFeature> PATCH_STRAWBERRY_COMMON = PLACED_VEGETATION_FEATURES.register("patch_strawberry_common", PlacementUtils.register("patch_strawberry_common", CMVegetationFeatures.PATCH_STRAWBERRY_BUSH.getHolder().get(), RarityFilter.onAverageOnceEvery(128), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+    public static final RegistryObject<PlacedFeature> PATCH_STRAWBERRY_COMMON = PLACED_VEGETATION_FEATURES.register("patch_strawberry_common",
+            () -> new PlacedFeature(CMVegetationFeatures.PATCH_STRAWBERRY_BUSH.getHolder().get(),
+                    rareBerryPlacement(128, PlacementUtils.HEIGHTMAP_WORLD_SURFACE)));
+
+
+
+
+    public static List<PlacementModifier> berryPlacement(PlacementModifier placementModifier1, PlacementModifier placementModifier2) {
+        return List.of(placementModifier1, InSquarePlacement.spread(), placementModifier2, BiomeFilter.biome());
+    }
+
+    public static List<PlacementModifier> commonBerryPlacement(int amount, PlacementModifier placementModifier) {
+        return berryPlacement(CountPlacement.of(amount), placementModifier);
+    }
+
+    public static List<PlacementModifier> rareBerryPlacement(int rarity, PlacementModifier placementModifier) {
+        return berryPlacement(RarityFilter.onAverageOnceEvery(rarity), placementModifier);
+    }
 
     public static void register(IEventBus eventBus) {
         PLACED_VEGETATION_FEATURES.register(eventBus);
