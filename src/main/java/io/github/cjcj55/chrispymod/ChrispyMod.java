@@ -29,9 +29,9 @@ public class ChrispyMod {
         PaintingsInit.register(bus);
 
         ChrispyModConfiguredFeatures.register(bus);
-        //CMVegetationFeatures.register(bus);
+        CMVegetationFeatures.register(bus);
         ChrispyModPlacedFeatures.register(bus);
-        //CMVegetationPlacements.register(bus);
+        CMVegetationPlacements.register(bus);
 
         BlockEntityInit.register(bus);
         MenuTypesInit.register(bus);
