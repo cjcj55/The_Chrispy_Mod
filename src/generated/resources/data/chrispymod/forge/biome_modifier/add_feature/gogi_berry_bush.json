@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_lush",
+  "features": "chrispymod:patch_gogi_berry_common",
+  "step": "vegetal_decoration"
+}

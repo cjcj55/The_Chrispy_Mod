@@ -15,6 +15,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.JsonCodecProvider;
 import net.minecraftforge.common.world.BiomeModifier;
@@ -34,7 +35,40 @@ public class CMBiomeModifierProvider {
         Registry<PlacedFeature> placedFeatures = access.registryOrThrow(Registry.PLACED_FEATURE_REGISTRY);
         HashMap<ResourceLocation, BiomeModifier> modifiers = new HashMap<>();
 
-        addModifier(modifiers, "add_feature/strawberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, BiomeTags.IS_FOREST), of(placedFeatures, CMVegetationPlacements.PATCH_STRAWBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/strawberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_PLAINS), of(placedFeatures, CMVegetationPlacements.PATCH_STRAWBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/blueberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_PLAINS), of(placedFeatures, CMVegetationPlacements.PATCH_BLUEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/loganberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_DRY_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_LOGANBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/red_raspberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_HOT_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_RED_RASPBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/black_raspberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_LUSH), of(placedFeatures, CMVegetationPlacements.PATCH_BLACK_RASPBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/golden_raspberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_SWAMP), of(placedFeatures, CMVegetationPlacements.PATCH_GOLDEN_RASPBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/white_raspberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_COLD_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_WHITE_RASPBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/marionberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_MOUNTAIN), of(placedFeatures, CMVegetationPlacements.PATCH_MARIONBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/blackcurrant_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_COLD_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_BLACKCURRANT_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/redcurrant_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_COLD_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_REDCURRANT_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/huckleberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_COLD_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_HUCKLEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/wineberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, BiomeTags.IS_FOREST), of(placedFeatures, CMVegetationPlacements.PATCH_WINEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/elderberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_PLAINS), of(placedFeatures, CMVegetationPlacements.PATCH_ELDERBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/blackberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_HOT_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_BLACKBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/boysenberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_MOUNTAIN), of(placedFeatures, CMVegetationPlacements.PATCH_BOYSENBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/ground_cherry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_HOT_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_GROUND_CHERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/aronia_berry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_DRY_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_ARONIA_BERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/serviceberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_DRY_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_SERVICEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/wonderberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_LUSH), of(placedFeatures, CMVegetationPlacements.PATCH_WONDERBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/mulberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, BiomeTags.IS_FOREST), of(placedFeatures, CMVegetationPlacements.PATCH_MULBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/lingonberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_COLD_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_LINGONBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/cranberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_SWAMP), of(placedFeatures, CMVegetationPlacements.PATCH_CRANBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/dewberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, BiomeTags.IS_FOREST), of(placedFeatures, CMVegetationPlacements.PATCH_DEWBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/thimbleberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_PLAINS), of(placedFeatures, CMVegetationPlacements.PATCH_THIMBLEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/gooseberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_SWAMP), of(placedFeatures, CMVegetationPlacements.PATCH_GOOSEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/chokeberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_LUSH), of(placedFeatures, CMVegetationPlacements.PATCH_CHOKEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/olallieberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, BiomeTags.IS_FOREST), of(placedFeatures, CMVegetationPlacements.PATCH_OLALLIEBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/acerola_cherry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_HOT_OVERWORLD), of(placedFeatures, CMVegetationPlacements.PATCH_ACEROLA_CHERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/barberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_MOUNTAIN), of(placedFeatures, CMVegetationPlacements.PATCH_BARBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/bayberry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_SWAMP), of(placedFeatures, CMVegetationPlacements.PATCH_BAYBERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+        addModifier(modifiers, "add_feature/gogi_berry_bush", new AddFeaturesBiomeModifier(tag(biomeRegistry, Tags.Biomes.IS_LUSH), of(placedFeatures, CMVegetationPlacements.PATCH_GOGI_BERRY_COMMON), GenerationStep.Decoration.VEGETAL_DECORATION));
+
+
+
         //addModifier(modifiers, "add_feature/adzuki_sprouts", new AddFeaturesBiomeModifier(tag(biomeRegistry, NeapolitanBiomeTags.HAS_ADZUKI_SPROUTS), of(placedFeatures, NeapolitanPlacedFeatures.PATCH_ADZUKI_SPROUTS), GenerationStep.Decoration.VEGETAL_DECORATION));
         //addModifier(modifiers, "add_feature/vanilla_vine", new AddFeaturesBiomeModifier(tag(biomeRegistry, NeapolitanBiomeTags.HAS_VANILLA_VINE), of(placedFeatures, NeapolitanPlacedFeatures.PATCH_VANILLA_VINE), GenerationStep.Decoration.VEGETAL_DECORATION));
         //addModifier(modifiers, "add_feature/mint_pond", new AddFeaturesBiomeModifier(tag(biomeRegistry, NeapolitanBiomeTags.HAS_MINT_POND), of(placedFeatures, NeapolitanPlacedFeatures.MINT_POND), GenerationStep.Decoration.VEGETAL_DECORATION));

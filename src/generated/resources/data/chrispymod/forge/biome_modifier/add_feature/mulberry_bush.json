@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_forest",
+  "features": "chrispymod:patch_mulberry_common",
+  "step": "vegetal_decoration"
+}
