@@ -17,14 +17,15 @@ public class DataGenerators {
         boolean includeServer = event.includeServer();
 
         generator.addProvider(includeServer, new CMRecipes(generator));
-        generator.addProvider(includeServer, new CMLootTables(generator));
-        CMBlockTags blockTags = new CMBlockTags(generator, existingFileHelper);
+        //generator.addProvider(includeServer, new CMLootTables(generator));
+        generator.addProvider(includeServer, new CMLootTableProvider(generator));
+        CMBlockTagProvider blockTags = new CMBlockTagProvider(generator, existingFileHelper);
         generator.addProvider(includeServer, blockTags);
-        generator.addProvider(includeServer, new CMItemTags(generator, blockTags, existingFileHelper));
+        generator.addProvider(includeServer, new CMItemTagProvider(generator, blockTags, existingFileHelper));
         generator.addProvider(includeServer, CMBiomeModifierProvider.create(generator, existingFileHelper));
 
-        generator.addProvider(includeServer, new CMBlockStates(generator, existingFileHelper));
-        generator.addProvider(includeServer, new CMItemModels(generator, existingFileHelper));
+        generator.addProvider(includeServer, new CMBlockStateProvider(generator, existingFileHelper));
+        generator.addProvider(includeServer, new CMItemModelProvider(generator, existingFileHelper));
         generator.addProvider(includeServer, new CMLanguageProvider(generator, "en_us"));
     }
 }
