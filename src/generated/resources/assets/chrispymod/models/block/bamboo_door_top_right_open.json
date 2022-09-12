@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "chrispymod:block/bamboo_door_bottom",
+    "top": "chrispymod:block/bamboo_door_top"
+  }
+}

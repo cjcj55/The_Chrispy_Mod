@@ -11,6 +11,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -189,6 +190,8 @@ public class CMBlockStateProvider extends BlockStateProvider {
         simpleBlock(BlockInit.DEEPSLATE_YTTRIUM_ORE.get());
         simpleBlock(BlockInit.ZIRCONIUM_ORE.get());
         simpleBlock(BlockInit.DEEPSLATE_ZIRCONIUM_ORE.get());
+
+        doorBlock((DoorBlock) BlockInit.BAMBOO_DOOR.get(), new ResourceLocation(ChrispyMod.MODID, "block/bamboo_door_bottom"), new ResourceLocation(ChrispyMod.MODID, "block/bamboo_door_top"));
     }
 
     /*private void registerJamAndJellyMaker() {

@@ -348,7 +348,10 @@ public class CMItemModelProvider extends ItemModelProvider {
         simpleItem(ItemInit.RAW_YTTRIUM);
         simpleItem(ItemInit.ZIRCONIUM);
         simpleItem(ItemInit.RAW_ZIRCONIUM);
+
+        simpleBlockItem(BlockInit.BAMBOO_DOOR);
     }
+
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -364,5 +367,11 @@ public class CMItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder blockItem(RegistryObject<Block> block) {
         return withExistingParent(block.getId().getPath(),
                 new ResourceLocation(ChrispyMod.MODID, "block/" + block.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> block) {
+        return withExistingParent(block.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(ChrispyMod.MODID, "item/" + block.getId().getPath()));
     }
 }

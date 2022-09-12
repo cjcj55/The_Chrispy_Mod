@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-12T14:24:48.0516374	Item Models: chrispymod
+// 1.19.2	2022-09-12T18:11:15.348112	Item Models: chrispymod
 21b9a942c715a2fb9397fe42699614b349375f24 assets/chrispymod/models/item/acerola_cherry.json
 6c0de514437aaf855093f4aa43d0abd50ed6d76a assets/chrispymod/models/item/acerola_cherry_jam.json
 ecb4d9e43cc4629d5117bc17ef726784eb6bc5ed assets/chrispymod/models/item/aluminum.json
@@ -9,6 +9,7 @@ b5a76d7007c7ad1207639f471395694054116ce0 assets/chrispymod/models/item/aronia_be
 f2b8e4e6923f5d2f5c77123510cfca6cac32b53c assets/chrispymod/models/item/aronia_berry_jam.json
 15404639a8ddfcb9656caf972d4ca3da1aed7b10 assets/chrispymod/models/item/arsenic.json
 a314dbbaa477e7efd4548066c91597ecd0edecb5 assets/chrispymod/models/item/arsenic_ore.json
+9b0ecc09e42acadf8fc8bca612c41ec10a769d94 assets/chrispymod/models/item/bamboo_door.json
 884bde64f12acb31f531c18e1f8b1a41a670f51a assets/chrispymod/models/item/barberry.json
 22b6f32d1f3137d30605b357f3a96219c2d08ca7 assets/chrispymod/models/item/barberry_jam.json
 f40a8066fd7c4c745e14a50ea7f800ddc31cbb5c assets/chrispymod/models/item/barium.json
