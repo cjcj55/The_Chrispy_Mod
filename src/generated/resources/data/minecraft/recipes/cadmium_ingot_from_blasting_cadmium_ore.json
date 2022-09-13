@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "chrispymod:cadmium_ore"
+  },
+  "result": "chrispymod:cadmium"
+}
