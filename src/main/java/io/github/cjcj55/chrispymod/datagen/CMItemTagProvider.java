@@ -1,7 +1,6 @@
 package io.github.cjcj55.chrispymod.datagen;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
-import io.github.cjcj55.chrispymod.common.tags.ModBlockTags;
 import io.github.cjcj55.chrispymod.common.tags.ModItemTags;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import io.github.cjcj55.chrispymod.core.init.ItemInit;
@@ -243,7 +242,6 @@ public class CMItemTagProvider extends ItemTagsProvider {
                 .add(ItemInit.RAW_YTTERBIUM.get())
                 .add(ItemInit.RAW_YTTRIUM.get())
                 .add(ItemInit.RAW_ZIRCONIUM.get());
-
         tag(ModItemTags.RUBY_ORE)
                 .add(BlockInit.RUBY_ORE.get().asItem())
                 .add(BlockInit.DEEPSLATE_RUBY_ORE.get().asItem())
@@ -529,19 +527,6 @@ public class CMItemTagProvider extends ItemTagsProvider {
                 .add(ItemInit.BARBERRY_JAM.get())
                 .add(ItemInit.BAYBERRY_JAM.get())
                 .add(ItemInit.GOGI_BERRY_JAM.get());
-
-        /*tag(Tags.Items.ORES)
-                .add(Registration.MYSTERIOUS_ORE_OVERWORLD_ITEM.get())
-                .add(Registration.MYSTERIOUS_ORE_NETHER_ITEM.get())
-                .add(Registration.MYSTERIOUS_ORE_END_ITEM.get())
-                .add(Registration.MYSTERIOUS_ORE_DEEPSLATE_ITEM.get());
-        tag(Tags.Items.INGOTS)
-                .add(Registration.MYSTERIOUS_INGOT.get());
-        tag(Registration.MYSTERIOUS_ORE_ITEM)
-                .add(Registration.MYSTERIOUS_ORE_OVERWORLD_ITEM.get())
-                .add(Registration.MYSTERIOUS_ORE_NETHER_ITEM.get())
-                .add(Registration.MYSTERIOUS_ORE_END_ITEM.get())
-                .add(Registration.MYSTERIOUS_ORE_DEEPSLATE_ITEM.get());*/
     }
 
     @Override

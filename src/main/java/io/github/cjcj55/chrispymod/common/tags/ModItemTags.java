@@ -2,12 +2,9 @@ package io.github.cjcj55.chrispymod.common.tags;
 
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
 
 public class ModItemTags {
     public static final TagKey<Item> RUBY_ORE = ItemTags.create(new ResourceLocation(ChrispyMod.MODID, "ruby_ore"));
