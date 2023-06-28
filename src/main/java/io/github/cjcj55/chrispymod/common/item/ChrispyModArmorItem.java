@@ -8,6 +8,6 @@ import net.minecraft.world.item.Item;
 
 public class ChrispyModArmorItem extends ArmorItem {
     public ChrispyModArmorItem(ArmorMaterial material, EquipmentSlot slot) {
-        super(material, slot, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(material, slot, new Item.Properties());
     }
 }

@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class HellfireItem extends Item {
     public HellfireItem() {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(new Item.Properties());
     }
 
     @Override

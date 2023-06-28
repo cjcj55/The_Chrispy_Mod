@@ -21,7 +21,7 @@ import net.minecraft.world.phys.Vec3;
 
 public class LightningWandItem extends Item {
     public LightningWandItem() {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB).durability(64));
+        super(new Item.Properties().durability(64));
     }
 
     @Override

@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class FlameWandItem extends Item {
     public FlameWandItem() {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB).durability(64));
+        super(new Item.Properties().durability(64));
     }
 
     @Override

@@ -5,10 +5,10 @@ import net.minecraft.world.item.Item;
 
 public class ChrispyModItem extends Item {
     public ChrispyModItem() {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(new Item.Properties());
     }
 
     public ChrispyModItem(Properties properties) {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(new Item.Properties());
     }
 }

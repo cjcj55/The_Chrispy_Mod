@@ -8,10 +8,10 @@ import net.minecraft.world.item.Tier;
 
 public class ChrispyModPickaxeItem extends PickaxeItem {
     public ChrispyModPickaxeItem(Tier tier, int attackDamageModifier, float attackSpeedModifier) {
-        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties());
     }
 
     public ChrispyModPickaxeItem(Tier tier, int attackDamageModifier, float attackSpeedModifier, Rarity rarity) {
-        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB).rarity(rarity));
+        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties().rarity(rarity));
     }
 }

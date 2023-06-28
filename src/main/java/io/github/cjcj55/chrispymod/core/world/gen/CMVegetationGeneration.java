@@ -1,16 +1,5 @@
 package io.github.cjcj55.chrispymod.core.world.gen;
 
-import io.github.cjcj55.chrispymod.core.world.feature.CMVegetationPlacements;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-
-import java.util.List;
-import java.util.Set;
-
 public class CMVegetationGeneration {
     /*public static void generateBerries(final BiomeLoadingEvent event) {
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());

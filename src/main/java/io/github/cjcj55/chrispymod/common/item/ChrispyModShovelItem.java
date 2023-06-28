@@ -7,6 +7,6 @@ import net.minecraft.world.item.Tier;
 
 public class ChrispyModShovelItem extends ShovelItem {
     public ChrispyModShovelItem(Tier tier, float attackDamageModifier, float attackSpeedModifier) {
-        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties());
     }
 }

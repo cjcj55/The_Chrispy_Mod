@@ -7,6 +7,6 @@ import net.minecraft.world.item.Tier;
 
 public class ChrispyModHoeItem extends HoeItem {
     public ChrispyModHoeItem(Tier tier, int attackDamageModifier, float attackSpeedModifier) {
-        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties());
     }
 }

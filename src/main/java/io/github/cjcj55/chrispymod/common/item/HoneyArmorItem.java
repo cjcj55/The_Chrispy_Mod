@@ -22,7 +22,7 @@ public class HoneyArmorItem extends ArmorItem {
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ArmorMaterials.HONEY, new MobEffectInstance(MobEffects.REGENERATION, 40, 0)).build();
 
     public HoneyArmorItem(ArmorMaterial material, EquipmentSlot slot) {
-        super(material, slot, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(material, slot, new Item.Properties());
     }
 
     @Override

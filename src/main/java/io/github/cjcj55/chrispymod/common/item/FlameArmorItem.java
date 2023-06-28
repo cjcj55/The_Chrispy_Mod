@@ -19,7 +19,7 @@ public class FlameArmorItem extends ArmorItem {
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ArmorMaterials.FLAME, new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20, 0)).build();
 
     public FlameArmorItem(ArmorMaterial material, EquipmentSlot slot) {
-        super(material, slot, new Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(material, slot, new Properties());
     }
 
     @Override

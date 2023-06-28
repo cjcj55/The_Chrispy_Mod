@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class EdibleExperienceItem extends ChrispyModItem {
     public EdibleExperienceItem() {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(new Item.Properties());
     }
 
     @Override

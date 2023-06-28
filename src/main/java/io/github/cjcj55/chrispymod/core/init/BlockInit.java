@@ -3,6 +3,7 @@ package io.github.cjcj55.chrispymod.core.init;
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.common.block.*;
 import io.github.cjcj55.chrispymod.common.itemgroups.ChrispyModItemGroups;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -222,7 +223,7 @@ public class BlockInit {
     public static final RegistryObject<Block> BAMBOO_STAIRS = registerBlock("bamboo_stairs", () -> new StairBlock(() -> BAMBOO_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get())));
     public static final RegistryObject<Block> BAMBOO_SLAB = registerBlock("bamboo_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get())));
     public static final RegistryObject<Block> BAMBOO_WALL = registerBlock("bamboo_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get())));
-    public static final RegistryObject<Block> BAMBOO_DOOR = registerBlock("bamboo_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get()).noOcclusion()));
+    public static final RegistryObject<Block> BAMBOO_DOOR = registerBlock("bamboo_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(BAMBOO_BLOCK.get()).noOcclusion(), SoundEvents.BAMBOO_WOOD_DOOR_CLOSE, SoundEvents.BAMBOO_WOOD_DOOR_OPEN));
 
     public static final RegistryObject<Block> LAVA_SPONGE = registerBlock("lava_sponge", () -> new LavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BLACK).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().fireResistant());
     public static final RegistryObject<Block> WET_LAVA_SPONGE = registerBlock("wet_lava_sponge", () -> new WetLavaSpongeBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.FIRE).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().fireResistant());
@@ -280,7 +281,7 @@ public class BlockInit {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_BLOCKS_TAB)));
+        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
 

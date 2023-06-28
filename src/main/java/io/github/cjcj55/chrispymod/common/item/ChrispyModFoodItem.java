@@ -6,6 +6,6 @@ import net.minecraft.world.item.Item;
 
 public class ChrispyModFoodItem extends Item {
     public ChrispyModFoodItem(FoodProperties chrispyModFood) {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB).food(chrispyModFood));
+        super(new Item.Properties().food(chrispyModFood));
     }
 }

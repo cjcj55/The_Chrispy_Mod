@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 public class BerryJamItem extends Item {
     public BerryJamItem(FoodProperties chrispyModFood) {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB).food(chrispyModFood));
+        super(new Item.Properties().food(chrispyModFood));
     }
 
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {

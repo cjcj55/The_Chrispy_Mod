@@ -10,7 +10,7 @@ import net.minecraft.world.item.Tier;
 public class FlameSwordItem extends SwordItem {
 
     public FlameSwordItem(Tier tier, int attackDamageModifier, float attackSpeedModifier) {
-        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(tier, attackDamageModifier, attackSpeedModifier, new Item.Properties());
     }
 
     @Override

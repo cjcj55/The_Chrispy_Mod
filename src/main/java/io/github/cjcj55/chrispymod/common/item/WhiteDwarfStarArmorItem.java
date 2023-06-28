@@ -20,7 +20,7 @@ public class WhiteDwarfStarArmorItem extends ArmorItem {
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ArmorMaterials.WHITE_DWARF_STAR, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1)).build();
 
     public WhiteDwarfStarArmorItem(ArmorMaterial material, EquipmentSlot slot) {
-        super(material, slot, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(material, slot, new Item.Properties());
     }
 
     @Override

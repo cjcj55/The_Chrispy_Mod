@@ -5,12 +5,23 @@ import com.google.common.base.Suppliers;
 import io.github.cjcj55.chrispymod.ChrispyMod;
 import io.github.cjcj55.chrispymod.core.init.BlockInit;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -18,96 +29,93 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.List;
 
 public class ChrispyModConfiguredFeatures {
-    public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, ChrispyMod.MODID);
-
-// Overworld
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_RUBY_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.COBALT_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_COBALT_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_OPAL_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.OPAL_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_OPAL_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_TANGERINE_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.TANGERINE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_TANGERINE_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_COBALT_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.COBALT_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_COBALT_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_PARYTH_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.PARYTH_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_PARYTH_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_WHITE_DWARF_STAR_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.WHITE_DWARF_STAR_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_WHITE_DWARF_STAR_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_NATURAL_ESSENCE_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.NATURAL_ESSENCE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_NATURAL_ESSENCE_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ORE_EXPERIENCE_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.EXPERIENCE_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_EXPERIENCE_ORE.get().defaultBlockState())));
-
-// Nether
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_ORE_RUBY_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.RUBY_ORE_NETHER.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_ORE_FLAME_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.FLAME_ORE_NETHER.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_ORE_HELLFIRE_TARGET_LIST = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, BlockInit.HELLFIRE_ORE_NETHER.get().defaultBlockState())));
-    // For END, instead of OreFeatures.NETHER_ORE_REPLACEABLES do:  new BlockMatchTest(Blocks.END_STONE)
+    private static final TagMatchTest STONE_ORES = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+    private static final TagMatchTest DEEPSLATE_ORES = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+    private static final TagMatchTest NETHER_ORES = new TagMatchTest(BlockTags.BASE_STONE_NETHER);
+    private static final BlockMatchTest END_ORES = new BlockMatchTest(Blocks.END_STONE);
 
 
+// Overworld Ores
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_KEY = registerKey("overworld_ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_OPAL_ORE_KEY = registerKey("overworld_opal_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TANGERINE_ORE_KEY = registerKey("overworld_tangerine_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_COBALT_ORE_KEY = registerKey("overworld_cobalt_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_PARYTH_ORE_KEY = registerKey("overworld_paryth_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WHITE_DWARF_STAR_ORE_KEY = registerKey("overworld_white_dwarf_star_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NATURAL_ESSENCE_ORE_KEY = registerKey("overworld_natural_essence_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_EXPERIENCE_ORE_KEY = registerKey("overworld_experience_ore");
+// Nether Ores
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_RUBY_ORE_KEY = registerKey("nether_ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_FLAME_ORE_KEY = registerKey("nether_flame_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_HELLFIRE_ORE_KEY = registerKey("nether_hellfire_ore");
+// End Ores
 
 
+// Overworld Ores
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_RUBY_ORES = Suppliers.memoize(() -> List.of(
+        OreConfiguration.target(STONE_ORES, BlockInit.RUBY_ORE.get().defaultBlockState()),
+        OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_RUBY_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_OPAL_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(STONE_ORES, BlockInit.OPAL_ORE.get().defaultBlockState()),
+            OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_OPAL_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_TANGERINE_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(STONE_ORES, BlockInit.TANGERINE_ORE.get().defaultBlockState()),
+            OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_TANGERINE_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_COBALT_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(STONE_ORES, BlockInit.COBALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_COBALT_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PARYTH_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(STONE_ORES, BlockInit.PARYTH_ORE.get().defaultBlockState()),
+            OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_PARYTH_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_WHITE_DWARF_STAR_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(STONE_ORES, BlockInit.WHITE_DWARF_STAR_ORE.get().defaultBlockState()),
+            OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_WHITE_DWARF_STAR_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_NATURAL_ESSENCE_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(STONE_ORES, BlockInit.NATURAL_ESSENCE_ORE.get().defaultBlockState()),
+            OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_NATURAL_ESSENCE_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_EXPERIENCE_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(STONE_ORES, BlockInit.EXPERIENCE_ORE.get().defaultBlockState()),
+            OreConfiguration.target(DEEPSLATE_ORES, BlockInit.DEEPSLATE_EXPERIENCE_ORE.get().defaultBlockState())));
+// Nether Ores
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_RUBY_ORES = Suppliers.memoize(() -> List.of(
+        OreConfiguration.target(NETHER_ORES, BlockInit.RUBY_ORE_NETHER.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_FLAME_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(NETHER_ORES, BlockInit.FLAME_ORE_NETHER.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_HELLFIRE_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(NETHER_ORES, BlockInit.HELLFIRE_ORE_NETHER.get().defaultBlockState())));
+// End Ores
 
+    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
+        register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_RUBY_ORES.get(), 5, 0.4F));
+//        register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_RUBY_ORES.get(), 12, 0.6F));
+//        register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_RUBY_ORES.get(), 10, 1.0F));
+        register(context, OVERWORLD_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_OPAL_ORES.get(), 9));
+//        register(context, OVERWORLD_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_OPAL_ORES.get(), 4));
+        register(context, OVERWORLD_TANGERINE_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_TANGERINE_ORES.get(), 8));
+//        register(context, OVERWORLD_TANGERINE_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_TANGERINE_ORES.get(), 4));
+        register(context, OVERWORLD_COBALT_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_COBALT_ORES.get(), 3, 0.5F));
+//        register(context, OVERWORLD_COBALT_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_COBALT_ORES.get(), 10, 0.7F));
+//        register(context, OVERWORLD_COBALT_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_COBALT_ORES.get(), 7, 1.0F));
+        register(context, OVERWORLD_PARYTH_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_PARYTH_ORES.get(), 8));
+//        register(context, OVERWORLD_PARYTH_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_PARYTH_ORES.get(), 4));
+        register(context, OVERWORLD_WHITE_DWARF_STAR_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_WHITE_DWARF_STAR_ORES.get(), 4, 0.5F));
+//        register(context, OVERWORLD_WHITE_DWARF_STAR_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_WHITE_DWARF_STAR_ORES.get(), 6, 1.0F));
+        register(context, OVERWORLD_NATURAL_ESSENCE_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_NATURAL_ESSENCE_ORES.get(), 5, 1.0F));
+        register(context, OVERWORLD_EXPERIENCE_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_EXPERIENCE_ORES.get(), 4, 0.1F));
+//        register(context, OVERWORLD_EXPERIENCE_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_EXPERIENCE_ORES.get(), 5, 1.0F));
 
+        register(context, NETHER_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(NETHER_RUBY_ORES.get(), 9));
+        register(context, NETHER_FLAME_ORE_KEY, Feature.ORE, new OreConfiguration(NETHER_FLAME_ORES.get(), 9));
+        register(context, NETHER_HELLFIRE_ORE_KEY, Feature.ORE, new OreConfiguration(NETHER_HELLFIRE_ORES.get(), 9));
+    }
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(ChrispyMod.MODID, name));
+    }
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_RUBY_SMALL = CONFIGURED_FEATURES.register("overworld_ore_ruby_small",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_RUBY_TARGET_LIST.get(), 5, 0.4F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_RUBY_LARGE = CONFIGURED_FEATURES.register("overworld_ore_ruby_large",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_RUBY_TARGET_LIST.get(), 12, 0.6F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_RUBY_HIDDEN = CONFIGURED_FEATURES.register("overworld_ore_ruby_hidden",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_RUBY_TARGET_LIST.get(), 10, 1.0F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_OPAL = CONFIGURED_FEATURES.register("overworld_ore_opal",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_OPAL_TARGET_LIST.get(), 9)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_OPAL_SMALL = CONFIGURED_FEATURES.register("overworld_ore_opal_small",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_OPAL_TARGET_LIST.get(), 4)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_TANGERINE = CONFIGURED_FEATURES.register("overworld_ore_tangerine",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_TANGERINE_TARGET_LIST.get(), 8)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_TANGERINE_SMALL = CONFIGURED_FEATURES.register("overworld_ore_tangerine_small",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_TANGERINE_TARGET_LIST.get(), 4)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_COBALT_SMALL = CONFIGURED_FEATURES.register("overworld_ore_cobalt_small",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_COBALT_TARGET_LIST.get(), 3, 0.5F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_COBALT_LARGE = CONFIGURED_FEATURES.register("overworld_ore_cobalt_large",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_COBALT_TARGET_LIST.get(), 10, 0.7F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_COBALT_HIDDEN = CONFIGURED_FEATURES.register("overworld_ore_cobalt_hidden",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_COBALT_TARGET_LIST.get(), 7, 1.0F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_PARYTH = CONFIGURED_FEATURES.register("overworld_ore_paryth",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_PARYTH_TARGET_LIST.get(), 8)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_PARYTH_SMALL = CONFIGURED_FEATURES.register("overworld_ore_paryth_small",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_PARYTH_TARGET_LIST.get(), 4)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_WHITE_DWARF_STAR_SMALL = CONFIGURED_FEATURES.register("overworld_ore_white_dwarf_star_small",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_WHITE_DWARF_STAR_TARGET_LIST.get(), 4, 0.5F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_WHITE_DWARF_STAR_HIDDEN = CONFIGURED_FEATURES.register("overworld_ore_white_dwarf_star_hidden",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_WHITE_DWARF_STAR_TARGET_LIST.get(), 6, 1.0F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_NATURAL_ESSENCE_HIDDEN = CONFIGURED_FEATURES.register("overworld_ore_natural_essence_hidden",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_NATURAL_ESSENCE_TARGET_LIST.get(), 5, 1.0F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_EXPERIENCE = CONFIGURED_FEATURES.register("overworld_ore_experience",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_EXPERIENCE_TARGET_LIST.get(), 4, 0.1F)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_ORE_EXPERIENCE_HIDDEN = CONFIGURED_FEATURES.register("overworld_ore_experience_hidden",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ORE_EXPERIENCE_TARGET_LIST.get(), 5, 1.0F)));
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> NETHER_ORE_RUBY = CONFIGURED_FEATURES.register("nether_ore_ruby",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NETHER_ORE_RUBY_TARGET_LIST.get(), 9)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> NETHER_ORE_FLAME = CONFIGURED_FEATURES.register("nether_ore_flame",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NETHER_ORE_FLAME_TARGET_LIST.get(), 9)));
-    public static final RegistryObject<ConfiguredFeature<?, ?>> NETHER_ORE_HELLFIRE = CONFIGURED_FEATURES.register("nether_ore_hellfire",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NETHER_ORE_HELLFIRE_TARGET_LIST.get(), 9)));
-
-    public static void register(IEventBus eventBus) {
-        CONFIGURED_FEATURES.register(eventBus);
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
+        context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
 }

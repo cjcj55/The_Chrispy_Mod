@@ -6,7 +6,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class WhiteDwarfStarItem extends Item {
     public WhiteDwarfStarItem() {
-        super(new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB));
+        super(new Item.Properties());
     }
 
     @Override

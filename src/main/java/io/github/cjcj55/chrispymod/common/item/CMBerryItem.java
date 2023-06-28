@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 
 public class CMBerryItem extends ItemNameBlockItem {
     public CMBerryItem(Block block, FoodProperties foodProperties) {
-        super(block, new Item.Properties().tab(ChrispyModItemGroups.CHRISPY_ITEMS_TAB).food(foodProperties));
+        super(block, new Item.Properties().food(foodProperties));
 
     }
 }
