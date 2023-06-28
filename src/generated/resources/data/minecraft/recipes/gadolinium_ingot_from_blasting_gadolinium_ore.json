@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "cookingtime": 100,
-  "experience": 1.0,
-  "ingredient": {
-    "item": "chrispymod:gadolinium_ore"
-  },
-  "result": "chrispymod:gadolinium"
-}

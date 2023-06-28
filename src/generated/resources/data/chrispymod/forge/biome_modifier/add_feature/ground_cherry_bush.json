@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#forge:is_hot/overworld",
-  "features": "chrispymod:patch_ground_cherry_common",
-  "step": "vegetal_decoration"
-}
