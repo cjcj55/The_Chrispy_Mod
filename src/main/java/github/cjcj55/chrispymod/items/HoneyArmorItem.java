@@ -1,7 +1,7 @@
 package github.cjcj55.chrispymod.items;
 
 import com.google.common.collect.ImmutableMap;
-import github.cjcj55.chrispymod.items.materials.ArmorMaterials;
+import github.cjcj55.chrispymod.items.materials.CMArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class HoneyArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ArmorMaterials.HONEY, new MobEffectInstance(MobEffects.REGENERATION, 40, 0)).build();
+            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(CMArmorMaterials.HONEY, new MobEffectInstance(MobEffects.REGENERATION, 40, 0)).build();
 
     public HoneyArmorItem(ArmorMaterial material, Type type) {
         super(material, type, new Item.Properties());

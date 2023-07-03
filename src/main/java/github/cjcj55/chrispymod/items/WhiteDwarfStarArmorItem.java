@@ -1,10 +1,9 @@
 package github.cjcj55.chrispymod.items;
 
 import com.google.common.collect.ImmutableMap;
-import github.cjcj55.chrispymod.items.materials.ArmorMaterials;
+import github.cjcj55.chrispymod.items.materials.CMArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -16,7 +15,7 @@ import java.util.Map;
 
 public class WhiteDwarfStarArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ArmorMaterials.WHITE_DWARF_STAR, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1)).build();
+            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(CMArmorMaterials.WHITE_DWARF_STAR, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1)).build();
 
     public WhiteDwarfStarArmorItem(ArmorMaterial material, Type type) {
         super(material, type, new Item.Properties());
