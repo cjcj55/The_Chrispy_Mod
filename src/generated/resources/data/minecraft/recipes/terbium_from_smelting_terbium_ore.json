@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "terbium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:terbium_ore"
+  },
+  "result": "chrispymod:terbium"
+}

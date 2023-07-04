@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "molybdenum_smeltable",
+  "ingredient": {
+    "item": "chrispymod:molybdenum_ore"
+  },
+  "result": "chrispymod:molybdenum"
+}

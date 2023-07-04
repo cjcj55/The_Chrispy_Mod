@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "group": "gallium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:raw_gallium"
+  },
+  "result": "chrispymod:gallium"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "antimony_smeltable",
+  "ingredient": {
+    "item": "chrispymod:antimony_ore"
+  },
+  "result": "chrispymod:antimony"
+}

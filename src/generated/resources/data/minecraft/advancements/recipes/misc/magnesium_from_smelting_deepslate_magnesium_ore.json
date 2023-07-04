@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_magnesium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:deepslate_magnesium_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:magnesium_from_smelting_deepslate_magnesium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_deepslate_magnesium_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:magnesium_from_smelting_deepslate_magnesium_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

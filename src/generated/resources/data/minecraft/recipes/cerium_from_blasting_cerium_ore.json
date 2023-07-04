@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "group": "cerium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:cerium_ore"
+  },
+  "result": "chrispymod:cerium"
+}

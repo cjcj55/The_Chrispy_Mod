@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "tellurium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:raw_tellurium"
+  },
+  "result": "chrispymod:tellurium"
+}

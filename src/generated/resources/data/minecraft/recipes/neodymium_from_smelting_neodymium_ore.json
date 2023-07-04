@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "neodymium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:neodymium_ore"
+  },
+  "result": "chrispymod:neodymium"
+}

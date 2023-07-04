@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "group": "calcium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:calcium_ore"
+  },
+  "result": "chrispymod:calcium"
+}

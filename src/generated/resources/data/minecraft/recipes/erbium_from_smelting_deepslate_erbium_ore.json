@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "erbium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:deepslate_erbium_ore"
+  },
+  "result": "chrispymod:erbium"
+}

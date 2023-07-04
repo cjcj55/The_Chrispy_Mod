@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "group": "palladium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:palladium_ore"
+  },
+  "result": "chrispymod:palladium"
+}

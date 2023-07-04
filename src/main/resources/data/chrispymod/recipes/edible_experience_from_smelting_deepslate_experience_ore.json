@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": { "item": "chrispymod:deepslate_experience_ore" },
+	"result": "chrispymod:edible_experience",
+	"experience": 1.0,
+	"cookingtime": 200,
+	"count": 1
+}

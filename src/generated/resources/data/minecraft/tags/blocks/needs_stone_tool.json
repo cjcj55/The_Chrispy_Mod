@@ -1,0 +1,20 @@
+{
+  "values": [
+    "chrispymod:experience_ore",
+    "chrispymod:deepslate_experience_ore",
+    "chrispymod:opal_block",
+    "chrispymod:opal_ore",
+    "chrispymod:deepslate_opal_ore",
+    "chrispymod:skinny_slanted_bricks",
+    "chrispymod:slanted_bricks",
+    "chrispymod:skinny_bricks",
+    "chrispymod:circular_bricks",
+    "chrispymod:cracked_bricks",
+    "chrispymod:encased_bricks",
+    "chrispymod:mosaic_bricks",
+    "chrispymod:ornate_bricks",
+    "chrispymod:road_bricks",
+    "chrispymod:solid_bricks",
+    "chrispymod:weaver_bricks"
+  ]
+}

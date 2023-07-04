@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_mercury": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:raw_mercury"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mercury_from_smelting_raw_mercury"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_mercury",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mercury_from_smelting_raw_mercury"
+    ]
+  },
+  "sends_telemetry_event": false
+}

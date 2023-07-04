@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "chrispymod:block/berry_bushes/wonderberry_bush/stage_2"
+  }
+}

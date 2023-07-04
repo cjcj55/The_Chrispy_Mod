@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "north": "chrispymod:block/jam_and_jelly_maker_front_on",
+    "south": "chrispymod:block/jam_and_jelly_maker_side",
+    "east": "chrispymod:block/jam_and_jelly_maker_side",
+    "west": "chrispymod:block/jam_and_jelly_maker_side_handle",
+    "up": "chrispymod:block/jam_and_jelly_maker_top",
+    "down": "chrispymod:block/jam_and_jelly_maker_bottom"
+  }
+}

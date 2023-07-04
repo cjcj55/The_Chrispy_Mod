@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:blasting",
+	"ingredient": { "item": "chrispymod:natural_essence_ore" },
+	"result": "chrispymod:natural_essence",
+	"experience": 1.0,
+	"cookingtime": 100,
+	"count": 1
+}

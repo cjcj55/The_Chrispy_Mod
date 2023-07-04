@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "sodium_smeltable",
+  "ingredient": {
+    "item": "chrispymod:deepslate_sodium_ore"
+  },
+  "result": "chrispymod:sodium"
+}

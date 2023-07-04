@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "chrispymod:block/berry_bushes/chokeberry_bush_0"
+    },
+    "age=1": {
+      "model": "chrispymod:block/berry_bushes/chokeberry_bush_1"
+    },
+    "age=2": {
+      "model": "chrispymod:block/berry_bushes/chokeberry_bush_2"
+    },
+    "age=3": {
+      "model": "chrispymod:block/berry_bushes/chokeberry_bush_3"
+    }
+  }
+}
