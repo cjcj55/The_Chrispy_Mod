@@ -5,7 +5,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -17,8 +16,8 @@ public class CMCreativeTabs {
             () -> CreativeModeTab.builder()
                     // TODO:  Make creative tab translatable
 //                    .title(Component.translatable("itemGroup.farmersdelight"))
-                    .title(Component.literal("Chrispy Mod"))
-                    .icon(() -> new ItemStack(CMItems.BLACK_OPAL.get()))
+                    .title(Component.literal("itemGroup.chrispymod"))
+                    .icon(() -> new ItemStack(CMItems.BLUE_EMERALD.get()))
                     .build());
 
     public static void register(IEventBus eventBus) {

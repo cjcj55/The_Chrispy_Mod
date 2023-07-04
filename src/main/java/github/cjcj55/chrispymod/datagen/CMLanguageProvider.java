@@ -588,6 +588,8 @@ public class CMLanguageProvider extends LanguageProvider {
         add(CMBlocks.WHITE_REDSTONE_LAMP.get(), "White Redstone Lamp");
         add(CMBlocks.YELLOW_REDSTONE_LAMP.get(), "Yellow Redstone Lamp");
 
+        add("itemGroup.chrispymod", "Chrispy Mod Item Group");
+
 //        add(CMBlocks.ALLOY_FURNACE.get(), "Alloy Furnace");
 //        add("container.chrispymod.alloy_furnace", "Alloy Furnace");
 //        add(CMBlocks.JAM_AND_JELLY_MAKER.get(), "Jam and Jelly Maker");

@@ -36,7 +36,7 @@ public class ChrispyMod {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == CMCreativeTabs.CHRISPY_MOD_TAB.get()) {
-            event.accept(CMItems.BLACK_OPAL);
+//            event.accept(CMItems.BLACK_OPAL);
         }
     }
 }
