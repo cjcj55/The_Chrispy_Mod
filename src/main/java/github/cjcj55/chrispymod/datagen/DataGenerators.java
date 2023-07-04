@@ -19,12 +19,15 @@ public class DataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        boolean includeServer = event.includeServer();
+        boolean includeClient = event.includeClient();
 
-        generator.addProvider(event.includeServer(), new CMRecipeProvider(packOutput));
-        generator.addProvider(event.includeServer(), CMLootTableProvider.create(packOutput));
-        generator.addProvider(event.includeServer(), new CMBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(includeServer, new CMRecipeProvider(packOutput));
+        generator.addProvider(includeServer, CMLootTableProvider.create(packOutput));
+        generator.addProvider(includeServer, new CMBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
 
-        generator.addProvider(event.includeClient(), new CMItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new CMBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(includeClient, new CMItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(includeClient, new CMBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(includeServer, new CMLanguageProvider(packOutput, "en_us"));
     }
 }
