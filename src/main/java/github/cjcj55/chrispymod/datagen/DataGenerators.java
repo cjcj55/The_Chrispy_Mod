@@ -29,5 +29,7 @@ public class DataGenerators {
         generator.addProvider(includeClient, new CMItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(includeClient, new CMBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(includeServer, new CMLanguageProvider(packOutput, "en_us"));
+
+        generator.addProvider(event.includeServer(), new CMWorldgenProvider(packOutput, lookupProvider));
     }
 }
