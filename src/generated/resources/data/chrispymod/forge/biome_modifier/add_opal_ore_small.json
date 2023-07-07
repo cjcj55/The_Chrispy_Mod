@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "chrispymod:natural_essence_ore_placed",
+  "features": "chrispymod:opal_ore_small_placed",
   "step": "underground_ores"
 }

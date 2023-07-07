@@ -1,12 +1,12 @@
 {
   "type": "minecraft:ore",
   "config": {
-    "discard_chance_on_air_exposure": 0.0,
-    "size": 6,
+    "discard_chance_on_air_exposure": 1.0,
+    "size": 7,
     "targets": [
       {
         "state": {
-          "Name": "chrispymod:ruby_ore"
+          "Name": "chrispymod:cobalt_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "chrispymod:deepslate_ruby_ore"
+          "Name": "chrispymod:deepslate_cobalt_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

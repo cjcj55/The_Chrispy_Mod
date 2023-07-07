@@ -1,9 +1,9 @@
 {
-  "feature": "chrispymod:opal_ore",
+  "feature": "chrispymod:cobalt_ore_hidden",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 30
+      "count": 3
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:trapezoid",
         "max_inclusive": {
-          "absolute": 384
+          "above_bottom": 80
         },
         "min_inclusive": {
-          "absolute": 80
+          "above_bottom": -80
         }
       }
     },

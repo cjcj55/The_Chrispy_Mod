@@ -1,12 +1,12 @@
 {
   "type": "minecraft:ore",
   "config": {
-    "discard_chance_on_air_exposure": 0.0,
-    "size": 3,
+    "discard_chance_on_air_exposure": 1.0,
+    "size": 5,
     "targets": [
       {
         "state": {
-          "Name": "chrispymod:natural_essence_ore"
+          "Name": "chrispymod:experience_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "chrispymod:deepslate_natural_essence_ore"
+          "Name": "chrispymod:deepslate_experience_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

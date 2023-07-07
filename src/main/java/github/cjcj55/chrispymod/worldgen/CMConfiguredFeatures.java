@@ -20,14 +20,23 @@ import java.util.List;
 
 public class CMConfiguredFeatures {
     // Overworld Ores
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_KEY = registerKey("ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_SMALL_KEY = registerKey("ruby_ore_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_LARGE_KEY = registerKey("ruby_ore_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_HIDDEN_KEY = registerKey("ruby_ore_hidden");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_OPAL_ORE_KEY = registerKey("opal_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_OPAL_ORE_SMALL_KEY = registerKey("opal_ore_small");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TANGERINE_ORE_KEY = registerKey("tangerine_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_COBALT_ORE_KEY = registerKey("cobalt_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TANGERINE_ORE_SMALL_KEY = registerKey("tangerine_ore_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_COBALT_ORE_SMALL_KEY = registerKey("cobalt_ore_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_COBALT_ORE_LARGE_KEY = registerKey("cobalt_ore_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_COBALT_ORE_HIDDEN_KEY = registerKey("cobalt_ore_hidden");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_PARYTH_ORE_KEY = registerKey("paryth_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WHITE_DWARF_STAR_ORE_KEY = registerKey("white_dwarf_star_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NATURAL_ESSENCE_ORE_KEY = registerKey("natural_essence_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_PARYTH_ORE_SMALL_KEY = registerKey("paryth_ore_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WHITE_DWARF_STAR_ORE_SMALL_KEY = registerKey("white_dwarf_star_ore_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WHITE_DWARF_STAR_ORE_HIDDEN_KEY = registerKey("white_dwarf_star_ore_hidden");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NATURAL_ESSENCE_ORE_HIDDEN_KEY = registerKey("natural_essence_ore_hidden");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_EXPERIENCE_ORE_KEY = registerKey("experience_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_EXPERIENCE_ORE_HIDDEN_KEY = registerKey("experience_ore_hidden");
     // Nether Ores
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_RUBY_ORE_KEY = registerKey("nether_ruby_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_FLAME_ORE_KEY = registerKey("nether_flame_ore");
@@ -51,18 +60,27 @@ public class CMConfiguredFeatures {
 
         // NUMBER IS VEIN SIZE
         // Overworld Ores
-        register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 6));
-        register(context, OVERWORLD_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(overworldOpalOres, 8));
-        register(context, OVERWORLD_TANGERINE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTangerineOres, 9));
-        register(context, OVERWORLD_COBALT_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCobaltOres, 5));
+        register(context, OVERWORLD_RUBY_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 5, 0.4f));
+        register(context, OVERWORLD_RUBY_ORE_LARGE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 12, 0.6f));
+        register(context, OVERWORLD_RUBY_ORE_HIDDEN_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 10, 1.0f));
+        register(context, OVERWORLD_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(overworldOpalOres, 9));
+        register(context, OVERWORLD_OPAL_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(overworldOpalOres, 4));
+        register(context, OVERWORLD_TANGERINE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTangerineOres, 8));
+        register(context, OVERWORLD_TANGERINE_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(overworldTangerineOres, 4));
+        register(context, OVERWORLD_COBALT_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(overworldCobaltOres, 3, 0.5f));
+        register(context, OVERWORLD_COBALT_ORE_LARGE_KEY, Feature.ORE, new OreConfiguration(overworldCobaltOres, 10, 0.7f));
+        register(context, OVERWORLD_COBALT_ORE_HIDDEN_KEY, Feature.ORE, new OreConfiguration(overworldCobaltOres, 7, 1.0f));
         register(context, OVERWORLD_PARYTH_ORE_KEY, Feature.ORE, new OreConfiguration(overworldParythOres, 8));
-        register(context, OVERWORLD_WHITE_DWARF_STAR_ORE_KEY, Feature.ORE, new OreConfiguration(overworldWhiteDwarfStarOres, 4));
-        register(context, OVERWORLD_NATURAL_ESSENCE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldNaturalEssenceOres, 3));
-        register(context, OVERWORLD_EXPERIENCE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldExperienceOres, 4));
+        register(context, OVERWORLD_PARYTH_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(overworldParythOres, 4));
+        register(context, OVERWORLD_WHITE_DWARF_STAR_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(overworldWhiteDwarfStarOres, 4, 0.5f));
+        register(context, OVERWORLD_WHITE_DWARF_STAR_ORE_HIDDEN_KEY, Feature.ORE, new OreConfiguration(overworldWhiteDwarfStarOres, 6, 1.0f));
+        register(context, OVERWORLD_NATURAL_ESSENCE_ORE_HIDDEN_KEY, Feature.SCATTERED_ORE, new OreConfiguration(overworldNaturalEssenceOres, 5, 1.0f));
+        register(context, OVERWORLD_EXPERIENCE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldExperienceOres, 4, 0.1f));
+        register(context, OVERWORLD_EXPERIENCE_ORE_HIDDEN_KEY, Feature.ORE, new OreConfiguration(overworldExperienceOres, 5, 1.0f));
         // Nether Ores
-        register(context, NETHER_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(netherReplacables, CMBlocks.RUBY_ORE_NETHER.get().defaultBlockState(), 6));
-        register(context, NETHER_FLAME_ORE_KEY, Feature.ORE, new OreConfiguration(netherReplacables, CMBlocks.FLAME_ORE_NETHER.get().defaultBlockState(), 7));
-        register(context, NETHER_HELLFIRE_ORE_KEY, Feature.ORE, new OreConfiguration(netherReplacables, CMBlocks.HELLFIRE_ORE_NETHER.get().defaultBlockState(), 7));
+        register(context, NETHER_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(netherReplacables, CMBlocks.RUBY_ORE_NETHER.get().defaultBlockState(), 7));
+        register(context, NETHER_FLAME_ORE_KEY, Feature.ORE, new OreConfiguration(netherReplacables, CMBlocks.FLAME_ORE_NETHER.get().defaultBlockState(), 8));
+        register(context, NETHER_HELLFIRE_ORE_KEY, Feature.ORE, new OreConfiguration(netherReplacables, CMBlocks.HELLFIRE_ORE_NETHER.get().defaultBlockState(), 8));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
