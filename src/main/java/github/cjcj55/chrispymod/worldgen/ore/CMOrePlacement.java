@@ -1,4 +1,4 @@
-package github.cjcj55.chrispymod.worldgen;
+package github.cjcj55.chrispymod.worldgen.ore;
 
 import net.minecraft.world.level.levelgen.placement.*;
 

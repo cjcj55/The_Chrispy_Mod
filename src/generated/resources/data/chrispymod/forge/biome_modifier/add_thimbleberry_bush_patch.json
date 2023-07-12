@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_plains",
+  "features": "chrispymod:patch_thimbleberry_bush_placed",
+  "step": "vegetal_decoration"
+}

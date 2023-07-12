@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_mountain",
+  "features": "chrispymod:patch_boysenberry_bush_placed",
+  "step": "vegetal_decoration"
+}

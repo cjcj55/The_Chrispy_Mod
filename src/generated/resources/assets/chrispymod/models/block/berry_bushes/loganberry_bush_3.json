@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
   "textures": {
     "cross": "chrispymod:block/berry_bushes/loganberry_bush/stage_3"
   }

@@ -195,13 +195,13 @@ public class CMBlockStateProvider extends BlockStateProvider {
 
     public void berryBush(RegistryObject<Block> block) {
         getVariantBuilder(block.get()).partialState().with(BaseBerryBlock.AGE, 0).modelForState()
-                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_0", berryBushModel(block.get(), 0))).addModel()
+                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_0", berryBushModel(block.get(), 0)).renderType("cutout")).addModel()
                 .partialState().with(BaseBerryBlock.AGE, 1).modelForState()
-                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_1", berryBushModel(block.get(), 1))).addModel()
+                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_1", berryBushModel(block.get(), 1)).renderType("cutout")).addModel()
                 .partialState().with(BaseBerryBlock.AGE, 2).modelForState()
-                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_2", berryBushModel(block.get(), 2))).addModel()
+                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_2", berryBushModel(block.get(), 2)).renderType("cutout")).addModel()
                 .partialState().with(BaseBerryBlock.AGE, 3).modelForState()
-                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_3", berryBushModel(block.get(), 3))).addModel();
+                .modelFile(models().cross("block/berry_bushes/" + name(block.get()) + "_3", berryBushModel(block.get(), 3)).renderType("cutout")).addModel();
     }
 
     public String name(Block block) {

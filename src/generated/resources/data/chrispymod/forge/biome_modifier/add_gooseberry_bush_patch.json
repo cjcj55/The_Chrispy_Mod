@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_swamp",
+  "features": "chrispymod:patch_gooseberry_bush_placed",
+  "step": "vegetal_decoration"
+}
