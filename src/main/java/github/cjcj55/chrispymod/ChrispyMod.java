@@ -4,11 +4,14 @@ import com.mojang.logging.LogUtils;
 import github.cjcj55.chrispymod.registry.CMBlocks;
 import github.cjcj55.chrispymod.registry.CMCreativeTabs;
 import github.cjcj55.chrispymod.registry.CMItems;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 @Mod("chrispymod")
@@ -26,8 +29,6 @@ public class ChrispyMod {
         modEventBus.addListener(this::commonSetup);
 
         modEventBus.addListener(this::addCreative);
-
-//        modEventBus.addListener(DataGeneration::generate);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -36,7 +37,12 @@ public class ChrispyMod {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == CMCreativeTabs.CHRISPY_MOD_TAB.get()) {
-//            event.accept(CMItems.BLACK_OPAL);
+            for (RegistryObject<Item> item : CMItems.ITEMS.getEntries()) {
+                event.accept(item);
+            }
+            for (RegistryObject<Block> block : CMBlocks.BLOCKS.getEntries()) {
+                event.accept(block);
+            }
         }
     }
 }

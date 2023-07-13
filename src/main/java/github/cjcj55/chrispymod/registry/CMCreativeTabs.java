@@ -14,10 +14,9 @@ public class CMCreativeTabs {
 
     public static RegistryObject<CreativeModeTab> CHRISPY_MOD_TAB = CREATIVE_TABS.register(ChrispyMod.MODID,
             () -> CreativeModeTab.builder()
-                    // TODO:  Make creative tab translatable
-//                    .title(Component.translatable("itemGroup.farmersdelight"))
-                    .title(Component.literal("itemGroup.chrispymod"))
+                    .title(Component.translatable("itemGroup.chrispymod"))
                     .icon(() -> new ItemStack(CMItems.BLUE_EMERALD.get()))
+                    .withSearchBar()
                     .build());
 
     public static void register(IEventBus eventBus) {
