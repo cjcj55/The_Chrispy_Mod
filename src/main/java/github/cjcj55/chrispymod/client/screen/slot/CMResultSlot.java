@@ -1,4 +1,4 @@
-package github.cjcj55.chrispymod.screen.slot;
+package github.cjcj55.chrispymod.client.screen.slot;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;

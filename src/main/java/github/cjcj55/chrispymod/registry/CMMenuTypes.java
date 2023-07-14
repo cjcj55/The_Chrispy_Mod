@@ -1,7 +1,7 @@
 package github.cjcj55.chrispymod.registry;
 
 import github.cjcj55.chrispymod.ChrispyMod;
-import github.cjcj55.chrispymod.screen.AlloyFurnaceMenu;
+import github.cjcj55.chrispymod.client.screen.AlloyFurnaceMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;

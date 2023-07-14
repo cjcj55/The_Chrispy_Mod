@@ -2,7 +2,7 @@ package github.cjcj55.chrispymod;
 
 import com.mojang.logging.LogUtils;
 import github.cjcj55.chrispymod.registry.*;
-import github.cjcj55.chrispymod.screen.AlloyFurnaceScreen;
+import github.cjcj55.chrispymod.client.screen.AlloyFurnaceScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

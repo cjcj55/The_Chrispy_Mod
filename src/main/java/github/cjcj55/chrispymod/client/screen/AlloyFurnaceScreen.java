@@ -1,7 +1,6 @@
-package github.cjcj55.chrispymod.screen;
+package github.cjcj55.chrispymod.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import github.cjcj55.chrispymod.ChrispyMod;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

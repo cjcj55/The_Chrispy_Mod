@@ -1,10 +1,10 @@
-package github.cjcj55.chrispymod.screen;
+package github.cjcj55.chrispymod.client.screen;
 
 import github.cjcj55.chrispymod.blocks.entity.AlloyFurnaceBlockEntity;
 import github.cjcj55.chrispymod.registry.CMBlocks;
 import github.cjcj55.chrispymod.registry.CMMenuTypes;
-import github.cjcj55.chrispymod.screen.slot.AlloyFurnaceFuelSlot;
-import github.cjcj55.chrispymod.screen.slot.CMResultSlot;
+import github.cjcj55.chrispymod.client.screen.slot.AlloyFurnaceFuelSlot;
+import github.cjcj55.chrispymod.client.screen.slot.CMResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
