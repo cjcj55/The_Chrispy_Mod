@@ -1,9 +1,7 @@
 package github.cjcj55.chrispymod;
 
 import com.mojang.logging.LogUtils;
-import github.cjcj55.chrispymod.registry.CMBlocks;
-import github.cjcj55.chrispymod.registry.CMCreativeTabs;
-import github.cjcj55.chrispymod.registry.CMItems;
+import github.cjcj55.chrispymod.registry.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,8 +21,12 @@ public class ChrispyMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         CMCreativeTabs.register(modEventBus);
+
         CMBlocks.register(modEventBus);
         CMItems.register(modEventBus);
+
+        CMBlockEntities.register(modEventBus);
+        CMMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

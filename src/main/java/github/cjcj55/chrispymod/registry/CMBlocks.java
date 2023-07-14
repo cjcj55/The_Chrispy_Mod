@@ -1,10 +1,7 @@
 package github.cjcj55.chrispymod.registry;
 
 import github.cjcj55.chrispymod.ChrispyMod;
-import github.cjcj55.chrispymod.blocks.BaseBerryBlock;
-import github.cjcj55.chrispymod.blocks.FlameBlock;
-import github.cjcj55.chrispymod.blocks.LavaSpongeBlock;
-import github.cjcj55.chrispymod.blocks.WetLavaSpongeBlock;
+import github.cjcj55.chrispymod.blocks.*;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -220,8 +217,7 @@ public class CMBlocks {
     public static final RegistryObject<Block> LAVA_SPONGE = registerBlock("lava_sponge", () -> new LavaSpongeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().fireResistant());
     public static final RegistryObject<Block> WET_LAVA_SPONGE = registerBlock("wet_lava_sponge", () -> new WetLavaSpongeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().fireResistant());
 
-    // TODO:  uncomment below lines
-//    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 //    public static final RegistryObject<Block> JAM_AND_JELLY_MAKER = registerBlock("jam_and_jelly_maker", () -> new JamAndJellyMakerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(3.8f, 4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     // BERRY BLOCKS

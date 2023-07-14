@@ -78,10 +78,6 @@ public enum CMArmorMaterials implements ArmorMaterial {
         return this.repairIngredient.get();
     }
 
-    public String getName() {
-        return ChrispyMod.MODID + ":" + this.name;
-    }
-
     public float getToughness() {
         return this.toughness;
     }
@@ -91,5 +87,13 @@ public enum CMArmorMaterials implements ArmorMaterial {
      */
     public float getKnockbackResistance() {
         return this.knockbackResistance;
+    }
+
+    public String getName() {
+        return ChrispyMod.MODID + ":" + this.name;
+    }
+
+    public String getSerializedName() {
+        return ChrispyMod.MODID + ":" + this.name;
     }
 }
