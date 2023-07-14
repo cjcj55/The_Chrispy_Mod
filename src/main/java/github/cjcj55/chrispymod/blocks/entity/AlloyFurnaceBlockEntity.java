@@ -1,8 +1,12 @@
 package github.cjcj55.chrispymod.blocks.entity;
 
 import github.cjcj55.chrispymod.ChrispyMod;
+import github.cjcj55.chrispymod.blocks.AlloyFurnaceBlock;
+import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
 import github.cjcj55.chrispymod.registry.CMBlockEntities;
+import github.cjcj55.chrispymod.screen.AlloyFurnaceMenu;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
@@ -13,33 +17,28 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-        }
-
-        @Override
-        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return switch (slot) {
-                case 0 -> true;
-                case 1 -> true;
-                case 2 -> AbstractFurnaceBlockEntity.isFuel(stack);
-                case 3 -> false;
-                default -> super.isItemValid(slot, stack);
-            };
         }
     };
 
@@ -52,7 +51,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 100;
+    private int maxProgress = 300;
+    private int fuelTime;
+    private int maxFuelTime;
 
 
     public AlloyFurnaceBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -63,6 +64,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 return switch (pIndex) {
                     case 0 -> AlloyFurnaceBlockEntity.this.progress;
                     case 1 -> AlloyFurnaceBlockEntity.this.maxProgress;
+                    case 2 -> AlloyFurnaceBlockEntity.this.fuelTime;
+                    case 3 -> AlloyFurnaceBlockEntity.this.maxFuelTime;
                     default -> 0;
                 };
             }
@@ -72,12 +75,14 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 switch (pIndex) {
                     case 0 -> AlloyFurnaceBlockEntity.this.progress = pValue;
                     case 1 -> AlloyFurnaceBlockEntity.this.maxProgress = pValue;
+                    case 2 -> AlloyFurnaceBlockEntity.this.fuelTime = pValue;
+                    case 3 -> AlloyFurnaceBlockEntity.this.maxFuelTime = pValue;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 4;
             }
         };
     }
@@ -99,7 +104,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return
+        return new AlloyFurnaceMenu(pContainerId, pPlayerInventory, this, this.data);
     }
 
     @Override
@@ -128,7 +133,132 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         itemHandler.deserializeNBT(pTag.getCompound("alloy_furnace_inventory"));
     }
 
-    public void tick(Level level, BlockPos pPos, BlockState pState) {
+    private void consumeFuel() {
+        if(!itemHandler.getStackInSlot(0).isEmpty()) {
+            this.fuelTime = ForgeHooks.getBurnTime(this.itemHandler.extractItem(0, 1, false), RecipeType.SMELTING);
+            this.maxFuelTime = this.fuelTime;
+        }
+    }
 
+    public void tick(Level level, BlockPos blockPos, BlockState state) {
+        if (level.isClientSide()) {
+            return;
+        }
+
+        // TODO:  this if/else clause is new.  unsure if necessary or not
+        if (hasRecipe(this)) {
+            this.progress++;
+            setChanged(level, blockPos, state);
+
+            if (this.progress >= this.maxProgress) {
+                craftItem(this);
+            }
+        } else {
+            this.resetProgress();
+            setChanged(level, blockPos, state);
+        }
+
+        if(isConsumingFuel(this)) {
+            this.fuelTime--;
+        }
+
+        if (!isConsumingFuel(this)) {
+            this.forceUpdateAllStates();
+        }
+
+        if(hasRecipe(this)) {
+            if(hasFuelInFuelSlot(this) && !isConsumingFuel(this)) {
+                this.consumeFuel();
+                setChanged(level, blockPos, state);
+            }
+            if(isConsumingFuel(this)) {
+                this.forceUpdateAllStates();
+                this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(BlockStateProperties.LIT, this.isBurning()), 3);
+                state = state.setValue(AlloyFurnaceBlock.LIT, Boolean.valueOf(this.isBurning()));
+                level.setBlock(blockPos, state, 3);
+                this.progress++;
+                setChanged(level, blockPos, state);
+                if(this.progress > this.maxProgress) {
+                    craftItem(this);
+                }
+            }
+        } else {
+            this.resetProgress();
+            this.forceUpdateAllStates();
+            setChanged(level, blockPos, state);
+        }
+    }
+
+    @Override
+    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
+        if (cap == ForgeCapabilities.ITEM_HANDLER) {
+            return lazyItemHandler.cast();
+        }
+        return super.getCapability(cap);
+    }
+
+    public void forceUpdateAllStates() {
+        BlockState state = level.getBlockState(worldPosition);
+        if (state.getValue(BlockStateProperties.LIT) != this.isBurning()) {
+            level.setBlock(worldPosition, state.setValue(BlockStateProperties.LIT, this.isBurning()), 3);
+        }
+    }
+
+    private static boolean hasFuelInFuelSlot(AlloyFurnaceBlockEntity entity) {
+        return !entity.itemHandler.getStackInSlot(0).isEmpty();
+    }
+
+    private static boolean isConsumingFuel(AlloyFurnaceBlockEntity entity) {
+        return entity.fuelTime > 0;
+    }
+
+    public boolean isBurning() {
+        return this.fuelTime > 0;
+    }
+
+    private static boolean hasRecipe(AlloyFurnaceBlockEntity entity) {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<AlloyFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
+
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem(entity.getLevel().registryAccess()));
+    }
+
+    private static void craftItem(AlloyFurnaceBlockEntity entity) {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<AlloyFurnaceRecipe> match = level.getRecipeManager().getRecipeFor(AlloyFurnaceRecipe.Type.INSTANCE, inventory, level);
+
+        if(match.isPresent()) {
+            entity.itemHandler.extractItem(1,1, false);
+            entity.itemHandler.extractItem(2,1, false);
+
+            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem(entity.getLevel().registryAccess()).getItem(),
+                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
+
+            entity.resetProgress();
+        }
+    }
+
+    private void resetProgress() {
+        this.progress = 0;
+    }
+
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
+        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
+    }
+
+    private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
+        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
     }
 }

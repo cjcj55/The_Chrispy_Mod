@@ -1,5 +1,6 @@
 {
   "block.chrispymod.acerola_cherry_bush": "Acerola Cherry Bush",
+  "block.chrispymod.alloy_furnace": "Alloy Furnace",
   "block.chrispymod.aronia_berry_bush": "Aronia Berry Bush",
   "block.chrispymod.barberry_bush": "Barberry Bush",
   "block.chrispymod.bayberry_bush": "Bayberry Bush",
@@ -89,6 +90,7 @@
   "block.chrispymod.wineberry_bush": "Wineberry Bush",
   "block.chrispymod.wonderberry_bush": "Wonderberry Bush",
   "block.chrispymod.yellow_redstone_lamp": "Yellow Redstone Lamp",
+  "container.chrispymod.alloy_furnace": "Alloy Furnace",
   "item.chrispymod.acerola_cherry": "Acerola Cherry",
   "item.chrispymod.acerola_cherry_jam": "Acerola Cherry Jam",
   "item.chrispymod.aronia_berry": "Aronia Berry",

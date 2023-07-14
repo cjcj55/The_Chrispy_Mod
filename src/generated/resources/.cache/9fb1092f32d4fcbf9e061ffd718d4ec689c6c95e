@@ -1,3 +1,7 @@
-// 1.20.1	2023-07-07T12:28:31.1011599	Recipes
+// 1.20.1	2023-07-13T23:16:12.3377496	Recipes
+e46947c19936502d280fdd8859ff2d1484da036a data/chrispymod/advancements/recipes/blue_emerald.json
 beceec6fc81342bacb5266b709055a2a460952c7 data/chrispymod/advancements/recipes/food/mason_jar.json
+b393d9a599c57105b5ffe6cbff1e7b2e1e7a368b data/chrispymod/advancements/recipes/misc/alloy_furnace.json
+6baa00a300f2a5b09c6caf3da22452396be314ea data/chrispymod/recipes/alloy_furnace.json
+d0845e6f2b857b532ffd1e8b10db2377b64cc341 data/chrispymod/recipes/blue_emerald_from_alloy_smelting.json
 871c805bbb340bd0d6840e58e6d29f46c6d9a3d3 data/chrispymod/recipes/mason_jar.json

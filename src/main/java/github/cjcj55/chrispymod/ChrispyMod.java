@@ -28,6 +28,8 @@ public class ChrispyMod {
         CMBlockEntities.register(modEventBus);
         CMMenuTypes.register(modEventBus);
 
+        CMRecipes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         modEventBus.addListener(this::addCreative);

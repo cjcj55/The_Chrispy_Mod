@@ -27,7 +27,7 @@ public class CMBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-//        this.dropSelf(CMBlocks.ALLOY_FURNACE.get());
+        this.dropSelf(CMBlocks.ALLOY_FURNACE.get());
 //        this.dropSelf(CMBlocks.JAM_AND_JELLY_MAKER.get());
 
         this.dropSelf(CMBlocks.BLUE_EMERALD_BLOCK.get());

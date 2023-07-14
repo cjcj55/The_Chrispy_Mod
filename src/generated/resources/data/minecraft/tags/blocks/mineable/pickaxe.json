@@ -38,6 +38,7 @@
     "chrispymod:ornate_bricks",
     "chrispymod:road_bricks",
     "chrispymod:solid_bricks",
-    "chrispymod:weaver_bricks"
+    "chrispymod:weaver_bricks",
+    "chrispymod:alloy_furnace"
   ]
 }
