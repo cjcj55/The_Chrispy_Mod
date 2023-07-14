@@ -342,8 +342,8 @@ public class CMBlockTagGenerator extends BlockTagsProvider {
                 .add(CMBlocks.ROAD_BRICKS.get())
                 .add(CMBlocks.SOLID_BRICKS.get())
                 .add(CMBlocks.WEAVER_BRICKS.get())
-                .add(CMBlocks.ALLOY_FURNACE.get());
-//                .add(CMBlocks.JAM_AND_JELLY_MAKER.get());
+                .add(CMBlocks.ALLOY_FURNACE.get())
+                .add(CMBlocks.JAM_AND_JELLY_MAKER.get());
 
         this.tag(BlockTags.MINEABLE_WITH_AXE);
 

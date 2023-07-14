@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-13T23:16:12.3357488	Loot Tables
+// 1.20.1	2023-07-14T18:49:01.3948162	Loot Tables
 60de6069aa9731814516eff31ae05160aece4d2f data/chrispymod/loot_tables/blocks/acerola_cherry_bush.json
 b4ad4110c1164192ecb4bfd0167a46ff8202093b data/chrispymod/loot_tables/blocks/alloy_furnace.json
 ccea8b540f1a87916ee22cab8dd595c8da1a4d48 data/chrispymod/loot_tables/blocks/aronia_berry_bush.json
@@ -43,6 +43,7 @@ ca592a732f6d99904e1c25b320f96eb976732c7e data/chrispymod/loot_tables/blocks/gree
 384246ac87b316f3acc1e0c245702228d63c9aa7 data/chrispymod/loot_tables/blocks/hardened_redstone_block.json
 36c669c704b75de283f67bd278569afd257abc6a data/chrispymod/loot_tables/blocks/hellfire_ore_nether.json
 64b51378ab963dd2316853954f3b11aae5fdf0cc data/chrispymod/loot_tables/blocks/huckleberry_bush.json
+65090b3a4d3d8bee24fed972974323c688471caa data/chrispymod/loot_tables/blocks/jam_and_jelly_maker.json
 1c6c49429a1a4e11677c81361e1cf53ecf0d76bd data/chrispymod/loot_tables/blocks/lava_sponge.json
 45b430fa4ff938f2442c53f423a4ad07a62deef8 data/chrispymod/loot_tables/blocks/lightning_block.json
 a15b79f9b733a37fc6aecf7d1c3f59a9e2619865 data/chrispymod/loot_tables/blocks/light_blue_redstone_lamp.json

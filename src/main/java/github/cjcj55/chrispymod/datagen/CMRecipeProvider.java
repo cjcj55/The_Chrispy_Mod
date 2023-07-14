@@ -1,6 +1,7 @@
 package github.cjcj55.chrispymod.datagen;
 
 import github.cjcj55.chrispymod.datagen.builder.AlloyFurnaceRecipeBuilder;
+import github.cjcj55.chrispymod.datagen.builder.JamAndJellyMakerRecipeBuilder;
 import github.cjcj55.chrispymod.registry.CMBlocks;
 import github.cjcj55.chrispymod.registry.CMItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -91,6 +92,7 @@ public class CMRecipeProvider extends RecipeProvider implements IConditionBuilde
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         buildAlloyFurnaceRecipes(pWriter);
+        buildJamAndJellyMakerRecipes(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, CMItems.MASON_JAR.get())
                 .pattern("x x")
@@ -112,16 +114,16 @@ public class CMRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_blast_furnace", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLAST_FURNACE))
                 .save(pWriter);
 
-//        ShapedRecipeBuilder.shaped(CMBlocks.JAM_AND_JELLY_MAKER.get())
-//                .pattern("iii")
-//                .pattern("rgr")
-//                .pattern("iii")
-//                .define('g', Tags.Items.GLASS)
-//                .define('i', Tags.Items.INGOTS_IRON)
-//                .define('r', Tags.Items.DUSTS_REDSTONE)
-//                .group("chrispymod")
-//                .unlockedBy("has_redstone", InventoryChangeTrigger.TriggerInstance.hasItems(Items.REDSTONE))
-//                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CMBlocks.JAM_AND_JELLY_MAKER.get())
+                .pattern("iii")
+                .pattern("rgr")
+                .pattern("iii")
+                .define('g', Tags.Items.GLASS)
+                .define('i', Tags.Items.INGOTS_IRON)
+                .define('r', Tags.Items.DUSTS_REDSTONE)
+                .group("chrispymod")
+                .unlockedBy("has_redstone", InventoryChangeTrigger.TriggerInstance.hasItems(Items.REDSTONE))
+                .save(pWriter);
 
 //        oreSmeltingRecipes(pWriter, ALUMINUM_SMELTABLES, CMItems.ALUMINUM, 0.3f, "aluminum_smeltable");
 //        oreSmeltingRecipes(pWriter, ANTIMONY_SMELTABLES, CMItems.ANTIMONY, 0.3f, "antimony_smeltable");
@@ -400,39 +402,39 @@ public class CMRecipeProvider extends RecipeProvider implements IConditionBuilde
 //        oreBlasting(pWriter, SMELTABLES, RecipeCategory.MISC, Items.COPPER, 0.3f, 100, "smeltable");
     }
 
-    //    public static void buildJamAndJellyMakerRecipes(Consumer<FinishedRecipe> consumer) {
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.STRAWBERRY.get(), ItemInit.STRAWBERRY_JAM.get()).unlockedBy("has_strawberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.STRAWBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.BLUEBERRY.get(), ItemInit.BLUEBERRY_JAM.get()).unlockedBy("has_blueberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.BLUEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.LOGANBERRY.get(), ItemInit.LOGANBERRY_JAM.get()).unlockedBy("has_loganberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.LOGANBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.RED_RASPBERRY.get(), ItemInit.RED_RASPBERRY_JAM.get()).unlockedBy("has_red_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.RED_RASPBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.BLACK_RASPBERRY.get(), ItemInit.BLACK_RASPBERRY_JAM.get()).unlockedBy("has_black_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.BLACK_RASPBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.GOLDEN_RASPBERRY.get(), ItemInit.GOLDEN_RASPBERRY_JAM.get()).unlockedBy("has_golden_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.GOLDEN_RASPBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.WHITE_RASPBERRY.get(), ItemInit.WHITE_RASPBERRY_JAM.get()).unlockedBy("has_white_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.WHITE_RASPBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.MARIONBERRY.get(), ItemInit.MARIONBERRY_JAM.get()).unlockedBy("has_marionberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.MARIONBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.BLACKCURRANT.get(), ItemInit.BLACKCURRANT_JAM.get()).unlockedBy("has_blackcurrant", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.BLACKCURRANT.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.REDCURRANT.get(), ItemInit.REDCURRANT_JAM.get()).unlockedBy("has_redcurrant", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.REDCURRANT.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.HUCKLEBERRY.get(), ItemInit.HUCKLEBERRY_JAM.get()).unlockedBy("has_huckleberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.HUCKLEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.WINEBERRY.get(), ItemInit.WINEBERRY_JAM.get()).unlockedBy("has_wineberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.WINEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.ELDERBERRY.get(), ItemInit.ELDERBERRY_JAM.get()).unlockedBy("has_elderberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.ELDERBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.BLACKBERRY.get(), ItemInit.BLACKBERRY_JAM.get()).unlockedBy("has_blackberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.BLACKBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.BOYSENBERRY.get(), ItemInit.BOYSENBERRY_JAM.get()).unlockedBy("has_boysenberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.BOYSENBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.GROUND_CHERRY.get(), ItemInit.GROUND_CHERRY_JAM.get()).unlockedBy("has_ground_cherry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.GROUND_CHERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.ARONIA_BERRY.get(), ItemInit.ARONIA_BERRY_JAM.get()).unlockedBy("has_aronia_berry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.ARONIA_BERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.SERVICEBERRY.get(), ItemInit.SERVICEBERRY_JAM.get()).unlockedBy("has_serviceberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.SERVICEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.WONDERBERRY.get(), ItemInit.WONDERBERRY_JAM.get()).unlockedBy("has_wonderberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.WONDERBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.MULBERRY.get(), ItemInit.MULBERRY_JAM.get()).unlockedBy("has_mulberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.MULBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.LINGONBERRY.get(), ItemInit.LINGONBERRY_JAM.get()).unlockedBy("has_lingonberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.LINGONBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.CRANBERRY.get(), ItemInit.CRANBERRY_JAM.get()).unlockedBy("has_cranberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.CRANBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.DEWBERRY.get(), ItemInit.DEWBERRY_JAM.get()).unlockedBy("has_dewberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.DEWBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.THIMBLEBERRY.get(), ItemInit.THIMBLEBERRY_JAM.get()).unlockedBy("has_thimbleberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.THIMBLEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.GOOSEBERRY.get(), ItemInit.GOOSEBERRY_JAM.get()).unlockedBy("has_gooseberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.GOOSEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.CHOKEBERRY.get(), ItemInit.CHOKEBERRY_JAM.get()).unlockedBy("has_chokeberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.CHOKEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.OLALLIEBERRY.get(), ItemInit.OLALLIEBERRY_JAM.get()).unlockedBy("has_olallieberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.OLALLIEBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.ACEROLA_CHERRY.get(), ItemInit.ACEROLA_CHERRY_JAM.get()).unlockedBy("has_acerola_cherry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.ACEROLA_CHERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.BARBERRY.get(), ItemInit.BARBERRY_JAM.get()).unlockedBy("has_barberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.BARBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.BAYBERRY.get(), ItemInit.BAYBERRY_JAM.get()).unlockedBy("has_bayberry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.BAYBERRY.get()).build())).save(consumer);
-//        new JamAndJellyMakerRecipeBuilder(ItemInit.GOGI_BERRY.get(), ItemInit.GOGI_BERRY_JAM.get()).unlockedBy("has_gogi_berry", inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.GOGI_BERRY.get()).build())).save(consumer);
-//    }
+    public static void buildJamAndJellyMakerRecipes(Consumer<FinishedRecipe> consumer) {
+        new JamAndJellyMakerRecipeBuilder(CMItems.STRAWBERRY.get(), CMItems.STRAWBERRY_JAM.get()).unlockedBy("has_strawberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.STRAWBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.BLUEBERRY.get(), CMItems.BLUEBERRY_JAM.get()).unlockedBy("has_blueberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.BLUEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.LOGANBERRY.get(), CMItems.LOGANBERRY_JAM.get()).unlockedBy("has_loganberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.LOGANBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.RED_RASPBERRY.get(), CMItems.RED_RASPBERRY_JAM.get()).unlockedBy("has_red_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.RED_RASPBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.BLACK_RASPBERRY.get(), CMItems.BLACK_RASPBERRY_JAM.get()).unlockedBy("has_black_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.BLACK_RASPBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.GOLDEN_RASPBERRY.get(), CMItems.GOLDEN_RASPBERRY_JAM.get()).unlockedBy("has_golden_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.GOLDEN_RASPBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.WHITE_RASPBERRY.get(), CMItems.WHITE_RASPBERRY_JAM.get()).unlockedBy("has_white_raspberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.WHITE_RASPBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.MARIONBERRY.get(), CMItems.MARIONBERRY_JAM.get()).unlockedBy("has_marionberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.MARIONBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.BLACKCURRANT.get(), CMItems.BLACKCURRANT_JAM.get()).unlockedBy("has_blackcurrant", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.BLACKCURRANT.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.REDCURRANT.get(), CMItems.REDCURRANT_JAM.get()).unlockedBy("has_redcurrant", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.REDCURRANT.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.HUCKLEBERRY.get(), CMItems.HUCKLEBERRY_JAM.get()).unlockedBy("has_huckleberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.HUCKLEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.WINEBERRY.get(), CMItems.WINEBERRY_JAM.get()).unlockedBy("has_wineberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.WINEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.ELDERBERRY.get(), CMItems.ELDERBERRY_JAM.get()).unlockedBy("has_elderberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.ELDERBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.BLACKBERRY.get(), CMItems.BLACKBERRY_JAM.get()).unlockedBy("has_blackberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.BLACKBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.BOYSENBERRY.get(), CMItems.BOYSENBERRY_JAM.get()).unlockedBy("has_boysenberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.BOYSENBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.GROUND_CHERRY.get(), CMItems.GROUND_CHERRY_JAM.get()).unlockedBy("has_ground_cherry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.GROUND_CHERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.ARONIA_BERRY.get(), CMItems.ARONIA_BERRY_JAM.get()).unlockedBy("has_aronia_berry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.ARONIA_BERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.SERVICEBERRY.get(), CMItems.SERVICEBERRY_JAM.get()).unlockedBy("has_serviceberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.SERVICEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.WONDERBERRY.get(), CMItems.WONDERBERRY_JAM.get()).unlockedBy("has_wonderberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.WONDERBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.MULBERRY.get(), CMItems.MULBERRY_JAM.get()).unlockedBy("has_mulberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.MULBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.LINGONBERRY.get(), CMItems.LINGONBERRY_JAM.get()).unlockedBy("has_lingonberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.LINGONBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.CRANBERRY.get(), CMItems.CRANBERRY_JAM.get()).unlockedBy("has_cranberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.CRANBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.DEWBERRY.get(), CMItems.DEWBERRY_JAM.get()).unlockedBy("has_dewberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.DEWBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.THIMBLEBERRY.get(), CMItems.THIMBLEBERRY_JAM.get()).unlockedBy("has_thimbleberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.THIMBLEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.GOOSEBERRY.get(), CMItems.GOOSEBERRY_JAM.get()).unlockedBy("has_gooseberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.GOOSEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.CHOKEBERRY.get(), CMItems.CHOKEBERRY_JAM.get()).unlockedBy("has_chokeberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.CHOKEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.OLALLIEBERRY.get(), CMItems.OLALLIEBERRY_JAM.get()).unlockedBy("has_olallieberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.OLALLIEBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.ACEROLA_CHERRY.get(), CMItems.ACEROLA_CHERRY_JAM.get()).unlockedBy("has_acerola_cherry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.ACEROLA_CHERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.BARBERRY.get(), CMItems.BARBERRY_JAM.get()).unlockedBy("has_barberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.BARBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.BAYBERRY.get(), CMItems.BAYBERRY_JAM.get()).unlockedBy("has_bayberry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.BAYBERRY.get()).build())).save(consumer);
+//        new JamAndJellyMakerRecipeBuilder(CMItems.GOGI_BERRY.get(), CMItems.GOGI_BERRY_JAM.get()).unlockedBy("has_gogi_berry", inventoryTrigger(ItemPredicate.Builder.item().of(CMItems.GOGI_BERRY.get()).build())).save(consumer);
+    }
 
     public static void buildAlloyFurnaceRecipes(Consumer<FinishedRecipe> consumer) {
         new AlloyFurnaceRecipeBuilder(Items.DIAMOND, Items.EMERALD, CMItems.BLUE_EMERALD.get(), 1).unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item().of(Items.DIAMOND).build())).save(consumer);

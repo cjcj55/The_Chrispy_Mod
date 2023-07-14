@@ -39,6 +39,7 @@
     "chrispymod:road_bricks",
     "chrispymod:solid_bricks",
     "chrispymod:weaver_bricks",
-    "chrispymod:alloy_furnace"
+    "chrispymod:alloy_furnace",
+    "chrispymod:jam_and_jelly_maker"
   ]
 }

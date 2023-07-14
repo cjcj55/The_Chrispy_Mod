@@ -218,7 +218,7 @@ public class CMBlocks {
     public static final RegistryObject<Block> WET_LAVA_SPONGE = registerBlock("wet_lava_sponge", () -> new WetLavaSpongeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).strength(0.6f).sound(SoundType.GRASS)), new Item.Properties().fireResistant());
 
     public static final RegistryObject<Block> ALLOY_FURNACE = registerBlock("alloy_furnace", () -> new AlloyFurnaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
-//    public static final RegistryObject<Block> JAM_AND_JELLY_MAKER = registerBlock("jam_and_jelly_maker", () -> new JamAndJellyMakerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(3.8f, 4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> JAM_AND_JELLY_MAKER = registerBlock("jam_and_jelly_maker", () -> new JamAndJellyMakerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(3.8f, 4.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     // BERRY BLOCKS
     public static final RegistryObject<Block> STRAWBERRY_BUSH = registerOnlyBlock("strawberry_bush", () -> new BaseBerryBlock(CMItems.STRAWBERRY, false, false));

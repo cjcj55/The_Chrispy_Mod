@@ -1,10 +1,12 @@
 package github.cjcj55.chrispymod.client.screen;
 
-import github.cjcj55.chrispymod.blocks.entity.AlloyFurnaceBlockEntity;
-import github.cjcj55.chrispymod.registry.CMBlocks;
-import github.cjcj55.chrispymod.registry.CMMenuTypes;
+import github.cjcj55.chrispymod.blocks.entity.JamAndJellyMakerBlockEntity;
 import github.cjcj55.chrispymod.client.screen.slot.CMFuelSlot;
 import github.cjcj55.chrispymod.client.screen.slot.CMResultSlot;
+import github.cjcj55.chrispymod.client.screen.slot.MasonJarSlot;
+import github.cjcj55.chrispymod.client.screen.slot.SugarSlot;
+import github.cjcj55.chrispymod.registry.CMBlocks;
+import github.cjcj55.chrispymod.registry.CMMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -15,31 +17,36 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class AlloyFurnaceMenu extends AbstractContainerMenu {
-    public final AlloyFurnaceBlockEntity blockEntity;
+public class JamAndJellyMakerMenu extends AbstractContainerMenu {
+    private final JamAndJellyMakerBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public AlloyFurnaceMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+    public JamAndJellyMakerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(10));
     }
 
-    public AlloyFurnaceMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(CMMenuTypes.ALLOY_FURNACE_MENU.get(), pContainerId);
-        checkContainerSize(inv, 4);
-        blockEntity = ((AlloyFurnaceBlockEntity) entity);
+    public JamAndJellyMakerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(CMMenuTypes.JAM_AND_JELLY_MAKER_MENU.get(), pContainerId);
+        checkContainerSize(inv, 10);
+        blockEntity = ((JamAndJellyMakerBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        // Create item slots for entity
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
-            this.addSlot(new CMFuelSlot(handler, 0, 18, 50));
-            this.addSlot(new SlotItemHandler(handler, 1, 66, 16));
-            this.addSlot(new SlotItemHandler(handler, 2, 66, 50));
-            this.addSlot(new CMResultSlot(handler, 3, 114, 33));
+            this.addSlot(new CMFuelSlot(handler, 0, 9, 37));
+            this.addSlot(new SlotItemHandler(handler, 1, 40, 19));  // item 1
+            this.addSlot(new SlotItemHandler(handler, 2, 58, 19));  // item 2
+            this.addSlot(new SlotItemHandler(handler, 3, 76, 19));  // item 3
+            this.addSlot(new SlotItemHandler(handler, 4, 40, 37));  // item 4
+            this.addSlot(new SlotItemHandler(handler, 5, 58, 37));  // item 5
+            this.addSlot(new SlotItemHandler(handler, 6, 76, 37));  // item 6
+            this.addSlot(new SugarSlot(handler, 7, 113, 63));  // sugar
+            this.addSlot(new MasonJarSlot(handler, 8, 131, 63));  // mason jar
+            this.addSlot(new CMResultSlot(handler, 9, 117, 29));   // jam
         });
 
         addDataSlots(data);
@@ -56,7 +63,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the width in pixels of your arrow
+        int progressArrowSize = 20; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -85,28 +92,29 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 10;  // must be the number of slots you have!
+
     @Override
-    public ItemStack quickMoveStack(Player playerIn, int pIndex) {
-        Slot sourceSlot = slots.get(pIndex);
+    public ItemStack quickMoveStack(Player playerIn, int index) {
+        Slot sourceSlot = slots.get(index);
         if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
         // Check if the slot clicked is one of the vanilla container slots
-        if (pIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
+        if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
             // This is a vanilla container slot so merge the stack into the tile inventory
             if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
                     + TE_INVENTORY_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;  // EMPTY_ITEM
             }
-        } else if (pIndex < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
+        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
             // This is a TE slot so merge the stack into the players inventory
             if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
         } else {
-            System.out.println("Invalid slotIndex:" + pIndex);
+            System.out.println("Invalid slotIndex:" + index);
             return ItemStack.EMPTY;
         }
         // If stack size == 0 (the entire stack was moved) set slot contents to null
@@ -121,7 +129,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player pPlayer) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), pPlayer, CMBlocks.ALLOY_FURNACE.get());
+        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), pPlayer, CMBlocks.JAM_AND_JELLY_MAKER.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

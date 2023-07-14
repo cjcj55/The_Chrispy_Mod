@@ -19,8 +19,6 @@ public class CMBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //registerJamAndJellyMaker();
-
         berryBush(CMBlocks.STRAWBERRY_BUSH);
         berryBush(CMBlocks.BLUEBERRY_BUSH);
         berryBush(CMBlocks.LOGANBERRY_BUSH);

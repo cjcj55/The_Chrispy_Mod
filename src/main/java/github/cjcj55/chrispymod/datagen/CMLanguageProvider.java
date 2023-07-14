@@ -592,7 +592,7 @@ public class CMLanguageProvider extends LanguageProvider {
 
         add(CMBlocks.ALLOY_FURNACE.get(), "Alloy Furnace");
         add("container.chrispymod.alloy_furnace", "Alloy Furnace");
-//        add(CMBlocks.JAM_AND_JELLY_MAKER.get(), "Jam and Jelly Maker");
-//        add("container.chrispymod.jam_and_jelly_maker", "Jam and Jelly Maker");
+        add(CMBlocks.JAM_AND_JELLY_MAKER.get(), "Jam and Jelly Maker");
+        add("container.chrispymod.jam_and_jelly_maker", "Jam and Jelly Maker");
     }
 }

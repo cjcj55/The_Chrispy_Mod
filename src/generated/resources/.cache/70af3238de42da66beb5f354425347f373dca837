@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-13T23:16:12.3326036	Block Tags
+// 1.20.1	2023-07-14T18:49:01.3908067	Block Tags
 9d258e51a343b1b066537a19528a0197c0cc9a97 data/chrispymod/tags/blocks/cobalt_ore.json
 6f068b9ae3cee339b260f786bfb61561e742a85d data/chrispymod/tags/blocks/experience_ore.json
 60b534455f8e0005e6ba45d980ad8e8fef5b0b50 data/chrispymod/tags/blocks/natural_essence_ore.json
@@ -9,7 +9,7 @@ dfec237a63172fb20f77daaa046a7c5e852e0be9 data/chrispymod/tags/blocks/opal_ore.js
 c469f7ae473246de4e9bba36a4279a0cb391fa58 data/chrispymod/tags/blocks/white_dwarf_star_ore.json
 3bd9556ce0806d76a5aed92ace266c8c03041a95 data/forge/tags/blocks/ores.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/axe.json
-2442bd67028532ccc1a7fa83772666d057f999b2 data/minecraft/tags/blocks/mineable/pickaxe.json
+5f7856453069011469e281c9a8a7d68303ec0db4 data/minecraft/tags/blocks/mineable/pickaxe.json
 f08dfe8b3dfb0106218f34908494b84b364e1f1c data/minecraft/tags/blocks/needs_diamond_tool.json
 880227daa0b3589e1ca0d39fdeb54e868e6bb357 data/minecraft/tags/blocks/needs_iron_tool.json
 f8ab6437565b988adc3b9a279e48d738ba6dec6b data/minecraft/tags/blocks/needs_stone_tool.json
