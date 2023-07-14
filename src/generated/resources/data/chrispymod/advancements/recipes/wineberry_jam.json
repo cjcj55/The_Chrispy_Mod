@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chrispymod:wineberry_jam"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wineberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chrispymod:wineberry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wineberry",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chrispymod:wineberry_jam"
+    ]
+  },
+  "sends_telemetry_event": true
+}

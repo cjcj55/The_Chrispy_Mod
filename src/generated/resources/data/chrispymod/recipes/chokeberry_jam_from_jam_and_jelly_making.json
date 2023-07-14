@@ -1,0 +1,32 @@
+{
+  "type": "chrispymod:jam_and_jelly_making",
+  "ingredients": [
+    {
+      "item": "chrispymod:chokeberry"
+    },
+    {
+      "item": "chrispymod:chokeberry"
+    },
+    {
+      "item": "chrispymod:chokeberry"
+    },
+    {
+      "item": "chrispymod:chokeberry"
+    },
+    {
+      "item": "chrispymod:chokeberry"
+    },
+    {
+      "item": "chrispymod:chokeberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "chrispymod:mason_jar"
+    }
+  ],
+  "output": {
+    "item": "chrispymod:chokeberry_jam"
+  }
+}

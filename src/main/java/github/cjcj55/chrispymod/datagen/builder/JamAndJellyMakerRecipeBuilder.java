@@ -67,7 +67,6 @@ public class JamAndJellyMakerRecipeBuilder implements RecipeBuilder {
 
         pFinishedRecipeConsumer.accept(new JamAndJellyMakerRecipeBuilder.Result(pRecipeId, this.result, this.count, this.ingredient,
                 this.advancement, new ResourceLocation(pRecipeId.getNamespace(), "recipes/" + pRecipeId.getPath())));
-
     }
 
     public static class Result implements FinishedRecipe {
