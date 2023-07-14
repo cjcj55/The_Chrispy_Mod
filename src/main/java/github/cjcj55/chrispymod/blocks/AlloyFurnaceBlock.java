@@ -112,7 +112,7 @@ public class AlloyFurnaceBlock extends BaseEntityBlock {
             }
         }
 
-        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+        return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
 
     @Nullable

@@ -122,6 +122,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         pTag.put("alloy_furnace_inventory", itemHandler.serializeNBT());
+        pTag.putInt("alloy_smelting.progress", progress);
+        pTag.putInt("alloy_smelting.fuelTime", fuelTime);
+        pTag.putInt("alloy_smelting.maxFuelTime", maxFuelTime);
 
         super.saveAdditional(pTag);
     }
@@ -131,6 +134,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         super.load(pTag);
 
         itemHandler.deserializeNBT(pTag.getCompound("alloy_furnace_inventory"));
+        this.progress = pTag.getInt("alloy_smelting.progress");
+        this.fuelTime = pTag.getInt("alloy_smelting.fuelTime");
+        this.maxFuelTime = pTag.getInt("alloy_smelting.maxFuelTime");
     }
 
     private void consumeFuel() {
@@ -146,17 +152,17 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         }
 
         // TODO:  this if/else clause is new.  unsure if necessary or not
-        if (hasRecipe(this)) {
-            this.progress++;
-            setChanged(level, blockPos, state);
-
-            if (this.progress >= this.maxProgress) {
-                craftItem(this);
-            }
-        } else {
-            this.resetProgress();
-            setChanged(level, blockPos, state);
-        }
+//        if (hasRecipe(this)) {
+//            this.progress++;
+//            setChanged(level, blockPos, state);
+//
+//            if (this.progress >= this.maxProgress) {
+//                craftItem(this);
+//            }
+//        } else {
+//            this.resetProgress();
+//            setChanged(level, blockPos, state);
+//        }
 
         if(isConsumingFuel(this)) {
             this.fuelTime--;

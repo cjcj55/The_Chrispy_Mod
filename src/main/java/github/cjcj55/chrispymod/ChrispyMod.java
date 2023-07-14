@@ -2,11 +2,16 @@ package github.cjcj55.chrispymod;
 
 import com.mojang.logging.LogUtils;
 import github.cjcj55.chrispymod.registry.*;
+import github.cjcj55.chrispymod.screen.AlloyFurnaceScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
@@ -47,6 +52,16 @@ public class ChrispyMod {
             for (RegistryObject<Block> block : CMBlocks.BLOCKS.getEntries()) {
                 event.accept(block);
             }
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                MenuScreens.register(CMMenuTypes.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
+            });
         }
     }
 }
