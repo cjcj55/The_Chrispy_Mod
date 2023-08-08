@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "chrispymod",
+  "key": {
+    "i": {
+      "item": "chrispymod:lightning"
+    },
+    "s": {
+      "tag": "forge:string"
+    }
+  },
+  "pattern": [
+    " is",
+    "i s",
+    " is"
+  ],
+  "result": {
+    "item": "chrispymod:lightning_bow"
+  },
+  "show_notification": true
+}

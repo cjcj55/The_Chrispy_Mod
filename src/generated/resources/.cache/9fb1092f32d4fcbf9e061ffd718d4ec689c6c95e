@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-14T19:32:03.0132813	Recipes
+// 1.20.1	2023-08-07T18:26:51.2677086	Recipes
 58b0744de4e433543eb3a0aa8e7f8ca490dd0ebf data/chrispymod/advancements/recipes/acerola_cherry_jam.json
 7b8e0b81d0858380fb7bea76a9f7f14e87e037f8 data/chrispymod/advancements/recipes/aronia_berry_jam.json
 41f9ba269af5ba7df5b98b610dddc6c816759993 data/chrispymod/advancements/recipes/barberry_jam.json
@@ -10,6 +10,7 @@ b5641f7dc93ec0eb0aa1ef555da00f0e4e42aa4f data/chrispymod/advancements/recipes/bl
 e46947c19936502d280fdd8859ff2d1484da036a data/chrispymod/advancements/recipes/blue_emerald.json
 dc009fd4e2362ac6aae312bd4efb6f435bb7d071 data/chrispymod/advancements/recipes/boysenberry_jam.json
 9601ab2b3557bad59795baf40e090c964cd5d4a2 data/chrispymod/advancements/recipes/chokeberry_jam.json
+202b86cf7aded09448b91444ad1864ccf2ee8a74 data/chrispymod/advancements/recipes/combat/lightning_bow.json
 643494c67bf03f2413b021f439b996550b6eea88 data/chrispymod/advancements/recipes/cranberry_jam.json
 eb8c705bcf220404f3ef287126ece11624f79cd4 data/chrispymod/advancements/recipes/dewberry_jam.json
 a820b544beb9f5de0c94d4b63055cfc8dcc82518 data/chrispymod/advancements/recipes/elderberry_jam.json
@@ -55,6 +56,7 @@ ab3059088ae5e2338474f14f0918165ae90d662e data/chrispymod/recipes/gooseberry_jam_
 bc0a841e6405572452d140a6cd4d76222ade30c5 data/chrispymod/recipes/ground_cherry_jam_from_jam_and_jelly_making.json
 13481dc10939fafd2ec7b5a12e9ab2ec958bb552 data/chrispymod/recipes/huckleberry_jam_from_jam_and_jelly_making.json
 db30da058e855ce16d8a4f352168ca26d9a033e6 data/chrispymod/recipes/jam_and_jelly_maker.json
+225cacc1baf8c72abef1ad0ad472dd3c7ea7e5ab data/chrispymod/recipes/lightning_bow.json
 9b529fd6272a388c21da12c86021c5401f41fe98 data/chrispymod/recipes/lingonberry_jam_from_jam_and_jelly_making.json
 167899d867878115742b0d3c5f91f556202af84d data/chrispymod/recipes/loganberry_jam_from_jam_and_jelly_making.json
 4e17ee4f89805463df9a28bd64efc4be39a3af5c data/chrispymod/recipes/marionberry_jam_from_jam_and_jelly_making.json

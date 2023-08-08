@@ -108,6 +108,7 @@ public class CMLanguageProvider extends LanguageProvider {
         add(CMItems.LIGHTNING_LEGGINGS.get(), "§eLightning Leggings");
         add(CMItems.LIGHTNING_BOOTS.get(), "§eLightning Boots");
         add(CMBlocks.LIGHTNING_BLOCK.get(), "§eLightning Block");
+        add(CMItems.LIGHTNING_BOW.get(), "§eLightning Bow");
 
         add(CMItems.FLAME.get(), "§4Flame");
         add(CMItems.FLAME_PICKAXE.get(), "§4Flame Pickaxe");

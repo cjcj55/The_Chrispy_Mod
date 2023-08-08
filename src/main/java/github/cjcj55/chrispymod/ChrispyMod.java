@@ -35,6 +35,8 @@ public class ChrispyMod {
 
         CMRecipes.register(modEventBus);
 
+        CMEntities.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         modEventBus.addListener(this::addCreative);

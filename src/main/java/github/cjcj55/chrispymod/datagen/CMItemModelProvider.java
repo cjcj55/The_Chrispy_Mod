@@ -1,10 +1,13 @@
 package github.cjcj55.chrispymod.datagen;
 
+import com.google.gson.JsonObject;
 import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.registry.CMItems;
+import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -82,6 +85,8 @@ public class CMItemModelProvider extends ItemModelProvider {
         simpleItem(CMItems.BARBERRY_JAM);
         simpleItem(CMItems.BAYBERRY_JAM);
         simpleItem(CMItems.GOGI_BERRY_JAM);
+
+//        bowItem(CMItems.LIGHTNING_BOW);
 
 //        simpleItem(CMItems.ALUMINUM);
 //        simpleItem(CMItems.RAW_ALUMINUM);
@@ -219,5 +224,49 @@ public class CMItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(ChrispyMod.MODID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(ChrispyMod.MODID,"item/" + item.getId().getPath()));
+    }
+
+    private void bowItem(RegistryObject<Item> item) {
+        for (int i = 0; i <= 2; i++) {
+            bowPullings(item, i);
+        }
+
+        bowModel(item);
+    }
+
+    private ItemModelBuilder bowModel(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated"))
+                    .texture("layer0", new ResourceLocation(ChrispyMod.MODID, "item/" + item.getId().getPath()))
+                    .transforms()
+                        .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND)
+                            .rotation(0, -90, 25)
+                            .translation(1.13f, 3.2f, 1.13f)
+                            .scale(0.68f, 0.68f, 0.68f).end()
+                        .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND)
+                            .rotation(0, 90, -25)
+                            .translation(1.13f, 3.2f, 1.13f)
+                            .scale(0.68f, 0.68f, 0.68f).end()
+                        .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)
+                            .rotation(-80, 260, -40)
+                            .translation(-1, -2, 2.5f)
+                            .scale(0.9f, 0.9f, 0.9f).end()
+                        .transform(ItemDisplayContext.THIRD_PERSON_LEFT_HAND)
+                            .rotation(-80, -280, 40)
+                            .translation(-1, -2, 2.5f)
+                            .scale(0.9f, 0.9f, 0.9f).end()
+                    .end();
+    }
+
+    private ItemModelBuilder bowPullings(RegistryObject<Item> item, int pullingStage) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation(ChrispyMod.MODID + "item/" + item.getId().getPath() + "_pulling_" + pullingStage))
+                    .texture("layer0", new ResourceLocation(ChrispyMod.MODID, "item/" + item.getId().getPath() + "_pulling_" + pullingStage));
     }
 }

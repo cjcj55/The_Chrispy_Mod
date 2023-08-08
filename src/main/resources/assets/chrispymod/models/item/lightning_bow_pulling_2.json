@@ -1,0 +1,6 @@
+{
+    "parent": "chrispymod:item/lightning_bow",
+    "textures": {
+        "layer0": "chrispymod:item/lightning_bow_pulling_2"
+    }
+}

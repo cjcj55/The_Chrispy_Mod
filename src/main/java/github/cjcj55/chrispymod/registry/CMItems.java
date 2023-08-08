@@ -230,8 +230,9 @@ public class CMItems {
     public static final RegistryObject<Item> LIGHTNING_CHESTPLATE = ITEMS.register("lightning_chestplate", () -> new ArmorItem(CMArmorMaterials.LIGHTNING, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> LIGHTNING_LEGGINGS = ITEMS.register("lightning_leggings", () -> new ArmorItem(CMArmorMaterials.LIGHTNING, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> LIGHTNING_BOOTS = ITEMS.register("lightning_boots", () -> new ArmorItem(CMArmorMaterials.LIGHTNING, ArmorItem.Type.BOOTS, new Item.Properties()));
-    // Lightning Wand
     public static final RegistryObject<Item> LIGHTNING_WAND = ITEMS.register("lightning_wand", LightningWandItem::new);
+    public static final RegistryObject<Item> LIGHTNING_BOW = ITEMS.register("lightning_bow", () -> new LightningBowItem(new Item.Properties().durability(256)));
+
     public static final RegistryObject<Item> FLAME_WAND = ITEMS.register("flame_wand", FlameWandItem::new);
 
 

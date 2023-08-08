@@ -3,6 +3,7 @@ package github.cjcj55.chrispymod.client;
 import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.client.screen.AlloyFurnaceScreen;
 import github.cjcj55.chrispymod.client.screen.JamAndJellyMakerScreen;
+import github.cjcj55.chrispymod.items.properties.CMItemProperties;
 import github.cjcj55.chrispymod.registry.CMMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,6 +16,8 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
+            CMItemProperties.addCustomItemProperties();
+
             MenuScreens.register(CMMenuTypes.ALLOY_FURNACE_MENU.get(), AlloyFurnaceScreen::new);
             MenuScreens.register(CMMenuTypes.JAM_AND_JELLY_MAKER_MENU.get(), JamAndJellyMakerScreen::new);
         });

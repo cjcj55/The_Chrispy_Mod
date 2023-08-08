@@ -125,6 +125,16 @@ public class CMRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_redstone", InventoryChangeTrigger.TriggerInstance.hasItems(Items.REDSTONE))
                 .save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CMItems.LIGHTNING_BOW.get())
+                .pattern(" is")
+                .pattern("i s")
+                .pattern(" is")
+                .define('i', CMItems.LIGHTNING.get())
+                .define('s', Tags.Items.STRING)
+                .group("chrispymod")
+                .unlockedBy("has_lightning", InventoryChangeTrigger.TriggerInstance.hasItems(CMItems.LIGHTNING.get()))
+                .save(pWriter);
+
 //        oreSmeltingRecipes(pWriter, ALUMINUM_SMELTABLES, CMItems.ALUMINUM, 0.3f, "aluminum_smeltable");
 //        oreSmeltingRecipes(pWriter, ANTIMONY_SMELTABLES, CMItems.ANTIMONY, 0.3f, "antimony_smeltable");
 //        oreSmeltingRecipes(pWriter, ARSENIC_SMELTABLES, CMItems.ARSENIC, 0.3f, "arsenic_smeltable");
