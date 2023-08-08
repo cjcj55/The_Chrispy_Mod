@@ -61,7 +61,7 @@ public class AlloyFurnaceRecipeCategory extends AlloyFurnaceVariantCategory impl
     public void draw(AlloyFurnaceRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         animatedFlame.draw(guiGraphics, 19, 34);
 
-        animatedArrow.draw(guiGraphics, 84, 23);
+        animatedArrow.draw(guiGraphics, 84, 22);
     }
 
     @Override

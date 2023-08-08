@@ -5,7 +5,11 @@ import github.cjcj55.chrispymod.blocks.AlloyFurnaceBlock;
 import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
 import github.cjcj55.chrispymod.registry.CMBlockEntities;
 import github.cjcj55.chrispymod.client.screen.AlloyFurnaceMenu;
+import github.cjcj55.chrispymod.util.InventoryDirectionEntry;
+import github.cjcj55.chrispymod.util.InventoryDirectionWrapper;
+import github.cjcj55.chrispymod.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
@@ -30,6 +34,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
 import java.util.Optional;
 
 public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider {
@@ -46,6 +51,21 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private static final int OUTPUT_SLOT = 3;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+
+    //       N
+    //       *
+    //  W * [ ] * E
+    //       *
+    //       S
+    //     FRONT
+    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
+            new InventoryDirectionWrapper(itemHandler,
+                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT, false),
+                    new InventoryDirectionEntry(Direction.UP, FUEL_SLOT, true),
+                    new InventoryDirectionEntry(Direction.NORTH, FUEL_SLOT, true),
+                    new InventoryDirectionEntry(Direction.SOUTH, OUTPUT_SLOT, false),
+                    new InventoryDirectionEntry(Direction.EAST, INPUT_SLOT_1, true),
+                    new InventoryDirectionEntry(Direction.WEST, INPUT_SLOT_2, true)).directionsMap;
 
     protected final ContainerData data;
     private int progress = 0;
@@ -149,19 +169,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
             return;
         }
 
-        // TODO:  this if/else clause is new.  unsure if necessary or not
-//        if (hasRecipe(this)) {
-//            this.progress++;
-//            setChanged(level, blockPos, state);
-//
-//            if (this.progress >= this.maxProgress) {
-//                craftItem(this);
-//            }
-//        } else {
-//            this.resetProgress();
-//            setChanged(level, blockPos, state);
-//        }
-
         if(isConsumingFuel(this)) {
             this.fuelTime--;
         }
@@ -194,11 +201,28 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     @Override
-    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
+    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
+            if (side == null) {
+                return lazyItemHandler.cast();
+            }
+
+            if (directionWrappedHandlerMap.containsKey(side)) {
+                Direction localDir = this.getBlockState().getValue(AlloyFurnaceBlock.FACING);
+
+                if (side == Direction.DOWN || side == Direction.UP) {
+                    return directionWrappedHandlerMap.get(side).cast();
+                }
+
+                return switch (localDir) {
+                    default -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
+                    case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
+                    case SOUTH -> directionWrappedHandlerMap.get(side).cast();
+                    case WEST -> directionWrappedHandlerMap.get(side.getCounterClockWise()).cast();
+                };
+            }
         }
-        return super.getCapability(cap);
+        return super.getCapability(cap, side);
     }
 
     public void forceUpdateAllStates() {

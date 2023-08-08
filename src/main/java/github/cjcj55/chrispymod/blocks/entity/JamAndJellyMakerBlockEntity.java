@@ -7,6 +7,9 @@ import github.cjcj55.chrispymod.client.screen.JamAndJellyMakerMenu;
 import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
 import github.cjcj55.chrispymod.recipe.JamAndJellyMakerRecipe;
 import github.cjcj55.chrispymod.registry.CMBlockEntities;
+import github.cjcj55.chrispymod.util.InventoryDirectionEntry;
+import github.cjcj55.chrispymod.util.InventoryDirectionWrapper;
+import github.cjcj55.chrispymod.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -33,6 +36,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
 import java.util.Optional;
 
 public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProvider {
@@ -158,19 +162,6 @@ public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProv
         if (level.isClientSide()) {
             return;
         }
-
-        // TODO:  this if/else clause is new.  unsure if necessary or not
-//        if (hasRecipe(blockEntity)) {
-//            blockEntity.progress++;
-//            setChanged(level, blockPos, state);
-//
-//            if (blockEntity.progress >= blockEntity.maxProgress) {
-//                craftItem(blockEntity);
-//            }
-//        } else {
-//            blockEntity.resetProgress();
-//            setChanged(level, blockPos, state);
-//        }
 
         if(isConsumingFuel(blockEntity)) {
             blockEntity.fuelTime--;

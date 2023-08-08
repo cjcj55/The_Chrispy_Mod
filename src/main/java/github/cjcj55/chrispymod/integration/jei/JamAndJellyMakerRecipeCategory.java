@@ -60,7 +60,7 @@ public class JamAndJellyMakerRecipeCategory extends JamAndJellyMakerVariantCateg
     public void draw(JamAndJellyMakerRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         animatedFlame.draw(guiGraphics, 10, 21);
 
-        animatedArrow.draw(guiGraphics, 94, 31);
+        animatedArrow.draw(guiGraphics, 94, 30);
     }
 
     @Override
