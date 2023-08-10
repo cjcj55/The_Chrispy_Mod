@@ -1,4 +1,4 @@
-package github.cjcj55.chrispymod.client.screen;
+package github.cjcj55.chrispymod.blocks.entity.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import github.cjcj55.chrispymod.ChrispyMod;
@@ -9,10 +9,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class JamAndJellyMakerScreen extends AbstractContainerScreen<JamAndJellyMakerMenu> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(ChrispyMod.MODID, "textures/gui/jam_and_jelly_maker_gui.png");
+public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu> {
+    private static final ResourceLocation TEXTURE = new ResourceLocation(ChrispyMod.MODID, "textures/gui/alloy_furnace_gui.png");
 
-    public JamAndJellyMakerScreen(JamAndJellyMakerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public AlloyFurnaceScreen(AlloyFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 
@@ -22,7 +22,7 @@ public class JamAndJellyMakerScreen extends AbstractContainerScreen<JamAndJellyM
     }
 
     @Override
-    protected void renderBg(GuiGraphics guiGraphics, float pPartialTicks, int pMouseX, int pMouseY) {
+    protected void renderBg(GuiGraphics guiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
@@ -35,12 +35,12 @@ public class JamAndJellyMakerScreen extends AbstractContainerScreen<JamAndJellyM
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
-        if(menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 94, y + 31, 176, 14, menu.getScaledProgress(), 10);
+        if (menu.isCrafting()) {
+            guiGraphics.blit(TEXTURE, x + 84, y + 22, 176, 14, menu.getScaledProgress(), 36);
         }
 
-        if(menu.hasFuel()) {
-            guiGraphics.blit(TEXTURE, x + 9, y + 20 + 14 - menu.getScaledFuelProgress(), 176, 14 - menu.getScaledFuelProgress(), 14, menu.getScaledFuelProgress());
+        if (menu.hasFuel()) {
+            guiGraphics.blit(TEXTURE, x + 18, y + 33 + 14 - menu.getScaledFuelProgress(), 176, 14 - menu.getScaledFuelProgress(), 14, menu.getScaledFuelProgress());
         }
     }
 

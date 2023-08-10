@@ -4,7 +4,7 @@ import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.blocks.AlloyFurnaceBlock;
 import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
 import github.cjcj55.chrispymod.registry.CMBlockEntities;
-import github.cjcj55.chrispymod.client.screen.AlloyFurnaceMenu;
+import github.cjcj55.chrispymod.blocks.entity.screen.AlloyFurnaceMenu;
 import github.cjcj55.chrispymod.util.InventoryDirectionEntry;
 import github.cjcj55.chrispymod.util.InventoryDirectionWrapper;
 import github.cjcj55.chrispymod.util.WrappedHandler;
@@ -42,6 +42,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+//            if (!level.isClientSide()) {
+//                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+//            }
         }
     };
 
@@ -73,6 +76,15 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private int fuelTime;
     private int maxFuelTime;
 
+//    public ItemStack getRenderStack() {
+//        ItemStack stack = itemHandler.getStackInSlot(OUTPUT_SLOT);
+//
+//        if (stack.isEmpty()) {
+//            stack = itemHandler.getStackInSlot(INPUT_SLOT_1);
+//        }
+//
+//        return stack;
+//    }
 
     public AlloyFurnaceBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(CMBlockEntities.ALLOY_FURNACE_BLOCK_ENTITY.get(), pPos, pBlockState);

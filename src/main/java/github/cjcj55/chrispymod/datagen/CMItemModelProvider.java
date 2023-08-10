@@ -86,6 +86,8 @@ public class CMItemModelProvider extends ItemModelProvider {
         simpleItem(CMItems.BAYBERRY_JAM);
         simpleItem(CMItems.GOGI_BERRY_JAM);
 
+        spawnEggItem(CMItems.SANDY_COW_SPAWN_EGG);
+
 //        bowItem(CMItems.LIGHTNING_BOW);
 
 //        simpleItem(CMItems.ALUMINUM);
@@ -230,6 +232,10 @@ public class CMItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
                 new ResourceLocation(ChrispyMod.MODID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder spawnEggItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private void bowItem(RegistryObject<Item> item) {

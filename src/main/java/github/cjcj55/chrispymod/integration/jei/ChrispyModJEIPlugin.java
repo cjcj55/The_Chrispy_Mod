@@ -1,8 +1,8 @@
 package github.cjcj55.chrispymod.integration.jei;
 
 import github.cjcj55.chrispymod.ChrispyMod;
-import github.cjcj55.chrispymod.client.screen.AlloyFurnaceScreen;
-import github.cjcj55.chrispymod.client.screen.JamAndJellyMakerScreen;
+import github.cjcj55.chrispymod.blocks.entity.screen.AlloyFurnaceScreen;
+import github.cjcj55.chrispymod.blocks.entity.screen.JamAndJellyMakerScreen;
 import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
 import github.cjcj55.chrispymod.recipe.JamAndJellyMakerRecipe;
 import mezz.jei.api.IModPlugin;

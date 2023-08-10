@@ -6,6 +6,7 @@ import github.cjcj55.chrispymod.items.materials.CMArmorMaterials;
 import github.cjcj55.chrispymod.items.materials.CMToolMaterials;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -365,6 +366,9 @@ public class CMItems {
     public static final RegistryObject<Item> GOGI_BERRY_JAM = ITEMS.register("gogi_berry_jam", () -> new BerryJamItem(CMFoodProperties.GOGI_BERRY_JAM));
 
     public static final RegistryObject<Item> MASON_JAR = ITEMS.register("mason_jar", () -> new Item(new Item.Properties()));
+
+    // Entity Spawn Eggs
+    public static final RegistryObject<Item> SANDY_COW_SPAWN_EGG = ITEMS.register("sandy_cow_spawn_egg", () -> new ForgeSpawnEggItem(CMEntities.SANDY_COW, 0xd1ba8a, 0xe3dbb0, new Item.Properties().stacksTo(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

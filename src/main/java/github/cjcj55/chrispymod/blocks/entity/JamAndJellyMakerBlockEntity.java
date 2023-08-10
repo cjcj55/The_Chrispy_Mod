@@ -2,14 +2,9 @@ package github.cjcj55.chrispymod.blocks.entity;
 
 import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.blocks.AlloyFurnaceBlock;
-import github.cjcj55.chrispymod.client.screen.AlloyFurnaceMenu;
-import github.cjcj55.chrispymod.client.screen.JamAndJellyMakerMenu;
-import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
+import github.cjcj55.chrispymod.blocks.entity.screen.JamAndJellyMakerMenu;
 import github.cjcj55.chrispymod.recipe.JamAndJellyMakerRecipe;
 import github.cjcj55.chrispymod.registry.CMBlockEntities;
-import github.cjcj55.chrispymod.util.InventoryDirectionEntry;
-import github.cjcj55.chrispymod.util.InventoryDirectionWrapper;
-import github.cjcj55.chrispymod.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -36,7 +31,6 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
 import java.util.Optional;
 
 public class JamAndJellyMakerBlockEntity extends BlockEntity implements MenuProvider {

@@ -2,6 +2,7 @@ package github.cjcj55.chrispymod.datagen;
 
 import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.registry.CMBlocks;
+import github.cjcj55.chrispymod.registry.CMEntities;
 import github.cjcj55.chrispymod.registry.CMItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -588,6 +589,16 @@ public class CMLanguageProvider extends LanguageProvider {
         add(CMBlocks.RED_REDSTONE_LAMP.get(), "Red Redstone Lamp");
         add(CMBlocks.WHITE_REDSTONE_LAMP.get(), "White Redstone Lamp");
         add(CMBlocks.YELLOW_REDSTONE_LAMP.get(), "Yellow Redstone Lamp");
+
+
+        add(CMEntities.LIGHTNING_BOW_ARROW.get(), "Lightning Bow's Arrow");
+        add(CMEntities.SANDY_COW.get(), "Sandy Cow");
+        add(CMItems.SANDY_COW_SPAWN_EGG.get(), "Sandy Cow Spawn Egg");
+
+
+
+
+
 
         add("itemGroup.chrispymod", "Chrispy Mod");
 

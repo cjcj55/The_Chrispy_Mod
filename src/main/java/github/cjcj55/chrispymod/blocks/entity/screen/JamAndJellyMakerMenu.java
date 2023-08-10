@@ -1,10 +1,10 @@
-package github.cjcj55.chrispymod.client.screen;
+package github.cjcj55.chrispymod.blocks.entity.screen;
 
 import github.cjcj55.chrispymod.blocks.entity.JamAndJellyMakerBlockEntity;
-import github.cjcj55.chrispymod.client.screen.slot.CMFuelSlot;
-import github.cjcj55.chrispymod.client.screen.slot.CMResultSlot;
-import github.cjcj55.chrispymod.client.screen.slot.MasonJarSlot;
-import github.cjcj55.chrispymod.client.screen.slot.SugarSlot;
+import github.cjcj55.chrispymod.blocks.entity.screen.slot.CMResultSlot;
+import github.cjcj55.chrispymod.blocks.entity.screen.slot.MasonJarSlot;
+import github.cjcj55.chrispymod.blocks.entity.screen.slot.SugarSlot;
+import github.cjcj55.chrispymod.blocks.entity.screen.slot.CMFuelSlot;
 import github.cjcj55.chrispymod.registry.CMBlocks;
 import github.cjcj55.chrispymod.registry.CMMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;

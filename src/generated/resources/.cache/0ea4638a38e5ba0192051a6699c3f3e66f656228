@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-12T21:19:44.1458086	Item Models: chrispymod
+// 1.20.1	2023-08-10T15:19:09.0512664	Item Models: chrispymod
 21b9a942c715a2fb9397fe42699614b349375f24 assets/chrispymod/models/item/acerola_cherry.json
 6c0de514437aaf855093f4aa43d0abd50ed6d76a assets/chrispymod/models/item/acerola_cherry_jam.json
 b5a76d7007c7ad1207639f471395694054116ce0 assets/chrispymod/models/item/aronia_berry.json
@@ -50,6 +50,7 @@ a41e8cf01e9fc8268b6d87f40ac4797186a97e22 assets/chrispymod/models/item/redcurran
 9f8ff08876668fa6eb910d699bfcd9ce42f13563 assets/chrispymod/models/item/redcurrant_jam.json
 5e5bbd97f0c7c48d65f01e48bb978575185a3920 assets/chrispymod/models/item/red_raspberry.json
 bfaafdec5cb01f2a2882146e8e0e050734a7ef5b assets/chrispymod/models/item/red_raspberry_jam.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/chrispymod/models/item/sandy_cow_spawn_egg.json
 3a4193746612292e7652e4c301feb155cffadb4d assets/chrispymod/models/item/serviceberry.json
 4e0f1337ae8d9a57fade2e7d87e13e8d6ebd4e70 assets/chrispymod/models/item/serviceberry_jam.json
 d6c2df9ff7a2330889cd039f5a329276050b9f00 assets/chrispymod/models/item/strawberry.json
