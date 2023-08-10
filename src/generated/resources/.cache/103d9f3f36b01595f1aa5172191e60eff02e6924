@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-10T15:47:03.7720814	Registries
+// 1.20.1	2023-08-10T16:57:12.0077987	Registries
 4c6118eeb10134afe5c439872c2bf409a11b4690 data/chrispymod/forge/biome_modifier/add_acerola_cherry_bush_patch.json
 d57f0e5c71d291fae5e81bf9e6cc65850e4a3703 data/chrispymod/forge/biome_modifier/add_aronia_berry_bush_patch.json
 96c8ade87f037dc27087d7946cd73f3f444cdbea data/chrispymod/forge/biome_modifier/add_barberry_bush_patch.json
@@ -50,7 +50,7 @@ dd552b8cf3c3390bf33163e128ecdf4d8c75365c data/chrispymod/forge/biome_modifier/ad
 db71992e30de6f23ace51ed79a31741ad08eb1fa data/chrispymod/forge/biome_modifier/add_white_raspberry_bush_patch.json
 62687dec299274bae072eab9243c197aaeb257ea data/chrispymod/forge/biome_modifier/add_wineberry_bush_patch.json
 2a55097c0b0435c00915de74ffd3e71569dda765 data/chrispymod/forge/biome_modifier/add_wonderberry_bush_patch.json
-1994c5199a8c63ffb793e2cffffb2b085fa9da07 data/chrispymod/forge/biome_modifier/spawn_sandy_cow.json
+05d4225e75fc51310f213bf7481722e868fd3e2b data/chrispymod/forge/biome_modifier/spawn_sandy_cow.json
 bb1ec2e62eb3a834d3eebc4719b97920c1d89ffc data/chrispymod/worldgen/configured_feature/cobalt_ore_hidden.json
 f0a9c0c851b5b4d4c066636f97174182ef923617 data/chrispymod/worldgen/configured_feature/cobalt_ore_large.json
 6e9dbdf9d3f5630ee168cca2d6693d766022b677 data/chrispymod/worldgen/configured_feature/cobalt_ore_small.json

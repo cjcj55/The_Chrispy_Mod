@@ -25,7 +25,7 @@ public class CMEntityBiomeModifiers {
 
         context.register(SPAWN_SANDY_COW, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_DRY_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(CMEntities.SANDY_COW.get(), 130, 1, 3))));
+                List.of(new MobSpawnSettings.SpawnerData(CMEntities.SANDY_COW.get(), 50, 1, 3))));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
