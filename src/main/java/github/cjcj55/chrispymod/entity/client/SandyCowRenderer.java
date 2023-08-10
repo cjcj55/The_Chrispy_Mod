@@ -5,6 +5,7 @@ import github.cjcj55.chrispymod.entity.SandyCowEntity;
 import github.cjcj55.chrispymod.entity.layers.CMModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 
 public class SandyCowRenderer extends MobRenderer<SandyCowEntity, SandyCowModel<SandyCowEntity>> {
