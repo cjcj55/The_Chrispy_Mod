@@ -4,7 +4,6 @@ import github.cjcj55.chrispymod.registry.CMItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 
 public class CMItemProperties {
     public static void addCustomItemProperties() {

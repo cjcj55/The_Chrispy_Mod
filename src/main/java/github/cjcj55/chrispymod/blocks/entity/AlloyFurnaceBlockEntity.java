@@ -2,9 +2,9 @@ package github.cjcj55.chrispymod.blocks.entity;
 
 import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.blocks.AlloyFurnaceBlock;
+import github.cjcj55.chrispymod.blocks.entity.screen.AlloyFurnaceMenu;
 import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
 import github.cjcj55.chrispymod.registry.CMBlockEntities;
-import github.cjcj55.chrispymod.blocks.entity.screen.AlloyFurnaceMenu;
 import github.cjcj55.chrispymod.util.InventoryDirectionEntry;
 import github.cjcj55.chrispymod.util.InventoryDirectionWrapper;
 import github.cjcj55.chrispymod.util.WrappedHandler;

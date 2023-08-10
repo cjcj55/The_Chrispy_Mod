@@ -1,6 +1,5 @@
 package github.cjcj55.chrispymod.blocks;
 
-import github.cjcj55.chrispymod.registry.CMBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;

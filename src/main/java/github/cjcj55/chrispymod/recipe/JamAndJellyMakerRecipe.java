@@ -11,7 +11,6 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
-import net.minecraft.world.level.Level;
 
 public class JamAndJellyMakerRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;

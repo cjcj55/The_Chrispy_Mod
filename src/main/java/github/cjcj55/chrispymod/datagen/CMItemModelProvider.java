@@ -1,9 +1,7 @@
 package github.cjcj55.chrispymod.datagen;
 
-import com.google.gson.JsonObject;
 import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.registry.CMItems;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

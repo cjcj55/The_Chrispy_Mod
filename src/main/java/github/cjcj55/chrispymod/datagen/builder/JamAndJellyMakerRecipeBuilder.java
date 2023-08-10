@@ -3,7 +3,6 @@ package github.cjcj55.chrispymod.datagen.builder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import github.cjcj55.chrispymod.ChrispyMod;
-import github.cjcj55.chrispymod.recipe.AlloyFurnaceRecipe;
 import github.cjcj55.chrispymod.recipe.JamAndJellyMakerRecipe;
 import github.cjcj55.chrispymod.registry.CMItems;
 import net.minecraft.advancements.Advancement;

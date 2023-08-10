@@ -1,6 +1,5 @@
 package github.cjcj55.chrispymod.entity.layers;
 
-import com.ibm.icu.text.Normalizer;
 import github.cjcj55.chrispymod.ChrispyMod;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;

@@ -1,7 +1,6 @@
 package github.cjcj55.chrispymod.entity;
 
 import github.cjcj55.chrispymod.registry.CMParticles;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;

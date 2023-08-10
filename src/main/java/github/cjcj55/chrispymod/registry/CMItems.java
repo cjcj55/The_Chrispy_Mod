@@ -4,7 +4,6 @@ import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.items.*;
 import github.cjcj55.chrispymod.items.materials.CMArmorMaterials;
 import github.cjcj55.chrispymod.items.materials.CMToolMaterials;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
