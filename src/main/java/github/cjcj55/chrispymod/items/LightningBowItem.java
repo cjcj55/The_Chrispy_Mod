@@ -1,6 +1,6 @@
 package github.cjcj55.chrispymod.items;
 
-import github.cjcj55.chrispymod.entity.projectile.LightningBowArrowProjectileEntity;
+import github.cjcj55.chrispymod.entity.LightningBowArrowProjectileEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;

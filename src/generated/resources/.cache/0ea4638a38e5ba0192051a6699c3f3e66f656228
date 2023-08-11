@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-10T15:19:09.0512664	Item Models: chrispymod
+// 1.20.1	2023-08-11T13:47:15.1713698	Item Models: chrispymod
 21b9a942c715a2fb9397fe42699614b349375f24 assets/chrispymod/models/item/acerola_cherry.json
 6c0de514437aaf855093f4aa43d0abd50ed6d76a assets/chrispymod/models/item/acerola_cherry_jam.json
 b5a76d7007c7ad1207639f471395694054116ce0 assets/chrispymod/models/item/aronia_berry.json
@@ -23,6 +23,7 @@ e482c1d815356eac652c94082d1009ffaca34053 assets/chrispymod/models/item/blackcurr
 48fe60b64a015093a53d8788d6f3d594b18a8445 assets/chrispymod/models/item/cranberry_jam.json
 6cc0051513ab0f7ee7487510f4a39a902bc81eb5 assets/chrispymod/models/item/dewberry.json
 0bea11f981de593bfca55dac334e4ff1a2ebfbb6 assets/chrispymod/models/item/dewberry_jam.json
+d83eb5c9e6003ad83e6d4982e723f49507ce70a4 assets/chrispymod/models/item/dynamite.json
 f915ff67432462391a3e647565b9c5535370d23f assets/chrispymod/models/item/elderberry.json
 e4da7a361e65850d244c190d50abbab786a87d51 assets/chrispymod/models/item/elderberry_jam.json
 9258ded219161d1866bfbeb2bd6281e20c5aa9c1 assets/chrispymod/models/item/gogi_berry.json

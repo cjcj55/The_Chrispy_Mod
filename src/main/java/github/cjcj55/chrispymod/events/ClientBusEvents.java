@@ -11,6 +11,7 @@ import github.cjcj55.chrispymod.registry.CMMenuTypes;
 import github.cjcj55.chrispymod.registry.CMParticles;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,6 +29,8 @@ public class ClientBusEvents {
             MenuScreens.register(CMMenuTypes.JAM_AND_JELLY_MAKER_MENU.get(), JamAndJellyMakerScreen::new);
 
             EntityRenderers.register(CMEntities.SANDY_COW.get(), SandyCowRenderer::new);
+
+            EntityRenderers.register(CMEntities.DYNAMITE_PROJECTILE.get(), ThrownItemRenderer::new);
         });
     }
 

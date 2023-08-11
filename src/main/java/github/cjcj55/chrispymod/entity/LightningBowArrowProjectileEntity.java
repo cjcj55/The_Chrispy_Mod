@@ -1,4 +1,4 @@
-package github.cjcj55.chrispymod.entity.projectile;
+package github.cjcj55.chrispymod.entity;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;

@@ -86,6 +86,8 @@ public class CMItemModelProvider extends ItemModelProvider {
 
         spawnEggItem(CMItems.SANDY_COW_SPAWN_EGG);
 
+        simpleItem(CMItems.DYNAMITE);
+
 //        bowItem(CMItems.LIGHTNING_BOW);
 
 //        simpleItem(CMItems.ALUMINUM);

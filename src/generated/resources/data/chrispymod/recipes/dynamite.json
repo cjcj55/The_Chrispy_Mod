@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "chrispymod",
+  "key": {
+    "d": {
+      "item": "minecraft:tnt"
+    },
+    "s": {
+      "tag": "forge:string"
+    }
+  },
+  "pattern": [
+    "s",
+    "d"
+  ],
+  "result": {
+    "count": 4,
+    "item": "chrispymod:dynamite"
+  },
+  "show_notification": true
+}

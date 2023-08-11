@@ -595,6 +595,9 @@ public class CMLanguageProvider extends LanguageProvider {
         add(CMEntities.SANDY_COW.get(), "Sandy Cow");
         add(CMItems.SANDY_COW_SPAWN_EGG.get(), "Sandy Cow Spawn Egg");
 
+        add(CMEntities.DYNAMITE_PROJECTILE.get(), "Dynamite Projectile");
+        add(CMItems.DYNAMITE.get(), "Dynamite");
+
 
 
 

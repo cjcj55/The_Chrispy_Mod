@@ -14,6 +14,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
@@ -135,6 +136,15 @@ public class CMRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('s', Tags.Items.STRING)
                 .group("chrispymod")
                 .unlockedBy("has_lightning", InventoryChangeTrigger.TriggerInstance.hasItems(CMItems.LIGHTNING.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CMItems.DYNAMITE.get(), 4)
+                .pattern("s")
+                .pattern("d")
+                .define('s', Tags.Items.STRING)
+                .define('d', Blocks.TNT)
+                .group("chrispymod")
+                .unlockedBy("has_tnt", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.TNT))
                 .save(pWriter);
 
 //        oreSmeltingRecipes(pWriter, ALUMINUM_SMELTABLES, CMItems.ALUMINUM, 0.3f, "aluminum_smeltable");

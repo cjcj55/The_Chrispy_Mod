@@ -366,6 +366,8 @@ public class CMItems {
 
     public static final RegistryObject<Item> MASON_JAR = ITEMS.register("mason_jar", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> DYNAMITE = ITEMS.register("dynamite", () -> new DynamiteItem(new Item.Properties()));
+
     // Entity Spawn Eggs
     public static final RegistryObject<Item> SANDY_COW_SPAWN_EGG = ITEMS.register("sandy_cow_spawn_egg", () -> new ForgeSpawnEggItem(CMEntities.SANDY_COW, 0xd1ba8a, 0xe3dbb0, new Item.Properties().stacksTo(16)));
 

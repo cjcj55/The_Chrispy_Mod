@@ -1,8 +1,9 @@
 package github.cjcj55.chrispymod.registry;
 
 import github.cjcj55.chrispymod.ChrispyMod;
+import github.cjcj55.chrispymod.entity.DynamiteProjectileEntity;
 import github.cjcj55.chrispymod.entity.SandyCowEntity;
-import github.cjcj55.chrispymod.entity.projectile.LightningBowArrowProjectileEntity;
+import github.cjcj55.chrispymod.entity.LightningBowArrowProjectileEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,14 @@ public class CMEntities {
                 .clientTrackingRange(4)
                 .updateInterval(20)
                 .build("lightning_bow_arrow_projectile"));
+
+    public static final RegistryObject<EntityType<DynamiteProjectileEntity>> DYNAMITE_PROJECTILE = ENTITY_TYPES.register("dynamite_projectile",
+            () -> EntityType.Builder.<DynamiteProjectileEntity>of(DynamiteProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .clientTrackingRange(4)
+                    .updateInterval(20)
+                    .setCustomClientFactory((spawnEntity, level) -> new DynamiteProjectileEntity(level))
+                    .build("dynamite_projectile"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
