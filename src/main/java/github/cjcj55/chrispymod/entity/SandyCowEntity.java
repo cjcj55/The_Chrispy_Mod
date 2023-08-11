@@ -7,8 +7,10 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -28,6 +30,9 @@ public class SandyCowEntity extends Monster {
     private float allowedHeightOffset = 0.5F;
     private int nextHeightOffsetChangeTick;
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SandyCowEntity.class, EntityDataSerializers.BYTE);
+
+    public final AnimationState idleAnimationState = new AnimationState();
+    private int idleAnimationTimeout = 0;
 
     public SandyCowEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -52,6 +57,35 @@ public class SandyCowEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes().add(Attributes.ATTACK_DAMAGE, 4.0D).add(Attributes.MOVEMENT_SPEED, (double)0.25F).add(Attributes.FOLLOW_RANGE, 36.0D);
+    }
+
+    private void setupAnimationStates() {
+        if (this.idleAnimationTimeout <= 0) {
+            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
+            this.idleAnimationState.start(this.tickCount);
+        } else {
+            --this.idleAnimationTimeout;
+        }
+    }
+
+    protected void updateWalkAnimation(float v) {
+        float f;
+        if (this.getPose() == Pose.STANDING) {
+            f = Math.min(v * 6.0F, 1.0F);
+        } else {
+            f = 0.0F;
+        }
+
+        this.walkAnimation.update(f, 0.2F);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (this.level().isClientSide()) {
+            this.setupAnimationStates();
+        }
     }
 
     @Override
@@ -168,6 +202,7 @@ public class SandyCowEntity extends Monster {
             this.lastSeen = 0;
         }
 
+        @Override
         public void tick() {
             --this.attackTime;
             LivingEntity livingentity = this.sandyCow.getTarget();

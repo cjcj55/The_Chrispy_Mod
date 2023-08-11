@@ -3,6 +3,7 @@ package github.cjcj55.chrispymod.entity.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import github.cjcj55.chrispymod.entity.SandyCowEntity;
+import github.cjcj55.chrispymod.entity.animations.SandyCowAnimationDefinitions;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -49,9 +50,11 @@ public class SandyCowModel<T extends SandyCowEntity> extends HierarchicalModel<T
     }
 
     @Override
-    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(SandyCowEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.applyHeadRotation(entity, netHeadYaw, headPitch, ageInTicks);
+
+        this.animateWalk(SandyCowAnimationDefinitions.SANDY_COW_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
     }
 
     private void applyHeadRotation(SandyCowEntity pEntity, float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
