@@ -55,6 +55,8 @@ public class SandyCowModel<T extends SandyCowEntity> extends HierarchicalModel<T
         this.applyHeadRotation(entity, netHeadYaw, headPitch, ageInTicks);
 
         this.animateWalk(SandyCowAnimationDefinitions.SANDY_COW_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
+
+        this.animate(entity.flyAnimationState, SandyCowAnimationDefinitions.SANDY_COW_FLY, ageInTicks, 1f);
     }
 
     private void applyHeadRotation(SandyCowEntity pEntity, float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {

@@ -1,5 +1,6 @@
 package github.cjcj55.chrispymod.entity;
 
+import github.cjcj55.chrispymod.entity.animations.SandyCowAnimationDefinitions;
 import github.cjcj55.chrispymod.registry.CMParticles;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -30,9 +31,13 @@ public class SandyCowEntity extends Monster {
     private float allowedHeightOffset = 0.5F;
     private int nextHeightOffsetChangeTick;
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SandyCowEntity.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Boolean> FLYING = SynchedEntityData.defineId(SandyCowEntity.class, EntityDataSerializers.BOOLEAN);
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+
+    public final AnimationState flyAnimationState = new AnimationState();
+    private int flyAnimationTimeout = 0;
 
     public SandyCowEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -66,6 +71,17 @@ public class SandyCowEntity extends Monster {
         } else {
             --this.idleAnimationTimeout;
         }
+
+        if (this.isFlying() && flyAnimationTimeout <= 0) {
+            flyAnimationTimeout = 40;   // Length in ticks of animation
+            flyAnimationState.start(this.tickCount);
+        } else {
+            --this.flyAnimationTimeout;
+        }
+
+        if (!this.isFlying()) {
+            flyAnimationState.stop();
+        }
     }
 
     protected void updateWalkAnimation(float v) {
@@ -84,14 +100,27 @@ public class SandyCowEntity extends Monster {
         super.tick();
 
         if (this.level().isClientSide()) {
+            if (this.isInWater()) {
+                this.setCharged(false);
+            }
+
             this.setupAnimationStates();
         }
+    }
+
+    public void setFlying(boolean isFlying) {
+        this.entityData.set(FLYING, isFlying);
+    }
+
+    public boolean isFlying() {
+        return this.entityData.get(FLYING);
     }
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_FLAGS_ID, (byte)0);
+        this.entityData.define(FLYING, false);
     }
 
     @Nullable
@@ -116,25 +145,6 @@ public class SandyCowEntity extends Monster {
     }
 
     @Override
-    public void aiStep() {
-        if (!this.onGround() && this.getDeltaMovement().y < 0.0D) {
-            this.setDeltaMovement(this.getDeltaMovement().multiply(1.0D, 0.6D, 1.0D));
-        }
-
-        if (this.level().isClientSide()) {
-            if (this.random.nextInt(24) == 0 && !this.isSilent()) {
-                this.level().playLocalSound(this.getX() + 0.5D, this.getY() + 0.5D, this.getZ() + 0.5D, SoundEvents.BLAZE_BURN, this.getSoundSource(), 1.0F + this.random.nextFloat(), this.random.nextFloat() * 0.7F + 0.3F, false);
-            }
-
-            for (int i = 0; i < 2; ++i) {
-                this.level().addParticle(CMParticles.SANDY_SMOKE_PARTICLE.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
-            }
-        }
-
-        super.aiStep();
-    }
-
-    @Override
     public boolean isSensitiveToWater() {
         return false;
     }
@@ -152,6 +162,12 @@ public class SandyCowEntity extends Monster {
             Vec3 vec3 = this.getDeltaMovement();
             this.setDeltaMovement(this.getDeltaMovement().add(0.0D, ((double)0.3F - vec3.y) * (double)0.3F, 0.0D));
             this.hasImpulse = true;
+        }
+
+        if (!this.onGround()) {
+            this.setFlying(true);
+        } else {
+            this.setFlying(false);
         }
 
         super.customServerAiStep();
@@ -175,6 +191,11 @@ public class SandyCowEntity extends Monster {
         }
 
         this.entityData.set(DATA_FLAGS_ID, b0);
+    }
+
+    @Override
+    protected int calculateFallDamage(float pFallDistance, float pDamageMultiplier) {
+        return 0;
     }
 
     static class SandyCowAttackGoal extends Goal {
