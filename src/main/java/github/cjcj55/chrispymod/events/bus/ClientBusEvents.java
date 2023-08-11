@@ -1,4 +1,4 @@
-package github.cjcj55.chrispymod.events;
+package github.cjcj55.chrispymod.events.bus;
 
 import github.cjcj55.chrispymod.ChrispyMod;
 import github.cjcj55.chrispymod.blocks.entity.screen.AlloyFurnaceScreen;

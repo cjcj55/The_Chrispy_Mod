@@ -1,7 +1,7 @@
 package github.cjcj55.chrispymod;
 
 import com.mojang.logging.LogUtils;
-import github.cjcj55.chrispymod.events.CommonSetupEvents;
+import github.cjcj55.chrispymod.events.setup.CommonSetupEvents;
 import github.cjcj55.chrispymod.registry.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

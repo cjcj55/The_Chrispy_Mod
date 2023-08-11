@@ -1,4 +1,4 @@
-package github.cjcj55.chrispymod.events;
+package github.cjcj55.chrispymod.events.setup;
 
 import github.cjcj55.chrispymod.registry.CMItems;
 import net.minecraft.world.level.block.ComposterBlock;
